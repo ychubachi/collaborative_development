@@ -1,0 +1,12 @@
+#+TITLE: コラボレイティブ開発特論 1章
+#+AUTHOR: 産業技術大学院大学 \linebreak 中鉢 欣秀
+#+DATE: yyyy-mm-dd
+#+OPTIONS: ^:nil
+#+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col) %8BEAMER_OPT(Opt)
+#+PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 0.0 :ETC
+
+* 導入
+** こんにちは
+- あああ
+
+#+include: "../../self_introduction/self_introduction.org" :minlevel 1
