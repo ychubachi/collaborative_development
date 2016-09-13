@@ -1,0 +1,3 @@
+[submodule "self_introduction"]
+	path = self_introduction
+	url = git@github.com:ychubachi/self_introduction.git
