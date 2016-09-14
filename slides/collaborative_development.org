@@ -1,8 +1,15 @@
-#+TITLE: コラボレイティブ開発特論
+#+TITLE: コラボレイティブ開発特論（全15回）
 #+AUTHOR: 産業技術大学院大学 \linebreak 中鉢 欣秀
-#+DATE: yyyy-mm-dd
-#+OPTIONS: ^:nil
+#+DATE: 2016年度
+#+OPTIONS: ^:nil title:nil
 #+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col) %8BEAMER_OPT(Opt)
 #+PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 0.0 :ETC
 
+#+begin_latex
+ \title{title}
+#+end_latex
+
+* 第1部 導入
 #+include: "./p1_introduction/s1_introduction.org"
+* 第2部
+* 第3部

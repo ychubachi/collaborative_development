@@ -9,4 +9,5 @@
 ** こんにちは
 - あああ
 
+** 自己紹介
 #+include: "../../self_introduction/self_introduction.org" :minlevel 1
