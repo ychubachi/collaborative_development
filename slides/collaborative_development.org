@@ -1,68 +1,44 @@
-#+TITLE: コラボレイティブ開発特論（全15回）
+#+TITLE: コラボレイティブ開発特論
 #+AUTHOR: 産業技術大学院大学 \linebreak 中鉢 欣秀
 #+DATE: 2016年度
-#+OPTIONS: H:3 ^:nil
+#+OPTIONS: H:4 ^:nil
+#+latex_class: beamerlecture
 
 * COMMENT 設定
 
-#+begin_src elisp results: silent
+#+begin_src elisp :results silent
   ;; Beamer用クラスの設定（4階層用）
   (add-to-list 'org-latex-classes
                '("beamerlecture"
-                 "\\documentclass[uplatex,dvipdfmx,14pt,presentation]{beamer}
-% ゴシック体
-\\renewcommand{\\kanjifamilydefault}{\\gtdefault}
-% ナビゲーション表示消去
-\\setbeamertemplate{navigation symbols}{}
-% 部（第一階層）ごとに表題を表示
-\\AtBeginPart{
-  \\begin{frame}
-    \\date{\\insertpart}
-    \\maketitle
-  \\end{frame}
-}
-% 節（第二階層）ごとに目次を表示
-\\AtBeginSection[]{
-  \\begin{frame}
-    \\tableofcontents[currentsection,currentsubsection]
-  \\end{frame}
-}"
-		 ("\\part{%s}" . "\\part*{%s}")
-		 ("\\section{%s}" . "\\section*{%s}")
-		 ("\\subsection{%s}" . "\\subsection*{%s}")
-		 ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))))
+                 "\\documentclass[uplatex,dvipdfmx,14pt,presentation,t]{beamer}
+\\input{style}"
+                 ("\\part{%s}" . "\\part*{%s}")
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))))
   )
 #+end_src
 
-#+RESULTS:
-| beamerlecture | \documentclass[uplatex,dvipdfmx,14pt,presentation]{beamer}\n% ゴシック体\n\renewcommand{\kanjifamilydefault}{\gtdefault}\n% ナビゲーション表示消去\n\setbeamertemplate{navigation symbols}{}\n% 部（第一階層）ごとに表題を表示\n\AtBeginPart{\n  \begin{frame}\n    \date{\insertpart}\n    \maketitle\n  \end{frame}\n}\n% 節（第二階層）ごとに目次を表示\n\AtBeginSection[]{\n  \begin{frame}\n    \tableofcontents[currentsection,currentsubsection]\n  \end{frame}\n} | (\part{%s} . \part*{%s})       | (\section{%s} . \section*{%s})       | (\subsection{%s} . \subsection*{%s})       | (\subsubsection{%s} . \subsubsection*{%s}) |                                            |
-| beamer        | \documentclass[uplatex,dvipdfmx,14pt,xcolor=dvipsnames,table,presentation]{beamer}\n\input{style}                                                                                                                                                                                                                                                                                                                                                                         | (\section{%s} . \section*{%s}) | (\subsection{%s} . \subsection*{%s}) | (\subsubsection{%s} . \subsubsection*{%s}) |                                            |                                            |
-| beamer        | \documentclass[presentation]{beamer}                                                                                                                                                                                                                                                                                                                                                                                                                                      | (\section{%s} . \section*{%s}) | (\subsection{%s} . \subsection*{%s}) | (\subsubsection{%s} . \subsubsection*{%s}) |                                            |                                            |
-| utarticle     | \documentclass[uplatex,dvipdfmx]{utarticle}\n[DEFAULT-PACKAGES]\n[NO-PACKAGES]\n[EXTRA]\n\usepackage{pxjahyper}                                                                                                                                                                                                                                                                                                                                                           | (\section{%s} . \section*{%s}) | (\subsection{%s} . \subsection*{%s}) | (\subsubsection{%s} . \subsubsection*{%s}) | (\paragraph{%s} . \paragraph*{%s})         | (\subparagraph{%s} . \subparagraph*{%s})   |
-| ujsarticle    | \documentclass[uplatex,dvipdfmx]{jsarticle}                                                                                                                                                                                                                                                                                                                                                                                                                               | (\section{%s} . \section*{%s}) | (\subsection{%s} . \subsection*{%s}) | (\subsubsection{%s} . \subsubsection*{%s}) | (\paragraph{%s} . \paragraph*{%s})         | (\subparagraph{%s} . \subparagraph*{%s})   |
-| article       | \documentclass[11pt]{article}                                                                                                                                                                                                                                                                                                                                                                                                                                             | (\section{%s} . \section*{%s}) | (\subsection{%s} . \subsection*{%s}) | (\subsubsection{%s} . \subsubsection*{%s}) | (\paragraph{%s} . \paragraph*{%s})         | (\subparagraph{%s} . \subparagraph*{%s})   |
-| report        | \documentclass[11pt]{report}                                                                                                                                                                                                                                                                                                                                                                                                                                              | (\part{%s} . \part*{%s})       | (\chapter{%s} . \chapter*{%s})       | (\section{%s} . \section*{%s})             | (\subsection{%s} . \subsection*{%s})       | (\subsubsection{%s} . \subsubsection*{%s}) |
-| book          | \documentclass[11pt]{book}                                                                                                                                                                                                                                                                                                                                                                                                                                                | (\part{%s} . \part*{%s})       | (\chapter{%s} . \chapter*{%s})       | (\section{%s} . \section*{%s})             | (\subsection{%s} . \subsection*{%s})       | (\subsubsection{%s} . \subsubsection*{%s}) |
 
-* 第1部 導入
+* part 第1部 導入
 # #+include: "./p1_introduction/s1_introduction.org"
-** 第1章
-*** 第1節
+** sec1 第1回 ガイダンス
+*** subsec1-1 第1節
 **** 第1項
 - aaa
 **** 第2項
 - aaa
 **** 第3項
 - aaa
-*** 第2節
-**** 第1項
+*** 1-2
+**** 第1項 眺めのタイトル眺めのタイトル眺めのタイトル
 - aaa
 **** 第2項
 - aaa
 **** 第3項
 - aaa
-** 第2章
-*** 第3節
+** 第2回 素晴らしい知識
+*** subsec2-1 第3節
 **** 第1項
 - aaa
 **** 第2項
