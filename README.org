@@ -2,3 +2,5 @@
 
 - この授業は2016年度にAIITで開講するenPiTプログラム科目です．
 - 改善提案や質問はissueに登録してください．
+- スライド資料
+  - [[https://github.com/ychubachi/collaborative_development/raw/master/slides/collaborative_development.pdf][Download]]
