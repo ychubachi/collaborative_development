@@ -5,7 +5,7 @@
 #+latex_class: beamer-lecture
 
 * Part 1
-** 第1章 モダンなソフトウエア開発の道具達
+** COMMENT 第1章 ガイダンス
 *** 連絡事項
 **** 連絡事項(1)
 ***** 資料等の入手先
@@ -19,7 +19,7 @@
       - 各自のPCに仮想環境をインストールしておいてください
        	- PCを持ってない方には貸出も可能です（数量限定）
       - インストール方法については下記を参照
-       	- [[https://github.com/ychubachi/enpit/blob/master/slides/preparation.org][enpit/preparation.org at master · ychubachi/enpit]]
+	- [[https://github.com/ychubachi/cldv_preparation]]
 *** 授業の全体像
 **** 学習目標と目的
 ***** 目標
@@ -60,18 +60,21 @@
        - 課題提出と実技試験
 ***** 評価の観点
        - 分散PBLで役に立つ知識が習得できたかどうか
-*** 「学びの共同体」
+
+#+INCLUDE: "../self_introduction/slides/body.org" :minlevel 3
+
+*** 「学びの共同体」になろう
 **** 共に学び、共に教える「場」
-     - この教室に集うメンバーは学びの共同体である
-     - 他人に教えることは、優れた学びの方法の一つ
+     - この教室に集うメンバーで学びの共同体になろう
+     - 他人に教えること＝学び
      - 困った時には助けを求める
-**** 自己紹介
-     - 教員
-       - [[https://github.com/ychubachi/enpit/raw/master/slides/self_introduction.pdf][自己紹介]]
+**** そのためにお互いを知ろう
      - 履修者
        - 名前（可能であれば所属も）
        - どんな仕事をしているか（あるいは大学で学んだこと）
        - この授業を履修した動機
+
+** 第2章 モダンなソフトウエア開発の道具達
 *** モダンなソフトウエア開発とは
 **** ソフトウエア開発のための方法・言語・道具
 
@@ -114,15 +117,7 @@
       - その他
 ***** 仮想化環境の構築用リポジトリ（参考）
       - [[https://github.com/ychubachi/vagrant_enpit][ychubachi/vagrant_enpit]]
-*** 準備作業
-**** クラウドのアカウント作成
-***** GitHub
-      - [[[https://github.com/join][Join GitHub · GitHub]]]
-***** Heroku
-      - [[[https://id.heroku.com/signup][Heroku - Sign up]]]
-***** Travis CI
-      - [[[https://travis-ci.org/][Travis CI]]]
-       	- Travis CIは，GitHubのアカウントでログインできる
+*** 仮想環境の準備
 **** enPiT仮想化環境のアップデート
 ***** 作業内容
       - enPiT仮想化環境（vagrantのbox）を更新しておく
@@ -157,6 +152,15 @@ vagrant up
 vagrant ssh
 #+end_src
 
+*** クライドの準備
+**** GitHub/Herokuのアカウントを作成
+***** GitHub
+      - [[[https://github.com/join][Join GitHub · GitHub]]]
+***** Heroku
+      - [[[https://id.heroku.com/signup][Heroku - Sign up]]]
+***** Travis CI
+      - [[[https://travis-ci.org/][Travis CI]]]
+       	- Travis CIは，GitHubのアカウントでログインできる
 **** github-connectスクリプト
 ***** URL
       - [[[https://gist.github.com/ychubachi/6491682][github-connect.sh]]]
