@@ -4,8 +4,8 @@
 #+OPTIONS: H:4 ^:nil toc:nil
 #+latex_class: beamer-lecture
 
-* Part 1
-** COMMENT 第1章 ガイダンス
+* COMMENT P1: ガイダンスとモダンな道具達
+** 第1章 ガイダンス
 *** 連絡事項
 **** 連絡事項(1)
 ***** 資料等の入手先
@@ -90,7 +90,6 @@
       - 道具はプログラミング言語を問わない
 ***** 取り扱わないこと
       - 方法論そのものについてはアジャイル開発特論で学ぶ
-      - 言語の備えるエコシステムについては必要な範囲で学ぶ
       - プログラミングの初歩については教えない
 **** Scrumするための道具
 
@@ -108,7 +107,7 @@
       - GitはGitHubと連携することでOSS型のチーム開発ができる
 
 **** enPiT仮想化環境
-***** インストール済みの言語と道具
+***** 仮想環境にインストール済みの道具
       - エディタ（Emacs/Vim）
       - Rubyの実行環境
       - GitHub，Heroku，Travis CIと連携するための各種コマンド（github-connect.sh，hub，heroku，travis）
@@ -117,7 +116,7 @@
       - その他
 ***** 仮想化環境の構築用リポジトリ（参考）
       - [[https://github.com/ychubachi/vagrant_enpit][ychubachi/vagrant_enpit]]
-*** 仮想環境の準備
+*** 仮想環境の準備から起動
 **** enPiT仮想化環境のアップデート
 ***** 作業内容
       - enPiT仮想化環境（vagrantのbox）を更新しておく
@@ -128,10 +127,12 @@ cd ~/enpit
 vagrant destroy
 vagrant box update
 #+end_src
-**** Port Forwardの設定
+**** Port Forwardの設定(1)
 ***** 説明
       - Guest OSで実行するサーバに，Host OSからWebブラウザでアクセスできるようにしておく
+      - 任意のエディタでVagrantfileの「config.vm.network」を変更
       - 任意のエディタでVagrantfileを変更
+**** Port Forwardの設定(2)
 ***** 変更前
 #+begin_src ruby
   # config.vm.network "forwarded_port", guest: 80, host: 8080
@@ -152,7 +153,7 @@ vagrant up
 vagrant ssh
 #+end_src
 
-*** クライドの準備
+*** クラウド環境のアカウント・設定
 **** GitHub/Herokuのアカウントを作成
 ***** GitHub
       - [[[https://github.com/join][Join GitHub · GitHub]]]
@@ -187,8 +188,8 @@ git config --list
 ***** GitHubの設定確認
       - ブラウザでGitHubのSSH Keyページを開く
 
-* COMMENT Part 2?
-** 第2章 Git/GitHubの基本操作
+* Part P2: Git/GitHub
+** 第3章 Git/GitHubの基本操作
 *** ローカルリポジトリ
 **** Gitのローカルリポジトリの作成
 ***** ローカルリポジトリ
@@ -205,7 +206,7 @@ git init
 **** Gitの設定ディレクトリ
 ***** 隠しフォルダ「 =.git= 」
       - Gitソースコードの履歴情報や，各種の設定をGitが保存するディレクトリ
-      - このフォルダは通常，Gitを経由しないで変更することはない
+      - このフォルダは *変更してはならない*
 ***** 確認方法
 
 #+begin_src bash
@@ -214,13 +215,13 @@ find .git
 #+end_src
 
 *** リモートリポジトリ
-**** Hubコマンド
-***** enPiT環境のHubコマンド
-     - [[https://github.com/github/hub][github/hub]]
-***** GitへのGitHub操作機能追加
-     - 通常のGitの機能に加えて，GitHub用のコマンドが利用できる
-     - エイリアス設定しており，コマンド名は「git」のまま
-***** 確認方法
+**** Hubコマンドが利用可能
+- enPiT環境のHubコマンド
+  - [[https://github.com/github/hub][github/hub]]
+- GitへのGitHub操作機能追加
+  - 通常のGitの機能に加えて，GitHub用のコマンドが利用できる
+  - コマンド名は「git」のまま（エイリアス設定済み）
+- 確認方法
 
 #+begin_src bash
 git version
@@ -247,7 +248,6 @@ git create
 git remote -vv
 #+end_src
 *** GitとGitHubの基本操作
-**** Gitの操作方法
 ***** マニュアル等
       - [[http://git-scm.com/doc][Git - Documentation]]
 ***** commitログの書き方
@@ -311,6 +311,7 @@ git commit
 git pull_request
 #+end_src
 
+**** Gitの参考資料
 *** 演習課題
 **** 演習課題2-1
 ***** Init/Status/Addの練習
@@ -337,7 +338,7 @@ git pull_request
 ***** 提出先
       - [[[https://docs.google.com/forms/d/1FJUpH52RNstvIuIsTkGQxn5XYAWWrY_G_0vE0eRjDV0/viewform?usp%3Dsend_form][コラボレイティブ開発特論(2015) アカウント等]]]
 
-** 第3章 Gitのbranchの活用
+** COMMENT 第4章 Gitのbranchの活用
 *** branchの操作
 **** branchの作成
 ***** ブランチとは？
@@ -456,7 +457,7 @@ git pull
      2. Pull Requestを送る
      3. ブラウザで，Pull Requestをマージする
      4. =master= ブランチに移動して， =pull= することで，更新する
-** 第4章 GitHubによる協同作業
+** COMMENT 第5章 GitHubによる協同作業
 *** GitHub Flow
 **** GitHub Flow (1)
     1. 思い立ったらブランチ作成
