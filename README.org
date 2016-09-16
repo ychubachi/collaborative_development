@@ -6,7 +6,7 @@
    - スライド資料（PDF）
      - [[https://github.com/ychubachi/collaborative_development/raw/master/slides/collaborative_development.pdf][Download]]
    - Web版
-     - TODO
+     - [[https://github.com/ychubachi/collaborative_development/blob/master/slides/collaborative_development.org][collaborative_development.org]]
 
 ** 授業計画
 
