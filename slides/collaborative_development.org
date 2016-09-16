@@ -4,8 +4,8 @@
 #+OPTIONS: H:4 ^:nil toc:nil
 #+latex_class: beamer-lecture
 
-* COMMENT P1: ガイダンスとモダンな道具達
-** 第1章 ガイダンス
+* P1: ガイダンスとモダンな道具達
+** COMMENT 第1章 ガイダンス
 *** 連絡事項
 **** 連絡事項(1)
 ***** 資料等の入手先
@@ -187,8 +187,13 @@ git config --list
 #+end_src
 ***** GitHubの設定確認
       - ブラウザでGitHubのSSH Keyページを開く
+*** 演習: GitHubユーザ名の提出
+**** 演習: GitHubユーザ名名の提出
+     - 次のURLから授業で利用するGitHubユーザ名と
+       URLを登録してください．
+       - https://goo.gl/forms/7WVITH39Gxa6f5Us2
 
-* Part P2: Git/GitHub
+* COMMENT Part P2: Git/GitHub
 ** 第3章 Git/GitHubの基本操作
 *** ローカルリポジトリ
 **** Gitのローカルリポジトリの作成
