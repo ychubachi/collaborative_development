@@ -1,6 +1,23 @@
 * コラボレイティブ開発特論（全15回）
-
+** この授業について
 - この授業は2016年度にAIITで開講するenPiTプログラム科目です．
 - 改善提案や質問はissueに登録してください．
-- スライド資料
-  - [[https://github.com/ychubachi/collaborative_development/raw/master/slides/collaborative_development.pdf][Download]]
+** 資料
+   - スライド資料（PDF）
+     - [[https://github.com/ychubachi/collaborative_development/raw/master/slides/collaborative_development.pdf][Download]]
+   - Web版
+     -
+
+** 授業計画
+
+| 日付 | No | 内容         |   |   |
+|------+----+--------------+---+---|
+| 9/17 |  1 | ・ガイダンス |   |   |
+|      |    | ・授業概要   |   |   |
+|      |    |              |   |   |
+|      |    |              |   |   |
+| 9/18 |  2 |              |   |   |
+| 9/19 |  3 |              |   |   |
+| 9/22 |  4 |              |   |   |
+| 9/24 |  5 |              |   |   |
+|      |    |              |   |   |
