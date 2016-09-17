@@ -164,16 +164,15 @@ vagrant ssh
        	- Travis CIは，GitHubのアカウントでログインできる
 **** github-connectスクリプト
 ***** URL
-      - [[[https://gist.github.com/ychubachi/6491682][github-connect.sh]]]
+      - _[[https://gist.github.com/ychubachi/6491682][github-connect.sh]]_
 ***** git conifgを代行
       - GitHubにログインし，名前とemailを読み込んでgitに設定
 ***** SSHの鍵生成と登録
       - SSH鍵を作成し，公開鍵をGitHubに登録してくれる
 **** github-connect.shの実行
-***** 作業内容
-      - スクリプトを起動し，設定を行う
-      - GitHubのログイン名とパスワードを聞かれるので，入力する
-      - rsa key pairのパスフレーズは入力しなくて構わない
+     - スクリプトを起動し，設定を行う
+     - GitHubのログイン名とパスワードを聞かれるので，入力する
+     - rsa key pairのパスフレーズは入力しなくて構わない
 ***** コマンド
 
 #+begin_src bash
@@ -723,8 +722,6 @@ gem install travis     # Travis CLIのアップデート
 travis login --auto    # GitHubのログイン情報で自動ログイン
 travis init            # 質問には全てEnterを押す
 #+end_src
-
-# gem update --system 2.4.6
 
 **** Herokuとの連携
 ***** Herokuとの連携
