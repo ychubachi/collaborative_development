@@ -193,7 +193,7 @@ git config --list
        URLを登録してください．
        - [[https://goo.gl/forms/LOL7hOzVEKJeRk1t2][コラボレイティブ開発特論-GitHubユーザ名とURL]]
 
-* Part 2
+* Part 2: GitHub入門
 ** 第3章 GitHub入門
 *** GitHub入門の解説と演習
 **** GitHub入門について
@@ -202,7 +202,7 @@ git config --list
 ***** 演習資料
       [[https://github.com/ychubachi/github_practice][ychubachi/github_practice: Git/GitHub入門]]
 
-* Part 3
+* Part 3: Sinatra/Heroku/RoR
 ** 第4章 SinatraでWebアプリを作ろう
 *** Sinatraアプリケーションの作成
 **** Sinatraを使った簡単なWebアプリケーション
@@ -380,38 +380,20 @@ git push heroku master
       - GitHubのURLとHerokuのURLを提出
        	- http://goo.gl/forms/p1SXNT2grM
 
-** TODO 第5章 Ruby on Railsアプリの開発
+** 第5章 Ruby on Railsアプリの開発
 *** Ruby on Railsアプリの生成と実行
 **** RoRを使ったWebアプリケーション
 ***** Ruby on Rails（RoR）とは？
       - Webアプリケーションを作成するためのフレームワーク
 ***** 参考文献
-      - [[http://rubyonrails.org/][Ruby on Rails]]
+      - _[[http://rubyonrails.org/][Ruby on Rails]]_
 
-**** Herokuで動かす方法
-***** Getting Started
-     - [[https://devcenter.heroku.com/articles/getting-started-with-rails4][Getting Started with Rails 4.x on Heroku | Heroku Dev Center]]
+**** =rails_enpit= アプリを作成する
+     - =rails= は予め，仮想化環境にインストールしてある
+     - =rails new= コマンドを用いて，RoRアプリの雛形を作成する
+       - コマンドは次スライド
 
-***** DBについて
-     - DatabeseはPostgreSQLを使用する
-       - RoR標準のsqliteは使わない
-
-**** PostgreSQLにDBを作成
-***** 開発で利用するDB
-      - rails_enpit_development :: 開発作業中に利用
-      - rails_enpit_test :: テスト用に利用
-      - rails_enpit_production :: 本番環境で利用（ローカルには作成しない）
-***** コマンド
-#+begin_src bash
-createdb rails_enpit_development
-createdb rails_enpit_test
-#+end_src
-
-**** =rails_enpit= リポジトリを作成する
-***** 内容
-      - =rails= は予め，仮想化環境にインストールしてある
-      - =rails new= コマンドを用いて，RoRアプリの雛形を作成する
-***** コマンド
+**** =rails_enpit= を作成するコマンド
 
 #+begin_src bash
 rails new ~/rails_enpit --database=postgresql
@@ -423,10 +405,10 @@ git commit -m 'Generate a new rails app'
 git push -u origin master
 #+end_src
 
-**** Gemfileの変更
-***** 変更する内容
-      - GemfileにRails内部で動作するJavaScriptの実行環境を設定する
-      - 当該箇所のコメントを外す
+**** GemfileにJS用Gemの設定
+     - GemfileにRails内部で動作するJavaScriptの実行環境を設定する
+       - 当該箇所のコメントを外す
+
 ***** 変更前
 #+begin_src ruby
 # gem 'therubyracer',  platforms: :ruby
@@ -437,24 +419,52 @@ git push -u origin master
 gem 'therubyracer',  platforms: :ruby
 #+end_src
 
-**** Bundle installの実行
-***** =bundle install=
-      - Gemfileを読み込み，必要なgemをインストールする
-      - =rails new= をした際にも， =bundle install= は実行されている
-      - 今回はtherubyracerと，それが依存しているgemでまだインストールしていないものをインストール
-      - インストールする先は =~/.rbenv= 以下の特定のディレクトリ
+**** Bundle installの実行(1)
+     - Gemfileを読み込み，必要なgemをインストールする
+       - =rails new= をした際にも， =bundle install= は実行されている
+       - 今回はtherubyracerと，それが依存しているgemでまだインストールしていないものをインストール
+     - インストールする先は =~/.rbenv= 以下の特定のディレクトリ
+       - コマンドは次スライド
+**** Bundle installの実行(2)
 ***** コマンド
 #+begin_src bash
 bundle install
 git commit -a -m 'Run bundle install'
 #+end_src
 
+**** Gemfile設定変更のコミット
+     - ここまでの内容をコミットしておこう
+
+#+begin_src bash
+git add .
+git commit -m 'Edit Gemfile to enable the rubyracer gem'
+git push -u origin master
+#+end_src
+
+**** データベースの作成
+     - rails_enpitアプリの動作に必要なDBを作成する
+     - DatabeseはHerokuで標準のPostgreSQLを使用する
+       - RoR標準のsqliteは使わない
+     - enPiT仮想環境にはPostgreSQLインストール済み
+
+**** PostgreSQLにDBを作成
+***** 開発で利用するDB
+| rails_enpit_development  | 開発作業中に利用 |
+| rails_enpit_test         | テスト用に利用   |
+| (rails_enpit_production) | （本番環境用）   |
+     - 本番環境用DBは *Herokuでのみ* 用いる
+
+***** コマンド
+#+begin_src bash
+createdb rails_enpit_development
+createdb rails_enpit_test
+#+end_src
+
 **** Rails serverの起動
-***** Rails serverを起動
-      - この段階で，アプリケーションを起動できるようになっている
-      - Host OSのWebブラウザで， =http://localhost:3000= にアクセスして確認
-      - 端末にもログが表示される
-      - 確認したら，端末でCtrl-Cを押してサーバを停止する
+     - この段階で，アプリケーションを起動できるようになっている
+     - Host OSのWebブラウザで， =http://localhost:3000= にアクセスして確認
+     - 端末にもログが表示される
+     - 確認したら，端末でCtrl-Cを押してサーバを停止する
 ***** コマンド
 #+begin_src bash
 bin/rails server -b 0.0.0.0
@@ -462,59 +472,92 @@ bin/rails server -b 0.0.0.0
 
 *** Controller/Viewの作成
 **** Hello Worldを表示するController
-***** Controllerとは？
-      - MVC構造でいうController
-      - HTTPのリクエストを処理し，Viewに引き渡す
-      - =rails generate controller= コマンドで作成する
+     - HTTPのリクエストを処理し，Viewに引き渡す
+       - MVC構造でいうControllerである
+     - =rails generate controller= コマンドで作成する
 ***** コマンド
 #+begin_src bash
 bin/rails generate controller welcome
 #+end_src
-**** Viewの作成
-***** Viewとは？
-      - HTML等で結果をレンダリングして表示する
-      - =app/views/welcome/index.html.erb= を作成する
-      - erbで作成するのが一般的で，内部でRubyコードを動作させることができる
-***** =index.html.erb=
+**** 生成されたControllerコードの確認
+     - git diffコマンドでどのようなコードができたか確認
+#+begin_src bash
+git diff
+#+end_src
+     - Controllerのコードを作成した作業をコミット
+#+begin_src bash
+git add .
+git commit -m 'Generate the welcome controller'
+#+end_src
+
+**** Hello Worldを表示するView
+     - HTML等で結果をレンダリングして表示する
+       - erbで作成するのが一般的で，内部でRubyコードを動作させることができる
+     - =app/views/welcome/index.html.erb= を（手動で）作成する
+       - コードは次スライド
+**** Hello Worldを表示するViewのコード
+***** *index.html.erb*
 #+begin_src html
 <h2>Hello World</h2>
 <p>
   The time is now: <%= Time.now %>
 </p>
 #+end_src
+**** 生成されたViewコードの確認
+     - git diffコマンドで変更内容を確認
+#+begin_src bash
+git diff
+#+end_src
+     - Viewのコードを作成した作業をコミット
+#+begin_src bash
+git add .
+git commit -m 'Add the welcome view'
+#+end_src
 
 **** rootとなるrouteの設定
-***** Routeとは？
-      - HTTPのリクエスト（URL）とコントローラを紐付ける設定
+      - Routeとは？
+	- HTTPのリクエスト（URL）とコントローラを紐付ける設定
       - ここでは =root= へのリクエスト（ =GET /= ）を =welcome= コントローラの =index= メソッドに紐付ける
-      - =rake routes= で確認する
 ***** =config/routes.rb= の当該箇所をアンコメント
 #+begin_src ruby
 root 'welcome#index'
 #+end_src
+      - =rake routes= コマンドで確認できる
+
+**** routes.rbの設定変更の確認
+     - git diffコマンドで変更内容を確認
+#+begin_src bash
+git diff
+#+end_src
+     - routes.rbを変更した作業をコミット
+#+begin_src bash
+git add .
+git commit -m 'Edit routes.rb for the root controller'
+#+end_src
 
 **** ControllerとViewの動作確認
-***** 動作確認の方法
-     - 再度， =rails server= でアプリを起動する
-     - Webブラウザで =http://localhost:3000/= を開いて確認する
+     - 再度， =rails server= でアプリを起動し，動作を確認しよう
+     - Webブラウザで =http://localhost:3000/= を開ぐ
 ***** コマンド
 #+begin_src bash
 bin/rails server -b 0.0.0.0
 #+end_src
+     - git logコマンドで一連の作業を確認してみると良い
 
-**** ここまでをコミットしておく
-***** ここまでの内容
-      - ここまでの作業で，controllerとviewを1つ備えるRoRアプリができた
-      - 作業が一区切りしたので，commitする
-       	（commitはひとかたまりの作業に対して行う）
+**** GitHubへのPush
+     - ここまでの作業で，controllerとviewを1つ備えるRoRアプリができた
+     - 作業が一区切りしたので，GitHubへのpushもしておく
 ***** コマンド
 #+begin_src bash
-git add .
-git commit -m 'Create welcome controller and view'
+git push
 #+end_src
 
-*** Herokuにディプロイする
-**** Gemfileの設定
+*** TODO Herokuにディプロイする
+**** RoRをHerokuで動かす方法
+***** Getting Started
+     - _[[https://devcenter.heroku.com/articles/getting-started-with-rails4][Getting Started with Rails 4.x on Heroku]]_
+
+**** Heroku用設定をGemfileに追加
 ***** Heroku用Gem
       - =Gemfile= に =rails_12factor= を追加する
       - Rubyのバージョンも指定しておく
