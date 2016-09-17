@@ -552,16 +552,16 @@ bin/rails server -b 0.0.0.0
 git push
 #+end_src
 
-*** TODO Herokuにディプロイする
-**** RoRをHerokuで動かす方法
+*** Herokuにディプロイする
+**** RoRをHerokuで動かす
+     - 作成しとRoRアプリをHerokuで動作させよう
 ***** Getting Started
      - _[[https://devcenter.heroku.com/articles/getting-started-with-rails4][Getting Started with Rails 4.x on Heroku]]_
 
 **** Heroku用設定をGemfileに追加
-***** Heroku用Gem
-      - =Gemfile= に =rails_12factor= を追加する
-      - Rubyのバージョンも指定しておく
-      - =Gemfile= を変更したら必ず =bundle install= すること
+     - =Gemfile= に =rails_12factor= を追加する
+     - Rubyのバージョンも指定しておく
+     - =Gemfile= を変更したら必ず =bundle install= すること
 
 ***** =Gemfile= に追加する内容
 #+begin_src ruby
@@ -569,28 +569,27 @@ gem 'rails_12factor', group: :production
 ruby '2.2.2'
 #+end_src
 
-**** Gitにコミット
-***** コミットする必要性
-      - Herokuにコードを送るには，gitを用いる
-      - ローカルで最新版をcommitしておく必要がある
-      - ついでにGitHubにもpushしておく
+**** デプロイ前にGitにコミット
+     - Herokuにコードを送るには，gitを用いる
+     - 従って，最新版をcommitしておく必要がある
+     - ここでは，commit後，まずはGitHubにもpushしておく
 ***** コマンド
 #+begin_src bash
 git commit -a -m 'Set up for Heroku'
-git push # origin master -> GitHub が省略されている
+git push
 #+end_src
+     - 2行目: pushする先はorigin（=GitHub）である
 
 **** Herokuアプリの作成とディプロイ
-***** 作成とディプロイ
-      - =heroku= コマンドを利用してアプリを作成する
-      - =heroku create= で表示されたURLを開く
-      - =git push= でディプロイすると，Herokuからのログが流れてくる
+     - =heroku= コマンドを利用してアプリを作成する
 ***** コマンド
-
 #+begin_src bash
 heroku create
 git push heroku master
 #+end_src
+     - 1行目: =heroku create= で表示されたURLを開く
+     - 2行目: =git push= はherokuのmasterを指定．
+       ディプロイすると，Herokuからのログが流れてくる
 
 *** 演習課題
 **** 演習課題6
@@ -846,7 +845,7 @@ ruby hello.rb -o 0.0.0.0
 ***** 環境変数の作成
     - 次のコマンドで，Heroku内部にも環境変数を作る
     - 参考
-      - [[https://devcenter.heroku.com/articles/config-vars][Configuration and Config Vars | Heroku Dev Center]]
+      - _[[https://devcenter.heroku.com/articles/config-vars][Configuration and Config Vars | Heroku Dev Center]]_
 ***** コマンド
 #+begin_src bash
 heroku config:set APPID=102266705971259xxxx
