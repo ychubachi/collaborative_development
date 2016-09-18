@@ -73,3 +73,18 @@
 ** 参考資料
    - gitのブランチのシミュレータ
      - [[http://k.swd.cc/learnGitBranching-ja/][Learn Git Branching]]
+* 訂正
+** GitHubでのコンフリクト
+
+#+begin_src bash
+# ローカルのmasterを最新に
+git checkout master
+git pull
+# shizukaに移動してマージ
+git checkout shizuka
+git merge master
+# コンフリクトを解消する
+git add .
+git commit -m 'Merge'
+git push -u origin shizuka
+#+end_src
