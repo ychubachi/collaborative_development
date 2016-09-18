@@ -64,9 +64,10 @@
 
 ** 課題の提出先
    1. [[https://goo.gl/forms/LOL7hOzVEKJeRk1t2][コラボレイティブ開発特論-GitHubユーザ名とURL]]
-   2. [[https://goo.gl/forms/t2a77rm3WB7RuiD62][GitHub入門-チーム演習のURL]]
-   3. [[https://goo.gl/forms/gTRb8BLigFDKfoX13][コラボレイティブ開発特論-Sinatraアプリのチーム開発]]
-   4. [[https://goo.gl/forms/mC5EmPRWIVqh8Jkh1][コラボレイティブ開発特論-ミニプロジェクト]]
+   2. [[https://goo.gl/forms/6E1RTc8nrpLQxCDs1][GitHub入門-個人演習のURL]]
+   3. [[https://goo.gl/forms/t2a77rm3WB7RuiD62][GitHub入門-チーム演習のURL]]
+   4. [[https://goo.gl/forms/gTRb8BLigFDKfoX13][コラボレイティブ開発特論-Sinatraアプリのチーム開発]]
+   5. [[https://goo.gl/forms/mC5EmPRWIVqh8Jkh1][コラボレイティブ開発特論-ミニプロジェクト]]
 
 ** 連絡事項
    - 最終日，9/24の授業（とプログテスト）終了後，懇親会をやりましょう！
