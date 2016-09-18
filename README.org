@@ -70,3 +70,6 @@
 
 ** 連絡事項
    - 最終日，9/24の授業（とプログテスト）終了後，懇親会をやりましょう！
+** 参考資料
+   - gitのブランチのシミュレータ
+     - [[http://k.swd.cc/learnGitBranching-ja/][Learn Git Branching]]
