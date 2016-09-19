@@ -2,8 +2,19 @@
 #+AUTHOR: 産業技術大学院大学 \linebreak 中鉢 欣秀
 #+DATE: 2016年度
 #+OPTIONS: H:4 ^:nil toc:nil
-#+latex_class: beamer-part
-#+beamer_theme: Lecture
+
+# ############################################################
+# Options for Beamer
+# ############################################################
+#+LaTeX_CLASS: beamer-part
+#+BEAMER_THEME: Lecture
+
+# ############################################################
+# Options for LaTeX
+# ############################################################
+# #+LaTeX_CLASS: bxjsarticle
+# #+LaTeX_CLASS_OPTIONS: [autodetect-engine,10pt,a4paper,ja=standard,twocolumn,hirebb]
+# #+LaTeX_HEADER: \setpagelayout{margin=1cm}
 
 * Part 1: ガイダンスとモダンな道具達
 ** 第1章 ガイダンス
