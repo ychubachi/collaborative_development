@@ -13,7 +13,7 @@
 # Options for LaTeX
 # ############################################################
 # #+LaTeX_CLASS: bxjsarticle
-# #+LaTeX_CLASS_OPTIONS: [autodetect-engine,10pt,a4paper,ja=standard,twocolumn,hirebb]
+# #+LaTeX_CLASS_OPTIONS: [xelatex,ja=standard,a4paper,jbase=12Q,twocolumn]
 # #+LaTeX_HEADER: \setpagelayout{margin=1cm}
 
 * Part 1: ガイダンスとモダンな道具達
@@ -77,7 +77,7 @@
 
 *** 「学びの共同体」になろう
 **** 共に学び、共に教える「場」
-     - この教室に集うメンバーで学びの共同体になろう
+     - _この教室に集うメンバーで学びの共同体になろう_
      - 他人に教えること＝学び
      - 困った時には助けを求める
 **** そのためにお互いを知ろう
@@ -92,7 +92,7 @@
 
 #+CAPTION: The Framework-Language-Tool framework.
 #+NAME: FLT_framework
-#+ATTR_LATEX: :width 0.6\textwidth
+#+ATTR_LATEX: :width 0.6\columnwidth
 [[../figures/FLT_framework.pdf]]
 
 **** 授業で取り上げる範囲
@@ -107,7 +107,7 @@
 
 #+CAPTION: The modern tools for Scrum developments.
 #+NAME: tools
-#+ATTR_LATEX: :width 0.6\textwidth
+#+ATTR_LATEX: :width 0.6\columnwidth
 [[../figures/tools.pdf]]
 
 **** モダンな開発環境の全体像
