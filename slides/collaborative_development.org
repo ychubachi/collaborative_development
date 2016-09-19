@@ -213,7 +213,7 @@ git config --list
 ***** 演習資料
       [[https://github.com/ychubachi/github_practice][ychubachi/github_practice: Git/GitHub入門]]
 
-* Part 3: Sinatra/Heroku/RoR
+* Part 3: Sinatra/Heroku
 ** 第4章 SinatraでWebアプリを作ろう
 *** Sinatraアプリケーションの作成
 **** Sinatraを使った簡単なWebアプリケーション
@@ -391,6 +391,7 @@ git push heroku master
       - GitHubのURLとHerokuのURLを提出
        	- http://goo.gl/forms/p1SXNT2grM
 
+* Part 3: Ruby on Rails/Heroku
 ** 第5章 Ruby on Railsアプリの開発
 *** Ruby on Railsアプリの生成と実行
 **** RoRを使ったWebアプリケーション
@@ -607,7 +608,6 @@ git push heroku master
 ***** RoRアプリの作成
       - ここまでの説明に従い，Herokuで動作するRoRアプリ（ =rails_enpit= ）を完成させなさい
 
-* Part 4
 ** 第6章 DBを使うアプリの開発と継続的統合
 *** DBとScaffoldの作成
 **** Scaffold
@@ -814,6 +814,8 @@ git push
        - DBのmigrationを行い，動作確認しなさい
      - Herokuへの配備
        - Travis経由でHerokuへdeployできるようにする
+
+* Part 4: Web API
 ** 第7章 楽天APIを利用したアプリケーション
 *** 楽天API
 **** 楽天APIとは？
@@ -923,7 +925,7 @@ git push -u ychubach master
        	 - やり方は各自で考えてみよう
        - Travis CIに環境変数を設定する
 
-* Part 5
+* Part 5: Mini Project
 ** 第8章 ミニプロジェクト
 *** 演習課題
 **** 演習課題9
