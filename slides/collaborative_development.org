@@ -2,7 +2,8 @@
 #+AUTHOR: 産業技術大学院大学 \linebreak 中鉢 欣秀
 #+DATE: 2016年度
 #+OPTIONS: H:4 ^:nil toc:nil
-#+latex_class: beamer-lecture
+#+latex_class: beamer-part
+#+beamer_theme: Lecture
 
 * Part 1: ガイダンスとモダンな道具達
 ** 第1章 ガイダンス
