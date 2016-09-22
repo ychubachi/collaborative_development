@@ -197,5 +197,5 @@ TSWLatexianTemp*
 
 *.tex
 *.html
-
 *~
+.bundle/
