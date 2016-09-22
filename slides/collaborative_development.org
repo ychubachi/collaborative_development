@@ -1,7 +1,7 @@
 #+TITLE: コラボレイティブ開発特論
 #+AUTHOR: 産業技術大学院大学 \linebreak 中鉢 欣秀
 #+DATE: 2016年度
-#+OPTIONS: H:4 ^:nil toc:nil
+#+OPTIONS: H:4 ^:nil
 
 * Part 1: ガイダンスとモダンな道具達
 ** 第1章 ガイダンス
@@ -612,15 +612,25 @@ git push heroku master
 **** Scaffold
 ***** Scaffoldとは
       - [[https://www.google.co.jp/search?q=scaffold&client=ubuntu&hs=PiK&channel=fs&hl=ja&source=lnms&tbm=isch&sa=X&ei=smUdVKaZKY7s8AXew4LwDw&ved=0CAgQ_AUoAQ&biw=1195&bih=925][scaffold - Google 検索]]
-      - RoRでは，MVCの雛形を作る
-       	- CRUD処理が全て実装される
-      - 多くのコードが自動生成されるので，branchを切っておくと良い
-       	- 動作が確認できたらbranchをマージ
-       	- うまく行かなかったらbranchごと削除すれば良い
+***** RoRでは，MVCの雛形のこと
+      - CRUD処理が全て自動で実装される
+
+**** Scaffoldの生成方法
 ***** コマンド
 #+begin_src bash
 git checkout -b books
 bin/rails generate scaffold book title:string author:string
+#+end_src
+      - 多くのコードが自動生成されるので，branchを切っておくと良い
+       	- 動作が確認できたらbranchをマージ
+       	- うまく行かなかったらbranchごと削除すれば良い
+
+**** routeの確認
+***** route
+      - Scaffoldの生成で変更されたルーティングの設定を確認
+***** コマンド
+#+begin_src bash
+bin/rake routes
 #+end_src
 
 **** DBのMigrate
@@ -653,14 +663,6 @@ git branch -D books
      - 1〜2行目：自動生成されたScaffoldのコードをbranchに一旦コミット
      - 3行目：masterブランチに移動（）
      - 4行目：branchを削除（ *=-D=* オプション使用 ）
-
-**** routeの確認
-***** route
-      - ルーティングの設定を確認しよう
-***** コマンド
-#+begin_src bash
-bin/rake routes
-#+end_src
 
 **** 動作確認
 ***** 動作確認の方法

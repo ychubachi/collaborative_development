@@ -3,5 +3,6 @@
 # ############################################################
 #+LaTeX_CLASS: beamer-part
 #+BEAMER_THEME: Lecture
+#+OPTIONS: toc:nil
 
 #+INCLUDE: "collaborative_development.org"
