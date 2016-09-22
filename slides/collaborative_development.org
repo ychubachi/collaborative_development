@@ -418,22 +418,21 @@ git push -u origin master
 gem 'therubyracer',  platforms: :ruby
 #+end_src
 
-**** Bundle installの実行(1)
+**** Bundle installの実行
      - Gemfileを読み込み，必要なgemをインストールする
        - =rails new= をした際にも， =bundle install= は実行されている
-       - 今回はtherubyracerと，それが依存しているgemでまだインストールしていないものをインストール
-     - インストールする先は =~/.rbenv= 以下の特定のディレクトリ
-       - コマンドは次スライド
-**** Bundle installの実行(2)
+       - =therubyracer= と，それが依存しているgemで
+         まだインストールしていないものをインストール
+
 ***** コマンド
 #+begin_src bash
-bundle install
 git commit -a -m 'Run bundle install'
 #+end_src
 
 **** Gemfile設定変更のコミット
      - ここまでの内容をコミットしておこう
 
+***** コマンド
 #+begin_src bash
 git add .
 git commit -m 'Edit Gemfile to enable the rubyracer gem'
@@ -458,6 +457,19 @@ git push -u origin master
 createdb rails_enpit_development
 createdb rails_enpit_test
 #+end_src
+
+**** PostgereSQLクライアントのコマンド
+***** クライアントの起動
+    - =psql= コマンドでクライアントが起動
+***** psqlクライアンで利用できるコマンド
+
+| Backslashコマンド | 説明               |
+|-------------------+--------------------|
+| l                 | DBの一覧           |
+| c                 | DBに接続           |
+| d                 | リレーションの一覧 |
+| q                 | 終了               |
+
 
 **** Rails serverの起動
      - この段階で，アプリケーションを起動できるようになっている
@@ -620,6 +632,28 @@ bin/rails generate scaffold book title:string author:string
 bin/rake db:migrate
 #+end_src
 
+**** 参考：Migrateの取り消しの方法
+     - DBのmigrationを取り消したいときは次のコマンドで取り消せる
+#+begin_src bash
+bin/rake db:rollback
+#+end_src
+     - 再度，migrateすれば再実行される
+#+begin_src bash
+bin/rake db:migrate
+#+end_src
+
+**** 参考：Scaffold作成の取り消しの方法
+***** コマンド
+#+begin_src bash
+git add .
+git commit -m 'Cancel'
+git checkout master
+git branch -D books
+#+end_src
+     - 1〜2行目：自動生成されたScaffoldのコードをbranchに一旦コミット
+     - 3行目：masterブランチに移動（）
+     - 4行目：branchを削除（ *=-D=* オプション使用 ）
+
 **** routeの確認
 ***** route
       - ルーティングの設定を確認しよう
@@ -661,29 +695,7 @@ git push heroku master
 heroku run rake db:migrate
 #+end_src
 
-**** Scaffoldの作成を取り消す場合（参考）
-***** 取り消す操作
-     - migrationを取り消す
-     - branchに一旦コミットして，masterブランチに移動
-     - branchを削除
-***** コマンド
-#+begin_src bash
-bin/rake db:rollback
-git add .
-git commit -m 'Rollback'
-git checkout master
-git branch -D books
-#+end_src
 
-**** PostgereSQLクライアントのコマンド（参考）
-    - psqlでDBにログイン
-
-| Backslashコマンド | 説明               |
-|-------------------+--------------------|
-| l                 | DBの一覧           |
-| c                 | DBに接続           |
-| d                 | リレーションの一覧 |
-| q                 | 終了               |
 *** RoRアプリのテスト
 **** テストについて
 ***** ガイド
@@ -1004,8 +1016,6 @@ end
 
 *** 楽天API SDK
     - [[https://github.com/rakuten-ws/rws-ruby-sdk][rakuten-ws/rws-ruby-sdk]]
-
-*** Sinatraとの組み合わせ
 
 ** TODO ミニプロジェクト
 ** 補足資料
