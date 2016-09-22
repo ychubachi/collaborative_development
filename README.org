@@ -6,7 +6,9 @@
 ** 資料
 *** 本編
     - スライド資料（PDF）
-      - [[https://github.com/ychubachi/collaborative_development/raw/master/slides/collaborative_development.pdf][Download]]
+      - [[https://github.com/ychubachi/collaborative_development/raw/master/slides/collaborative_development.slide.pdf][Download]]
+    - ハンドアウト資料（PDF）
+      - [[https://github.com/ychubachi/collaborative_development/raw/master/slides/collaborative_development.handout.pdf][Download]]
     - Web版
       - [[https://github.com/ychubachi/collaborative_development/blob/master/slides/collaborative_development.org][collaborative_development.org]]
 *** GitHub入門
