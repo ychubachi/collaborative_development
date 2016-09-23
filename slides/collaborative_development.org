@@ -1,3 +1,4 @@
+#+STARTUP: overview hidestars
 #+TITLE: コラボレイティブ開発特論
 #+AUTHOR: 産業技術大学院大学 \linebreak 中鉢 欣秀
 #+DATE: 2016年度
@@ -64,11 +65,20 @@
 
 *** 「学びの共同体」になろう
 **** 共に学び、共に教える「場」
-     - _この教室に集うメンバーで学びの共同体になろう_
-     - 他人に教えること＝学び
+     - 教室に集うメンバーで *学びの共同体* になろう
      - 困った時には助けを求める
-**** そのためにお互いを知ろう
-     - 履修者
+     - 他人に教えること＝学び
+
+**** チーム演習での問題解決（理想の流れ）
+     1. 困った時はメンバーに聞く
+     2. わからなかったらチーム全員で考える
+     3. それでもダメなら他のチームに相談
+     4. 講師・コーチに尋ねるのは最終手段！
+     5. …となるのが理想
+	- 授業の進め方などの質問は遠慮無く聞いてください
+
+**** 共同体になるためにお互いを知ろう
+     - 皆さんの自己紹介
        - 名前（可能であれば所属も）
        - どんな仕事をしているか（あるいは大学で学んだこと）
        - この授業を履修した動機
@@ -84,9 +94,8 @@
 
 **** 授業で取り上げる範囲
 ***** 取り上げること
-      - 方法を支えるための道具
-      - 良い道具には設計概念として方法論が組み込まれている
-      - 道具はプログラミング言語を問わない
+      - 良い道具には *設計思想そのものに方法論* が組み込まれている
+      - 方法論を支えるための道具について学ぶ
 ***** 取り扱わないこと
       - 方法論そのものについてはアジャイル開発特論で学ぶ
       - プログラミングの初歩については教えない
@@ -820,9 +829,13 @@ git push
 ** 第7章 楽天APIを利用したアプリケーション
 *** 楽天API
 **** 楽天APIとは？
-     - [[http://webservice.rakuten.co.jp/document/][楽天ウェブサービス: API一覧]]
+***** ご利用ガイド
+      - [[https://webservice.rakuten.co.jp/guide/][楽天ウェブサービス: ご利用ガイド]]
 
-**** サンプルアプリ
+***** 楽天API SDK
+      - [[https://github.com/rakuten-ws/rws-ruby-sdk][rakuten-ws/rws-ruby-sdk]]
+
+**** 楽天APIサンプルアプリ
      - [[https://github.com/ychubachi/rakuten_enpit_example][ychubachi/rakuten_enpit_example]]
        - =git clone= する
        - =bundle install= する
@@ -856,43 +869,65 @@ ruby hello.rb -o 0.0.0.0
 **** Herokuの環境変数
 ***** 環境変数の作成
     - 次のコマンドで，Heroku内部にも環境変数を作る
-    - 参考
-      - _[[https://devcenter.heroku.com/articles/config-vars][Configuration and Config Vars | Heroku Dev Center]]_
 ***** コマンド
 #+begin_src bash
 heroku config:set APPID=102266705971259xxxx
 heroku config:set AFID=11b23d92.8f6b6ff4.11b23d93.???????
 #+end_src
+    - _[[https://devcenter.heroku.com/articles/config-vars][Configuration and Config Vars | Heroku Dev Center]]_
 
 **** Herokuでの動作確認
-***** 内容
-    - Herokuに直接Pushしてみる
-    - webブラウザで動作確認
+     - Herokuに直接Pushしてみる
 
 ***** コマンド
 #+begin_src bash
 git push heroku master
 #+end_src
 
+     - webブラウザで動作確認
+
 *** Travis CI連携
-**** .travis.ymlの再生成
-***** 内容
-     - =fork= して作業用のブランチを作成する
-     - .travis.yml の削除と新規作成
-     - 不要なRubyのバージョンを削除
+**** 楽天APIサンプルアプリのTravis CI連携
+     - 楽天APIサンプルアプリを修正してTravis CIと連携させよう
+     - この作業を行うために，ychubachiが所有するrakuten_enpit_exampleを
+       *フォーク* する
+
+**** フォーク（fork）とは？
+     - 他人のGitHubのリポジトリを複製して自分で更新できるようにすること
+       - 他人のGitHubにはpushできない
+     - フォークをすると，他人が作成したソースコードを修正できる
+       - フォーク（複製）した自分のリポジトリにpush可能
+     - フォーク元のリポジトリに対してPull requestを送ることができる
+       - フォーク元の持ち主がマージするともともとのmasterに反映される
+     - まさに *OSS流開発* のスタイル！
+
+**** 楽天APIサンプルのフォーク
 ***** コマンド
 #+begin_src bash
 git fork
-git branch new_feature
+git remote -vv
+#+end_src
+      - 1行目: コマンドラインでフォークを作成
+        - GitHubのWebで作成することもできる
+      - 2行目: remoteに自分のGitHubユーザ名がついた宛先が追加されている
+	- Webでフォークを作成した場合と挙動が異なるので注意
+
+**** .travis.ymlの再生成
+     - 下の$GITHUB_NAMEは自分の名前に置換して実行
+
+#+begin_src bash
 rm .travis.yml
-travis init -r <your_name>/rakuten_enpit_example
+travis init -r $GITHUB_NAME/rakuten_enpit_example
 travis setup heroku
-emacs .travis.yml
+emacs .travis.yml # 任意のエディタで
 #+end_src
 
+     - 1〜2行目: travis.yml の削除と新規作成
+     - 3行目: Heroku用の追加設定
+     - 4行目: 利用するRubyのバージョンを指定
+
 **** Travis CIの環境変数
-***** 内容
-     - リポジトリで次のコマンドを打つ
+     - Travis CIにも環境変数を設定
      - 自分のAPPID，AFIDに書き換えること
 ***** コマンド
 #+begin_src bash
@@ -900,16 +935,17 @@ travis env set APPID 102266705971259xxxx
 travis env set AFID 11b23d92.8f6b6ff4.11b23d93.???????
 #+end_src
 
-**** コミットしてpush
-***** 内容
-      - =add= して =commit=
-      - 自分のリポジトリにpush
+**** GitHubにpushしてTravis CIを走らせる
+      - 変更をコミットして *自分の* リポジトリにpush
+
 ***** コマンド
 #+begin_src bash
 git add .
 git commit -m 'Update .travis.yml'
-git push -u ychubach master
+git push -u $GITHUB_NAME master
 #+end_src
+
+      - しばらくするとTravis CIが動き出すので，確認する
 
 *** 演習課題
 **** 演習課題8-1
@@ -929,29 +965,106 @@ git push -u ychubach master
 * Part 5: Mini Project
 ** 第8章 ミニプロジェクト
 *** 演習課題
-**** 演習課題9
-***** ミニプロジェクト
-     - 楽天APIを利用したWebアプリケーションを開発する
-       - （作業 45分 + Demo 10分） × 3回
-     - グループで次のことを相談
-       - プロダクトバックログをGitHub の Issue で作る
-       - 見積もりなど Scrum 的にやってみよう
-     - 授業で取り扱った内容のほか自分の知っている知識を活用してください
-       - JavaScript，CSS ...
-     - その他
-       - README.md に使い方，HerokuのURLなどを書く
-       - LICENCE は必ず設定する
+**** ミニプロジェクト演習
+     - 楽天APIを利用したWebアプリの *コラボレイティブ開発*
+       - 概ね1時間ごとに最新版を「デモ」する超短距離スプリント
+     - アプリそのものの完成度は問わない
+       - 「GitHubフロー」をうまく回せるかどうか
+     - 注意事項
+       - 難しい知識を無理して使わない
+       - 自分がチームに貢献できることを自分で発見しよう
+
 **** 課題の提出先
      - グループの代表者はアプリのURL等を次のフォームから提出してください
        - http://goo.gl/forms/xdeirTA169
-** COMMENT 補足資料
-*** FAQ
-**** FAQ （git関連）
-***** .gitignoreについて
-     - Gitに登録したくないファイルは.gitignoreに登録する
-     - 例
-       - [[https://github.com/github/gitignore/blob/master/Global/Emacs.gitignore][gitignore/Emacs.gitignore at master · github/gitignore]]
-**** FAQ （Heroku関連）
+     - その他
+       - README.md に使い方，GitHub/HerokuのURLなどを書く
+       - LICENCE は必ず設定する
+       - コミットメッセージやブランチ名は分かりやすく
+
+*** おわりに
+**** Thank you
+     - and enjoy *Scrum!*
+* 補足資料
+** 補足資料
+*** Vagrant関連
+**** Vagrantの補足
+***** 仮想環境とのファイル共有
+     - Guest OS内に =/vagrant= という共有フォルダがある
+     - このフォルダはHost OSからアクセスできる
+     - 場所はVagrantfileがあるフォルダ
+     - 共有したいファイル（画像など）をここに置く
+
+*** Git関連
+**** Gitの補足
+***** 元いたbranchに素早く戻る方法
+
+#+begin_src bash
+git checkout other_branch # masterで
+# 編集作業とcommit
+git checkout - # masterに戻る
+#+end_src
+
+***** Git brame
+      - だれがどの作業をしたかわかる（誰がバグを仕込んだのかも）
+       	- [[https://help.github.com/articles/using-git-blame-to-trace-changes-in-a-file][Using git blame to trace changes in a file · GitHub Help]]
+
+**** バイナリのコンフリクト(1)
+     - git mergeでバイナリファイルがコンフリクトした場合、
+       ファイルはgit merge実行前のままとなります[fn:issue6]。
+     - 以下を実行してコンフリクトが発生したとします。
+
+#+BEGIN_SRC bash
+git checkout master
+git merge branch_aaa
+#+END_SRC
+
+[fn:issue6] [[https://github.com/ychubachi/collaborative_development/issues/6][git mergeでバイナリファイルがコンフリクトした場合 · Issue #6]]
+
+**** バイナリのコンフリクト(2)
+     - そのままにしたいとき(=masterを採用）は
+
+#+BEGIN_SRC bash
+git checkout --ours <binaryfile> #明示的な実行は不要
+git add <binaryfile>
+git commit
+#+END_SRC
+
+     - branch_aaaのファイルを採用したいときは
+
+#+BEGIN_SRC bash
+git checkout --theirs <binaryfile>
+git add <binaryfile>
+git commit
+#+END_SRC
+
+**** Hubコマンドについて
+- enPiT環境にはHubコマンドが仕込んである
+  - [[https://github.com/github/hub][github/hub]]
+- 通常のGitの機能に加えて，GitHub用のコマンドが利用できる
+  - コマンド名は「git」のまま（エイリアス設定済み）
+- 確認方法
+
+#+begin_src bash
+git version
+alias git
+#+end_src
+
+*** GitHub関連
+**** GitHubの補足(1)
+***** Issue
+     - 課題管理（ITS: Issue Tracking System）
+     - コミットのメッセージでcloseできる
+       - [[https://help.github.com/articles/closing-issues-via-commit-messages][Closing issues via commit messages · GitHub Help]]
+***** Wiki
+      - GitHubのリポジトリにWikiを作る
+       	- [[https://help.github.com/articles/about-github-wikis][About GitHub Wikis · GitHub Help]]
+**** GitHubの補足(2)
+***** GitHub Pages
+      - 特殊なブランチを作成すると，Webページが構築できる
+       	- [[https://pages.github.com/][GitHub Pages]]
+*** Heroku関連
+**** Herokuの補足
 ***** HerokuのアプリのURL確認
 #+begin_src bash
 heroku apps:info
@@ -962,21 +1075,13 @@ heroku apps:info
 heroku logs --tail
 #+end_src
 
-**** FAQ （Rails関連）
 ***** =rails generate= などが動かない
-    - [[https://devcenter.heroku.com/articles/getting-started-with-rails4#write-your-app][Write your App]]
-
 #+begin_src bash
 spring stop
 #+end_src
 
-**** FAQ （Vagrant関連）
-***** 仮想環境内にファイル（画像など）
-     - Guest OS内に =/vagrant= という共有フォルダがある
-     - このフォルダはHost OSからアクセスできる
-     - 場所はVagrantfileがあるフォルダ
-
-**** FAQ （Travis CI関連）
+*** Travis CI関連
+**** Travis CIの補足
 ***** Status Image
       - README.mdを編集し，Travisのテスト状況を表示するStatus Imageを追加する
       - [[http://docs.travis-ci.com/user/status-images/][Travis CI: Status Images]]
@@ -984,22 +1089,14 @@ spring stop
       - 次のURLの「Running-commands」の箇所を参照
        	- [[http://docs.travis-ci.com/user/deployment/heroku/][Heroku Deployment - Travis CI]]
 
-*** その他
-**** 演習課題
-***** Webアプリケーションの共同開発（ペア）
-     - 2人でペアを組み，1つのWebアプリケーションを開発しなさい
-       - 何を作るかは，ペアで相談してください
-     - 授業で取り上げたツールを使い，自由に試しなさい
-     - 利用するフレームワークは，SinatraでもRailsでもどちらでもかまいません
-       - どちらを使うかは，ペアで相談して決めてください
-**** TODO 補足：Sinatraでテストが通るようにする
-***** Gemfileに =rake= を追加する
+**** Sinatraでテストを実行可能に
+     - =Gemfile= に =rake= を追加する
 
 #+begin_src bash
 gem 'rake'
 #+end_src
 
-***** Rakefileを作成する
+     - =Rakefile= を作成する
 
 #+begin_src ruby
 task :default => :test
@@ -1010,506 +1107,3 @@ Rake::TestTask.new do |t|
   t.pattern = "./*_test.rb"
 end
 #+end_src
-
-* COMMENT memo
-** TODO 第7章 Web APIを活用したサービス構築
-*** ご利用ガイド
-    - [[https://webservice.rakuten.co.jp/guide/][楽天ウェブサービス: ご利用ガイド]]
-
-*** 楽天API SDK
-    - [[https://github.com/rakuten-ws/rws-ruby-sdk][rakuten-ws/rws-ruby-sdk]]
-
-** TODO ミニプロジェクト
-** 補足資料
-*** 補足資料
-**** 演習で作成したリポジトリ
-- my_enpit
-- our_enpit -> 事前に教員が用意
-- 二人で行う演習のもの
-- sinatra_enpit
-- rails_enpit
-
-**** 演習課題
-***** 演習課題
-      - あなたがよく知っている「歴史上の有名人」を一人取り上げる
-      - その人を紹介するWebページを作成する
-      - HTMLを作成する（リンクや画像の埋め込みにもチャレンジ）
-      - gitでバージョン管理
-      - GitHubにpushする
-** TODO アンケートを作成する
-- 調査の目的
-  - モダンなソフトウエア開発の理解度（これは2回やる）
-    - gitについて
-      90%（業務でのソフトウエア開発に利用できる）
-	, 70%, 50%, 30%,
-      10% （ほとんど知らない・使ったことはない）
-  - PBLのために，事前学習が役に立ったか（これはPBL後）
-    事前学習をした人とそうでない人とで，PBLの満足感，達成感が違うか
-    円滑にPBLをすすめることができたか
-
-- 方法論
-あなたはBizApp演習の内容を学習しましか？
-1. 授業を履修した
-   2. ビデオを視聴した
-      3. 学習していない
-- 道具
-** TODO 第7章 Web APIを活用したサービス構築
-*** ご利用ガイド
-    - [[https://webservice.rakuten.co.jp/guide/][楽天ウェブサービス: ご利用ガイド]]
-
-*** 楽天API SDK
-    - [[https://github.com/rakuten-ws/rws-ruby-sdk][rakuten-ws/rws-ruby-sdk]]
-
-*** Sinatraとの組み合わせ
-
-** TODO ミニプロジェクト
-** 補足資料
-*** 補足資料
-**** 演習で作成したリポジトリ
-- my_enpit
-- our_enpit -> 事前に教員が用意
-- 二人で行う演習のもの
-- sinatra_enpit
-- rails_enpit
-
-**** 演習課題
-***** 演習課題
-      - あなたがよく知っている「歴史上の有名人」を一人取り上げる
-      - その人を紹介するWebページを作成する
-      - HTMLを作成する（リンクや画像の埋め込みにもチャレンジ）
-      - gitでバージョン管理
-      - GitHubにpushする
-** Tasks
-*** TODO 英語の原典を読めるようになること
-*** TODO よくある間違い cdしないでgit initするとか．
-*** TODO OSをインストールし，手順書を参照しながら長々とコマンドを打つ，ということが不要になった．
-*** TODO アンケートを作成する
-- 調査の目的
-  - モダンなソフトウエア開発の理解度（これは2回やる）
-    - gitについて
-      90%（業務でのソフトウエア開発に利用できる）
-	, 70%, 50%, 30%,
-      10% （ほとんど知らない・使ったことはない）
-  - PBLのために，事前学習が役に立ったか（これはPBL後）
-    事前学習をした人とそうでない人とで，PBLの満足感，達成感が違うか
-    円滑にPBLをすすめることができたか
-
-- 方法論
-あなたはBizApp演習の内容を学習しましか？
-1. 授業を履修した
-   2. ビデオを視聴した
-      3. 学習していない
-- 道具
-*** TODO .bash_profileから.bashrcを読み込む（カラー化）
-* COMMENT Part P2: Git/GitHub
-** 第3章 Git/GitHubの基本操作
-*** ローカルリポジトリ
-**** Gitのローカルリポジトリの作成
-***** ローカルリポジトリ
-      - ソースコードや各種のファイルを保存し，開発に利用する
-      - 「 =my_enpit= 」というディレクトリを作成し，初期化する
-***** コマンド
-
-#+begin_src bash
-mkdir ~/my_enpit
-cd ~/my_enpit
-git init
-#+end_src
-
-**** Gitの設定ディレクトリ
-***** 隠しフォルダ「 =.git= 」
-      - Gitソースコードの履歴情報や，各種の設定をGitが保存するディレクトリ
-      - このフォルダは *変更してはならない*
-***** 確認方法
-
-#+begin_src bash
-ls -a
-find .git
-#+end_src
-
-*** リモートリポジトリ
-**** Hubコマンドが利用可能
-- enPiT環境のHubコマンド
-  - [[https://github.com/github/hub][github/hub]]
-- GitへのGitHub操作機能追加
-  - 通常のGitの機能に加えて，GitHub用のコマンドが利用できる
-  - コマンド名は「git」のまま（エイリアス設定済み）
-- 確認方法
-
-#+begin_src bash
-git version
-alias git
-#+end_src
-
-**** Hubコマンドによるリモートリポジトリの作成
-***** 作業内容
-      - コマンドライン操作で，GitHubにリポジトリを作成する
-      - Hubコマンドの機能である =git create= を利用
-      - 初回既動時にはパスワードか聞かれる
-***** コマンド
-
-#+begin_src bash
-git create
-#+end_src
-
-**** リポジトリの確認方法
-***** 確認方法
-     - WebブラウザでGitHubを開き，「 =my_enpit= 」ができていることを確認
-***** コマンドラインで確認
-
-#+begin_src bash
-git remote -vv
-#+end_src
-*** GitとGitHubの基本操作
-***** マニュアル等
-      - [[http://git-scm.com/doc][Git - Documentation]]
-***** commitログの書き方
-      - [[https://github.com/erlang/otp/wiki/Writing-good-commit-messages][Writing good commit messages · erlang/otp Wiki]]
-**** ステータスの確認
-***** リポジトリの状態を確認する
-      - =git status= は，頻繁に利用するコマンド
-      - リポジトリの状態を確認することができる
-      - この表示の読み方を理解することが重要
-***** コマンド
-#+begin_src bash
-git status
-#+end_src
-
-**** ファイルの追加とステータスの確認
-***** 作業内容
-      - テキストエディタで =README.md= を作成
-      - ステータスの変化を見る
-***** コマンド
-#+begin_src bash
-emacs README.md
-git status
-#+end_src
-
-**** Add/Commitの方法
-***** ステージングエリアを利用する場合
-      - git add README.mb
-      - git commit -m 'First commit'
-***** ステージングエリアを省略する場合
-      - git commit -a -m 'First commit'
-       	- トラックされていないファイルはcommitしないので注意
-
-**** リモートリポジトリへの公開
-***** pushとは？
-      - ローカルで作成したcommitを，リモートのリポジトリにアップロードすること
-      - originとは，リモートのリポジトリの内部的な名前
-      - upstreamとは，ブランチ（後述）が紐づいているリポジトリのこと
-      - 最初にそのブランチをpushするときは， =--setupstream= オプションを指定
-***** コマンド
-#+begin_src bash
-git push --set-upstream origin master
-#+end_src
-
-**** Logの閲覧
-***** コミットログ
-      - ソースコードに加えた変更の履歴を，commitを単位として閲覧できる
-***** コマンド
-#+begin_src bash
-git log
-#+end_src
-
-**** コミットのログを詳細に書く方法
-***** エディタを使ったログの記述
-     - コミットのログや，Pull Requestの記述を，より詳しく書くことができる
-     - =commit= や =pull_request= から  =-m= オプションを外すと，エディタが立ち上がる
-       - エディタはemacsを起動するようになっている
-       - =C-x C-s= で保存， =C-x C-c= で終了
-***** コマンド
-#+begin_src bash
-git commit
-git pull_request
-#+end_src
-
-**** Gitの参考資料
-*** 演習課題
-**** 演習課題2-1
-***** Init/Status/Addの練習
-      1. 解説した手順に従い，my_enpitリポジトリを作成
-      2. git statusコマンドを実行
-      3. README.mdファイルを作成しなさい
-      4. git statusコマンドを実行し，変化を見なさい
-      5. commitしなさい．ログを必ず書くこと
-      6. git statusコマンドを実行し，変化を見なさい
-**** 演習課題2-3
-***** Commit/Log/Pushの練習
-      1. README.mdを修正してcommitしなさい
-      2. 新しいファイルを作成してcommitしなさい
-      3. 作業が完了したら，pushしなさい（ =--set-upstream= が必要）
-      4. コミットがpushされていることをWebブラウザで確認しなさい
-      5. 作成したファイルを削除してcommitしてpushしなさい
-      6. エディタを使って，詳細なログを書きなさい
-      7. その他，自由にcommitの作業を試しなさい
-**** 課題の提出
-***** 提出物
-      - 下記のものを提出してください
-       	- GitHubとHerokuアカウント
-       	- 作成したmy_enpitリポジトリのURL
-***** 提出先
-      - [[[https://docs.google.com/forms/d/1FJUpH52RNstvIuIsTkGQxn5XYAWWrY_G_0vE0eRjDV0/viewform?usp%3Dsend_form][コラボレイティブ開発特論(2015) アカウント等]]]
-
-** 第4章 Gitのbranchの活用
-*** branchの操作
-**** branchの作成
-***** ブランチとは？
-      - リポジトリにはmasterブランチがある
-      - branchは自由に作成できる
-      - branch = commit についた別名
-***** コマンド
-
-#+begin_src bash
-git branch new_branch
-git branch -vv
-#+end_src
-
-**** branchのcheckout
-***** branchを切り替える
-      - checkoutしてブランチを切り替える
-      - ブランチをcommitすることができる
-      - 切り替える前に，ブランチでの作業はcommitしておく（stashも可）
-***** コマンド
-#+begin_src bash
-git checkout new_branch
-<編集作業>
-git commit -a -m 'Create a new branch'
-#+end_src
-
-**** branchの作成とcheckoutの省力化
-***** 同時に行う方法
-      - 作成してすぐチェックアウトする
-      - 元いたbranchに戻る方法も併せて学ぼう
-***** コマンド
-
-#+begin_src bash
-git checkout -b new_branch
-git checkout -
-#+end_src
-
-**** 他のbranchをmergeする
-***** mergeとは
-      - ブランチで作業した内容（commit）を，他のブランチに統合すること
-      - new_branchでの作業をmasterに統合する場合，最初にmasterをcheckoutする
-***** コマンド操作
-#+begin_src bash
-git checkout master
-git merge new_branch
-#+end_src
-
-**** Conflict（競合）とその解消
-***** Conflictとは
-      - branchで行う作業がかち合った場合，発生する
-      - mergeする際，conflictが生じた場合，エラーになる
-***** 解消方法
-      - エディタ等で編集を行い，解消する
-***** 参考文献
-      - [[https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line][Resolving a merge conflict from the command line · GitHub Help]]
-*** リモートのブランチ
-**** BranchのPush
-***** リモートへのPush
-     - BranchをGitHubにPushすることができる
-     - masterブランチをPushした際と同様，upstreamを指定する
-     - PushできたかどうかをWebブラウザで確認する
-
-***** コマンド
-#+begin_src bash
-git push --set-upstream origin new_branch
-#+end_src
-
-*** Pull Request
-**** Pull Requestの作成
-***** Pull Roquestとは？
-      - pushしたbranchでの作業の統合（merge）を依頼する
-      - hubコマンドの =pull-request= で発行できる
-
-***** コマンド
-#+begin_src bash
-git pull-request -m 'Update a new branch'
-#+end_src
-
-**** Pull Requestのmerge
-***** Pull Requestをレビューする
-      - WebブラウザでPull Requestを確認する
-***** ブラウザでmerge
-      - 問題なければmergeボタンを押す
-***** コマンドラインでmergeする場合
-#+begin_src bash
-git merge pull_request_URL
-#+end_src
-
-**** BranchのPull
-***** BranchをPullするとは
-      - リモートで行われた変更を適用すること
-      - 内部的にはfetchでダウンロードしてからmergeする
-***** コマンド
-#+begin_src bash
-git checkout master
-git pull
-#+end_src
-
-*** 演習課題
-**** 演習課題3-1
-***** branchの操作（ローカル）
-     1. =my_enpit= リポジトリでブランチを作成しなさい（ =new_branch= ）
-     2. =checkout= で =new_branch= に移動する
-     3. ファイルを編集しcommitする
-     4. =master= ブランチに移動してファイルの内容が
-       	「編集されていないこと」を確認しなさい
-     5. =merge= して，変更を適用しなさい
-**** 演習課題3-2
-***** 競合の発生と解消
-     1. =new_branch= でファイルを編集して，commitする
-     2. =master= に移動し，ファイルの同じ箇所を編集して，commitする
-     3. =master= に =new_branch= をmergeして，コンフリクトを発生させる
-     4. エディタで競合箇所を修正してcommitする
-**** 演習課題3-3
-***** リモートのbranchの操作
-     1. 新しいブランチを作成して，remoteにpushする
-     2. Pull Requestを送る
-     3. ブラウザで，Pull Requestをマージする
-     4. =master= ブランチに移動して， =pull= することで，更新する
-** 第5章 GitHubによる協同作業
-*** GitHub Flow
-**** GitHub Flow (1)
-    1. 思い立ったらブランチ作成
-       - 新しい機能追加や，アイディアを試す
-    2. ブランチにコミットを追加
-       - 変更点をコミットとして作成
-       - コミットのログは，他人が読んでわかるように書く
-    3. Pull Requestを開く
-       - コミットについて，意見交換ができる
-       - 作業途中でPull Requestを出しても構わない
-**** GitHub Flow (2)
-   1. 議論とレビュー
-      - レビューをしたり，質疑応答をしたりする
-   2. マージしてディプロイ
-      - レビュー（とテスト）が通ったら、 =master= ブランチにマージする
-      - 「レビューが通ったか」どうかの条件はチームで決める
-参考文献
-   - [[https://guides.github.com/introduction/flow/index.html][Understanding the GitHub Flow · GitHub Guides]]
-
-*** OSSの開発に参加する
-**** リモートのリポジトリをClone
-***** Cloneとは
-     - GitHubで公開されているリポジトリはだれでも複製（clone）できる
-     - ソースコードはローカルにコピーされ，閲覧やコンパイルなどができるようになる
-     - アクセス権限がない場合は，pushできない
-***** コマンド
-#+begin_src bash
-git clone octocat/Spoon-Knife
-#+end_src
-
-**** オリジナルのリポジトリをForkする
-***** Forkとは
-      - Cloneしたリポジトリを，
-       	自分のアカウントが所持するリポジトリとして
-       	GitHub上で複製する
-      - =remote= の値は，オリジナルのリポジトリが =origin= ，
-       	自分のリポジトリは自分のGitHubユーザ名になる
-***** コマンド
-#+begin_src bash
-git fork
-git remote -vv
-#+end_src
-
-**** ブランチを作成し自分のリポジトリにpush
-***** オリジナルの改変等
-      - 新しい機能追加等を行う場合，ブランチを作成する
-      - ブランチは，自分のリポジトリにpushする
-***** コマンド
-#+begin_src bash
-git branch my_branch
-git checkout my_branch
-# 編集
-git commit -a -m 'Update'
-git push -u ychubachi my_branch
-#+end_src
-
-**** Forkした元にPull Requestを送る
-***** コードのレビューやマージを依頼する
-      - 新しい機能ができたら，オリジナルにPull Requestを送り，
-       	レビューやマージをしてもらう
-***** コマンド
-#+begin_src bash
-git pull_request -m 'Pull Request'
-#+end_src
-
-**** コンフリクトの解消
-***** コンフリクトが発生したら
-      - 作業中のブランチで次の作業を行う
-***** コマンド（未確認）
-#+begin_src bash
-git fetch origin
-git merge origin/master
-# コンフリクト修正
-git add .
-git commit -m 'Fix conflict'
-git push
-#+end_src
-
-**** Pull Requestをチェックアウト
-***** Pull Requestのチェックアウト
-      - 誰かが作成したPull Requestの内容を，ブランチとしてローカルにコピーする
-      - 試しに動作させたり，コードをチェックするときなどに利用
-***** コマンド
-#+begin_src bash
-git checkout https://github.com/octocat/Spoon-Knife/pull/3166
-#+end_src
-
-**** Fork以外の方法
-     - リポジトリの Collaborators にメンバーを登録する
-     - （masterを含め）branchを直接pushできるようになる
-     - mergeの作業も、pull requestを出した本人ができる
-*** GitHubの他の機能
-**** Issue/Wiki
-***** Issue
-     - 課題管理（ITS: Issue Tracking System）
-     - コミットのメッセージでcloseできる
-       - [[https://help.github.com/articles/closing-issues-via-commit-messages][Closing issues via commit messages · GitHub Help]]
-***** Wiki
-      - GitHubのリポジトリにWikiを作る
-       	- [[https://help.github.com/articles/about-github-wikis][About GitHub Wikis · GitHub Help]]
-**** GitHub
-***** GitHub Pages
-      - 特殊なブランチを作成すると，Webページが構築できる
-       	- [[https://pages.github.com/][GitHub Pages]]
-***** Git brame
-      - だれがどの作業をしたかわかる（誰がバグを仕込んだのかも）
-       	- [[https://help.github.com/articles/using-git-blame-to-trace-changes-in-a-file][Using git blame to trace changes in a file · GitHub Help]]
-*** 演習課題
-**** 演習課題4-1
-***** ファイルを追加する
-     1. =ychubachi/our_enpit= をgitコマンドでcloneし，forkする
-     2. 新しいブランチを作成し，新規にファイルを追加する
-       	- 内容は任意（自己紹介など）
-       	- Markdownで書いてください（拡張子は.md）
-     3. コミットを作成し，pull requestを送信する
-     4. 教員がマージ作業を行います
-       	- コンフリクトが起きた時は各自で修正してください
-       	- コンフリクトが解消されない場合はマージしません
-**** 演習課題4-2
-***** 既存のファイルを変更する（オプション）
-     1. 新しいブランチを作成する
-     2. README.mdを改変して，pull requestを送信する
-     3. 教員がマージ作業を行います
-       	- コンフリクトが起きた時は各自で修正してください
-       	- コンフリクトが解消されない場合はマージしません
-
-**** 演習課題4-3
-***** グループでの協同作業
-      1. グループの代表者が新しくリポジトリを作成する（名称は任意）
-      2. 他のメンバーにリポジトリ名を教え，forkしてもらい
-         Pull Requestを送ってもらう
-      3. マージしてあげる
-      4. 2〜3を繰り返し，協同作業を行ってみよう
-
-***** 終わったブループは…
-      - リポジトリの Collaborators にメンバーを登録する方法も試す
-      - どちらがやりやすいかメンバーで話し合ってみよう
-**** 演習課題4-3
-***** Issue/Wikiの利用
-      - GitHubのIssueの機能を使ってみなさい
-      - commitのログでIssueをクローズさせてみなさい
-      - Wikiを作ってください
