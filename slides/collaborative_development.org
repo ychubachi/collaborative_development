@@ -29,6 +29,7 @@
      - 分散ソフトウェア開発のための道具を学ぶ
        - 開発環境（Ruby），VCSとリモートリポジトリ（GitHub）
        - テスト自動化，継続的インテグレーション，PaaS
+     - これらのツールの *設計思想* に対する本質理解
 **** 前提知識と到達目標
 ***** 前提とする知識
       - 情報系の学部レベルで基礎的な知識を持っていること
@@ -94,7 +95,7 @@
 **** 授業で取り上げる範囲
 ***** 取り上げること
       - 良い道具には設計思想そのものに方法論が組み込まれている
-      - 方法論を支えるための道具について学ぶ
+      - 世界中の技術者の知恵が結晶した成果としてのOSSのツール
 ***** 取り扱わないこと
       - 方法論そのものについてはアジャイル開発特論で学ぶ
       - プログラミングの初歩については教えない
@@ -163,15 +164,15 @@ vagrant ssh
 *** クラウド環境のアカウント・設定
 **** GitHub/Herokuのアカウントを作成
 ***** GitHub
-      - [[[https://github.com/join][Join GitHub · GitHub]]]
+      - [[https://github.com/join][Join GitHub · GitHub]]
 ***** Heroku
-      - [[[https://id.heroku.com/signup][Heroku - Sign up]]]
+      - [[https://id.heroku.com/signup][Heroku - Sign up]]
 ***** Travis CI
-      - [[[https://travis-ci.org/][Travis CI]]]
+      - [[https://travis-ci.org/][Travis CI]]
        	- Travis CIは，GitHubのアカウントでログインできる
 **** github-connectスクリプト
 ***** URL
-      - _[[https://gist.github.com/ychubachi/6491682][github-connect.sh]]_
+      - [[https://gist.github.com/ychubachi/6491682][github-connect.sh]]
 ***** git conifgを代行
       - GitHubにログインし，名前とemailを読み込んでgitに設定
 ***** SSHの鍵生成と登録
@@ -199,7 +200,7 @@ git config --list
        URLを登録してください．
        - [[https://goo.gl/forms/LOL7hOzVEKJeRk1t2][コラボレイティブ開発特論-GitHubユーザ名とURL]]
 
-* Part 2: GitHub入門
+* Part 2: GitHub入門（別資料）
 ** 第3章 GitHub入門
 *** GitHub入門の解説と演習
 **** GitHub入門について
@@ -217,7 +218,7 @@ git config --list
       - Railsに比べ簡単で，学習曲線が緩やか
       - 素早くWebアプリを作ってHerokuで公開してみよう
 ***** 参考文献
-      - _[[http://www.sinatrarb.com/][Sinatra]]_
+      - [[http://www.sinatrarb.com/][Sinatra]]
       - [[http://www.sinatrarb.com/intro.html][Sinatra: README]]
 
 **** Sinatraアプリ用リポジトリを作成する
