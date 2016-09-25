@@ -1,7 +1,7 @@
 guard :shell do
   watch(/^collaborative_development.org$/) do |m|
     %x{emacs collaborative_development.slide.org -batch -l org-init.el -f org-beamer-export-to-pdf}
-    %x{emacs collaborative_development.handout.org -batch -l org-init.el -f org-latex-export-to-pdf}
+#    %x{emacs collaborative_development.handout.org -batch -l org-init.el -f org-latex-export-to-pdf}
   end
 
   watch(/^collaborative_development.handout.org$/) do |m|

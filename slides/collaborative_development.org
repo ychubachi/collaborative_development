@@ -200,14 +200,14 @@ git config --list
        URLを登録してください．
        - [[https://goo.gl/forms/LOL7hOzVEKJeRk1t2][コラボレイティブ開発特論-GitHubユーザ名とURL]]
 
-* Part 2: GitHub入門（別資料）
-** 第3章 GitHub入門
-*** GitHub入門の解説と演習
-**** GitHub入門について
-***** GitHub入門
+* Part 2: Git/GitHub演習（別資料）
+** 第3章 Git/GitHub演習
+*** Git/GitHub演習の解説と演習
+**** Git/GitHub演習について
+***** Git/GitHub演習
       GitとGitHubにとことん精通しよう
 ***** 演習資料
-      [[https://github.com/ychubachi/github_practice][ychubachi/github_practice: Git/GitHub入門]]
+      [[https://github.com/ychubachi/github_practice][ychubachi/github_practice: Git/GitHub演習]]
 
 * Part 3: Sinatra/Heroku
 ** 第4章 SinatraでWebアプリを作ろう
@@ -254,9 +254,8 @@ end
 #+end_src
 
 **** Sinatraアプリを起動する
-***** 起動の方法
-      - hello.rbをrubyで動かせば，サーバが立ち上がる
-        - vagrantのport forwardを利用するため，「-o」オプションを指定する
+     - hello.rbをrubyで動かせば，サーバが立ち上がる
+       - vagrantのport forwardを利用するため，「-o」オプションを指定する
 
 ***** コマンド
 #+begin_src bash
@@ -264,12 +263,9 @@ ruby hello.rb -o 0.0.0.0
 #+end_src
 
 **** Sinatraアプリの動作確認
-***** 動作確認の方法
-      - *Host OS* のWebブラウザで，http://localhost:4567 にアクセスする．
-	- 「Hello World!」が表示されれば成功
-
-**** 参考文献
-     - [[http://stackoverflow.com/questions/21250885/unable-to-access-sinatra-app-on-host-machine-with-vagrant-forwarded-ports][ruby - Unable to access Sinatra app on host machine with Vagrant forwarded ports - Stack Overflow]]
+     - *Host OS* のWebブラウザで，http://localhost:4567 にアクセスする
+       - 「Hello World!」が表示されれば成功
+     - アクセスできない場合は =Vagrantfile= のPort Forwardの設定を見直すこと
 
 *** HerokuでSinatraを動かす
 **** Sinatraアプリのディプロイ
@@ -302,13 +298,15 @@ heroku keys
 **** SinatraアプリをHerokuで動かせるようにする
      - SinatraアプリをHerokuで動作させるには，
        （少ないものの）追加の設定が必要
-***** 内容
-      - 次スライドを見ながら，エディタを用いて，新たに次の2つのファイルを作成する
+      - 次スライドを見ながら，エディタを用いて，
+	次の2つのファイルを作成する
 
-| ファイル名  | 内容                              |
-|-------------+-----------------------------------|
-| =config.ru= | Webアプリサーバ（Rack）の設定     |
-| =Gemfile=   | アプリで利用するライブラリ（Gem） |
+| ファイル名  | 内容                                 |
+|-------------+--------------------------------------|
+| =config.ru= | Webアプリサーバ（Rack）の設定        |
+| =Gemfile=   | 他のメンバーやHeroku/Travis CIとで， |
+|             | Gemのバージョンを揃える              |
+
 
 **** 追加するコード
 ***** コード: *config.ru*
@@ -355,14 +353,30 @@ git remote -v # 確認用
      - WebブラウザでHerokuの管理画面を開き，アプリができていることを確認する
 
 **** Herokuにアプリを配備する
-     - Herokuにアプリを配備するには，Herokuを宛先としてリモートリポジトリにpushする
+     - Herokuにアプリを配備するには，
+       Herokuを宛先としてリモートリポジトリにpushする
 
 ***** コマンド
 #+begin_src bash
 git push heroku master
 #+end_src
 
-     - WebブラウザでアプリのURL（heroku createの際にメモしたもの）を開き，動作を確認する
+     - WebブラウザでアプリのURL（heroku createの際にメモしたもの）を開き，
+       動作を確認する
+
+**** Herokuのログの確認
+     - 次のコマンドでHeroku上のアプリの直近のログが閲覧できる
+
+#+begin_src bash
+heroku logs
+#+end_src
+
+     - ログを常に監視するには別な端末を開き，
+       VagrantにSSHして次のコマンドを実行
+
+#+begin_src bash
+heroku logs --tail
+#+end_src
 
 *** 演習課題
 **** 演習課題4-1
@@ -481,14 +495,20 @@ createdb rails_enpit_test
 
 
 **** Rails serverの起動
-     - この段階で，アプリケーションを起動できるようになっている
-     - Host OSのWebブラウザで， =http://localhost:3000= にアクセスして確認
-     - 端末にもログが表示される
-     - 確認したら，端末でCtrl-Cを押してサーバを停止する
+     - 次のコマンドでアプリケーションを起動できる
+
 ***** コマンド
 #+begin_src bash
 bin/rails server -b 0.0.0.0
 #+end_src
+
+     - なお，ここで「 =bin/= 」をつけているのは，
+       bundlerで管理しているバージョンのコマンドを起動するため
+
+**** Webアプリの動作確認
+     - Host OSのWebブラウザで， =http://localhost:3000= にアクセスして確認
+     - 端末にもログが表示される
+     - 確認したら，端末でCtrl-Cを押してサーバを停止する
 
 *** Controller/Viewの作成
 **** Hello Worldを表示するController
@@ -499,11 +519,13 @@ bin/rails server -b 0.0.0.0
 #+begin_src bash
 bin/rails generate controller welcome
 #+end_src
-**** 生成されたControllerコードの確認
-     - git diffコマンドでどのようなコードができたか確認
+
+**** 生成されたControllerの確認とコミット
+     - git statusコマンドでどのようなコードができたか確認
 #+begin_src bash
-git diff
+git status
 #+end_src
+
      - Controllerのコードを作成した作業をコミット
 #+begin_src bash
 git add .
@@ -523,32 +545,37 @@ git commit -m 'Generate the welcome controller'
   The time is now: <%= Time.now %>
 </p>
 #+end_src
-**** 生成されたViewコードの確認
-     - git diffコマンドで変更内容を確認
+**** 作成したViewの確認とコミット
+     - git statusコマンドで変更内容を確認
 #+begin_src bash
-git diff
+git status
 #+end_src
+
      - Viewのコードを作成した作業をコミット
 #+begin_src bash
 git add .
 git commit -m 'Add the welcome view'
 #+end_src
 
-**** rootとなるrouteの設定
+**** routeの設定
       - Routeとは？
 	- HTTPのリクエスト（URL）とコントローラを紐付ける設定
-      - ここでは =root= へのリクエスト（ =GET /= ）を =welcome= コントローラの =index= メソッドに紐付ける
-***** =config/routes.rb= の当該箇所をアンコメント
+      - ここでは =root= へのリクエスト（ =GET /= ）を
+	=welcome= コントローラの =index= メソッドに紐付ける
+      - =config/routes.rb= の当該箇所をアンコメント
+
 #+begin_src ruby
 root 'welcome#index'
 #+end_src
-      - =rake routes= コマンドで確認できる
+      - =bin/rake routes= コマンドで確認できる
 
 **** routes.rbの設定変更の確認
-     - git diffコマンドで変更内容を確認
+     - =routes.rb= は既にトラッキングされているので，
+       git diffコマンドで変更内容を確認できる
 #+begin_src bash
 git diff
 #+end_src
+
      - routes.rbを変更した作業をコミット
 #+begin_src bash
 git add .
@@ -562,11 +589,11 @@ git commit -m 'Edit routes.rb for the root controller'
 #+begin_src bash
 bin/rails server -b 0.0.0.0
 #+end_src
-     - git logコマンドで一連の作業を確認してみると良い
 
 **** GitHubへのPush
      - ここまでの作業で，controllerとviewを1つ備えるRoRアプリができた
      - 作業が一区切りしたので，GitHubへのpushもしておく
+       - 一連の作業を =git log= コマンドで確認してみると良い
 ***** コマンド
 #+begin_src bash
 git push
@@ -589,10 +616,22 @@ gem 'rails_12factor', group: :production
 ruby '2.2.2'
 #+end_src
 
+**** productionを除いたbundle install
+     - =rils_12factor= は開発時には利用しない
+       - =Gemfile= では「 =group: production= 」を指定してある
+     - 次のコマンドでproduction以外のGemをインストール
+
+#+begin_src bash
+bundle install --without production
+#+end_src
+
+     - このオプションは記憶されるので，
+       2回目以降 =--without production= は不要
+
 **** デプロイ前にGitにコミット
      - Herokuにコードを送るには，gitを用いる
-     - 従って，最新版をcommitしておく必要がある
-     - ここでは，commit後，まずはGitHubにもpushしておく
+       - 従って，最新版をcommitしておく必要がある
+     - commitし，まずはGitHubにpushしておく
 ***** コマンド
 #+begin_src bash
 git commit -a -m 'Set up for Heroku'
@@ -635,12 +674,12 @@ bin/rails generate scaffold book title:string author:string
        	- うまく行かなかったらbranchごと削除すれば良い
 
 **** routeの確認
-***** route
-      - Scaffoldの生成で変更されたルーティングの設定を確認
+     - Scaffoldの生成で追加されたルーティングの設定を確認
 ***** コマンド
 #+begin_src bash
 bin/rake routes
 #+end_src
+     - =git diff= でも確認してみよう
 
 **** DBのMigrate
 ***** migrateとは
@@ -670,7 +709,7 @@ git checkout master
 git branch -D books
 #+end_src
      - 1〜2行目：自動生成されたScaffoldのコードをbranchに一旦コミット
-     - 3行目：masterブランチに移動（）
+     - 3行目：masterブランチに移動
      - 4行目：branchを削除（ *=-D=* オプション使用 ）
 
 **** 動作確認
@@ -728,27 +767,29 @@ bin/rake test
        - [[https://travis-ci.org/][Travis CI - Free Hosted Continuous Integration Platform for the Open Source Community]]
      - GitHubの認証ページが出るので，画面下部にある緑のボタンを押す
      - Travis CIから確認のメールが来るので，確認する
-***** Ruby アプリ
-     − [[http://docs.travis-ci.com/user/languages/ruby/][Travis CI: Building a Ruby Project]]
 
 **** Travisの初期化
-***** 内容
       - Travis の CI ツール
        	- [[https://github.com/travis-ci/travis.rb][travis-ci/travis.rb]]
       - Travisにログインして初期化を行う
-      - =init= すると =.travis.yml= ができる
-***** コマンド
+      - 設定ファイル =.travis.yml= は次のコマンドで生成できる
 
+**** =.travis.yml= の生成
+***** コマンド
 #+begin_src bash
-gem install travis     # Travis CLIのアップデート
-travis login --auto    # GitHubのログイン情報で自動ログイン
-travis init            # 質問には全てEnterを押す
+gem install travis
+travis login --auto
+travis init
 #+end_src
+      - 1行目: Travis CLIのアップデート
+      - 2行目: GitHubのログイン情報で自動ログイン
+      - 3行目: 設定ファイルの生成（質問には全てEnterを押す）
 
 **** Herokuとの連携
-***** Herokuとの連携
       - Travis CIからHerokuへの接続を設定する
        	- [[http://docs.travis-ci.com/user/deployment/heroku/][Travis CI: Heroku Deployment]]
+      - 次のコマンドで =.travis.xml= に設定が追加される
+
 ***** コマンド
 #+begin_src bash
 travis setup heroku
@@ -762,11 +803,10 @@ travis setup heroku
 #+begin_src yaml
 language: ruby
 rvm:
-- 2.2.2
+- 2.2.5
 #+end_src
 
-**** Travis用DB設定ファイル
-***** TravisでのテストDB
+**** Travis用DB設定ファイルと作成
       - テストDB用の設定ファイルを追加する
 
 ***** =config/database.yml.travis=
@@ -777,21 +817,17 @@ test:
   username: postgres
 #+end_src
 
-**** Travis上のDB設定
-***** 設定ファイルの変更（追加）
-      - PostgreSQLのバージョン
-      - DBの作成
-      - [[http://docs.travis-ci.com/user/using-postgresql/][Travis CI: Using PostgreSQl on Travis CI]]
-
-***** .travis.yml（抜粋）
+**** =.travis.yml= への設定追加
 #+begin_src yaml
 addons:
   postgresql: "9.3"
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
   - cp config/database.yml.travis config/database.yml
-  - rake db:migrate RAILS_ENV=test # いらない？
+  - bin/rake db:migrate RAILS_ENV=test
 #+end_src
+     - 1行目: PostgreSQLのバージョン指定
+     - 4〜6行目: DBの作成・マイグレーション等
 
 **** GitHubとTravis CI連携
 ***** 説明
@@ -808,8 +844,7 @@ git push
 
 **** Travis経由でのHerokuへのdeploy
 ***** Travisのログを閲覧
-      - WebブラウザでTravis CIの画面を開く
-      - ログを読む
+      - WebブラウザでTravis CIの画面を開き，ログを確認
 ***** HerokuへのDeploy
       - テストが通れば，自動でHerokuに配備される
       - 配備できたらWebブラウザでアプリのページを開いて確認する
@@ -1070,11 +1105,6 @@ alias git
 heroku apps:info
 #+end_src
 
-***** Herokuのログをリアルタイムで見る
-#+begin_src bash
-heroku logs --tail
-#+end_src
-
 ***** =rails generate= などが動かない
 #+begin_src bash
 spring stop
@@ -1107,3 +1137,9 @@ Rake::TestTask.new do |t|
   t.pattern = "./*_test.rb"
 end
 #+end_src
+**** TODO =travxs setup= のトラブル
+     - 次のようなトラブルが発生することがある
+       - [[https://github.com/ychubachi/collaborative_development/issues/17][TravisとGitHubのリポジトリの同期 · Issue #17]]
+       - [[https://github.com/ychubachi/collaborative_development/issues/18][楽天APIサンプルのfork · Issue #18]]
+     - Travis CIからHerokuにディプロイするのではなく，
+       HerokuからGitHubを監視させるようにしたほうがよいかも・・・
