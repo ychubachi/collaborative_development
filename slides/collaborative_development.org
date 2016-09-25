@@ -86,11 +86,14 @@
 ** 第2章 コラボレイティブ開発の道具達
 *** モダンなソフトウエア開発とは
 **** ソフトウエア開発のための方法・言語・道具
+     :PROPERTIES:
+     :BEAMER_ENV: fullframe
+     :END:
 
-#+CAPTION: The Framework-Language-Tool framework.
+#+CAPTION: ソフトウエア開発のための方法・言語・道具
 #+NAME: FLT_framework
-#+ATTR_LATEX: :width 0.6\columnwidth
-[[../figures/FLT_framework.pdf]]
+#+ATTR_LATEX: :width 0.8\columnwidth
+[[./figures/FLT_framework.pdf]]
 
 **** 授業で取り上げる範囲
 ***** 取り上げること
@@ -99,12 +102,15 @@
 ***** 取り扱わないこと
       - 方法論そのものについてはアジャイル開発特論で学ぶ
       - プログラミングの初歩については教えない
-**** Scrumするための道具
+**** Scrumするためのモダンな道具たち
+     :PROPERTIES:
+     :BEAMER_ENV: fullframe
+     :END:
 
-#+CAPTION: The modern tools for Scrum developments.
+#+CAPTION: Scrumするためのモダンな道具たち
 #+NAME: tools
-#+ATTR_LATEX: :width 0.6\columnwidth
-[[../figures/tools.pdf]]
+#+ATTR_LATEX: :width 0.8\columnwidth
+[[./figures/tools.pdf]]
 
 **** モダンな開発環境の全体像
 ***** 仮想化技術（Virtualization）
