@@ -505,11 +505,8 @@ createdb rails_enpit_test
 
 ***** コマンド
 #+begin_src bash
-bin/rails server -b 0.0.0.0
+bundle exec rails server -b 0.0.0.0
 #+end_src
-
-     - なお，ここで「 =bin/= 」をつけているのは，
-       bundlerで管理しているバージョンのコマンドを起動するため
 
 **** Webアプリの動作確認
      - Host OSのWebブラウザで， =http://localhost:3000= にアクセスして確認
@@ -523,7 +520,7 @@ bin/rails server -b 0.0.0.0
      - =rails generate controller= コマンドで作成する
 ***** コマンド
 #+begin_src bash
-bin/rails generate controller welcome
+bundle exec rails generate controller welcome
 #+end_src
 
 **** 生成されたControllerの確認とコミット
@@ -593,7 +590,7 @@ git commit -m 'Edit routes.rb for the root controller'
      - Webブラウザで =http://localhost:3000/= を開ぐ
 ***** コマンド
 #+begin_src bash
-bin/rails server -b 0.0.0.0
+bundle exec rails server -b 0.0.0.0
 #+end_src
 
 **** GitHubへのPush
@@ -619,7 +616,7 @@ git push
 ***** =Gemfile= に追加する内容
 #+begin_src ruby
 gem 'rails_12factor', group: :production
-ruby '2.2.2'
+ruby '2.2.5'
 #+end_src
 
 **** productionを除いたbundle install
