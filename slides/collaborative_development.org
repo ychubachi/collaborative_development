@@ -570,7 +570,7 @@ git commit -m 'Add the welcome view'
 #+begin_src ruby
 root 'welcome#index'
 #+end_src
-      - =bin/rake routes= コマンドで確認できる
+      - =bundle exec rake routes= コマンドで確認できる
 
 **** routes.rbの設定変更の確認
      - =routes.rb= は既にトラッキングされているので，
@@ -670,7 +670,7 @@ git push heroku master
 ***** コマンド
 #+begin_src bash
 git checkout -b books
-bin/rails generate scaffold book title:string author:string
+bundle exec rails generate scaffold book title:string author:string
 #+end_src
       - 多くのコードが自動生成されるので，branchを切っておくと良い
        	- 動作が確認できたらbranchをマージ
@@ -680,7 +680,7 @@ bin/rails generate scaffold book title:string author:string
      - Scaffoldの生成で追加されたルーティングの設定を確認
 ***** コマンド
 #+begin_src bash
-bin/rake routes
+bundle exec rake routes
 #+end_src
      - =git diff= でも確認してみよう
 
@@ -690,17 +690,17 @@ bin/rake routes
      - Scaffoldを追加したり，属性を追加したりした際に行う
 ***** コマンド
 #+begin_src bash
-bin/rake db:migrate
+bundle exec rake db:migrate
 #+end_src
 
 **** 参考：Migrateの取り消しの方法
      - DBのmigrationを取り消したいときは次のコマンドで取り消せる
 #+begin_src bash
-bin/rake db:rollback
+bundle exec rake db:rollback
 #+end_src
      - 再度，migrateすれば再実行される
 #+begin_src bash
-bin/rake db:migrate
+bundle exec rake db:migrate
 #+end_src
 
 **** 参考：Scaffold作成の取り消しの方法
@@ -721,7 +721,7 @@ git branch -D books
       - CRUD処理が完成していることを確かめる
 ***** コマンド
 #+begin_src bash
-bin/rails server
+bundle exec rails server
 #+end_src
 
 **** 完成したコードをマージ
@@ -760,7 +760,7 @@ heroku run rake db:migrate
       - テスト用のDB（ =rails_enpit_test= ）が更新される
 ***** コマンド
 #+begin_src bash
-bin/rake test
+bundle exec rake test
 #+end_src
 
 *** Travis CIとの連携
@@ -827,7 +827,7 @@ addons:
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
   - cp config/database.yml.travis config/database.yml
-  - bin/rake db:migrate RAILS_ENV=test
+  - bundle exec rake db:migrate RAILS_ENV=test
 #+end_src
      - 1行目: PostgreSQLのバージョン指定
      - 4〜6行目: DBの作成・マイグレーション等
