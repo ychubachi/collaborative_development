@@ -225,6 +225,9 @@ ruby hello.rb -o 0.0.0.0
        - 「Hello World!」が表示されれば成功
      - アクセスできない場合は =Vagrantfile= のPort Forwardの設定を見直すこと
 
+**** Sinatraのマニュアル
+     - http://sinatrarb.com/intro-ja.html
+
 *** HerokuでSinatraを動かす
 **** Sinatraアプリのディプロイ
      - SinatraアプリをHerokuで動作させてみよう
