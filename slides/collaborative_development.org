@@ -186,15 +186,9 @@ vagrant ssh
       - [[http://www.sinatrarb.com/intro.html][Sinatra: README]]
 
 **** Sinatraアプリ用リポジトリを作成する
-     - Sinatraアプリを作成するため，新しいリポジトリを作る
-       - WebブラウザでGitHubを開き，作成できたことを確認
-***** コマンド
-#+begin_src bash
-mkdir ~/sinatra_enpit
-cd ~/shinatra_enpit
-git init
-git create
-#+end_src
+     - Sinatraアプリを作成するため，GitHubで新しいリポジトリを作る
+       - 名前は 「sinatra_enpit」とする
+       - できたらcloneする
 
 **** Sinatraアプリを作成する(1)
      - エディタを起動し，次のスライドにある
