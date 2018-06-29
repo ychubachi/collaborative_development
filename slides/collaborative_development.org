@@ -241,7 +241,7 @@ ruby hello.rb -o 0.0.0.0
       - 以後の作業はHerokuコマンドを利用する
 ***** コマンド
 #+begin_src bash
-heroku login
+heroku auth:login
 #+end_src
 
 **** herokuにSSHの公開鍵を設定する
