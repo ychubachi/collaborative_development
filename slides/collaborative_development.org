@@ -305,9 +305,6 @@ bundle install
 
 **** アプリをGitHubにpushする
      - Herokuで動かす前に，commitが必要
-       - 後にHerokuのリポジトリに対してpushする
-     - ここでは，まず，GitHubにコードをpushしておく
-	- この場合のpush先は =origin master=
 ***** コマンド
 #+begin_src bash
 git add .
@@ -318,40 +315,12 @@ git push
 TODO
 
 **** Herokuにアプリを作る
-***** コマンド
-#+begin_src bash
-heroku create
-git remote -v # 確認用
-#+end_src
-     - 1行目: Herokuが自動生成したURLが表示されるので，メモする
-     - 2行目: herokuという名前のremoteが追加されたことが分かる
-     - WebブラウザでHerokuの管理画面を開き，アプリができていることを確認する
-
-**** Herokuにアプリを配備する
-     - Herokuにアプリを配備するには，
-       Herokuを宛先としてリモートリポジトリにpushする
-
-***** コマンド
-#+begin_src bash
-git push heroku master
-#+end_src
-
-     - WebブラウザでアプリのURL（heroku createの際にメモしたもの）を開き，
-       動作を確認する
-
-**** Herokuのログの確認
-     - 次のコマンドでHeroku上のアプリの直近のログが閲覧できる
-
-#+begin_src bash
-heroku logs
-#+end_src
-
-     - ログを常に監視するには別な端末を開き，
-       VagrantにSSHして次のコマンドを実行
-
-#+begin_src bash
-heroku logs --tail
-#+end_src
+***** Herokuでの操作
+	- Heroku にログインする
+	- 新しいアプリを作る
+	- GitHubと連携させる
+	- 手動でディプロイする
+	- 以降、GitHubにpushするとHerokuにも自動でディプロイされる
 
 *** 演習課題
 **** 演習課題4-1
