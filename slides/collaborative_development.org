@@ -239,6 +239,8 @@ ruby hello.rb -o 0.0.0.0
       - =heroku= コマンドを用いて，Herokuにログインできる
 	- HerokuのIDとPWを入力する
       - 以後の作業はHerokuコマンドを利用する
+      - 次のコマンドで最新版にアップデートできる
+     	- sudo apt-get install heroku-toolbelt
 ***** コマンド
 #+begin_src bash
 heroku auth:login
