@@ -228,6 +228,16 @@ ruby hello.rb -o 0.0.0.0
 **** Sinatraのマニュアル
      - http://sinatrarb.com/intro-ja.html
 
+**** アプリをGitHubにpushする
+     - GitHubにコードをpushしよう
+     
+***** コマンド
+#+begin_src bash
+git add .
+git commit -m 'My Sintra App'
+git push
+#+end_src
+
 *** HerokuでSinatraを動かす
 **** Sinatraアプリのディプロイ
      - SinatraアプリをHerokuで動作させてみよう
@@ -302,8 +312,10 @@ bundle install
 #+begin_src bash
 git add .
 git commit -m 'Add configuration files for Heroku'
-git push -u origin master
+git push
 #+end_src
+
+TODO
 
 **** Herokuにアプリを作る
 ***** コマンド
