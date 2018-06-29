@@ -1,7 +1,7 @@
 #+STARTUP: overview hidestars
 #+TITLE: コラボレイティブ開発特論
 #+AUTHOR: 産業技術大学院大学 \linebreak 中鉢 欣秀
-#+DATE: 2016年度
+#+DATE: 2018年度
 #+OPTIONS: H:4 ^:nil
 
 * Part 1: ガイダンスとモダンな道具達
@@ -130,17 +130,38 @@
       - その他
 ***** 仮想化環境の構築用リポジトリ（参考）
       - [[https://github.com/ychubachi/vagrant_enpit][ychubachi/vagrant_enpit]]
-*** 仮想環境の準備から起動
-**** enPiT仮想化環境のアップデート
-***** 作業内容
-      - enPiT仮想化環境（vagrantのbox）を更新しておく
-***** コマンド
 
+**** enPiT仮想化環境にログイン
+***** 作業内容
+      - 前の操作に引き続き，仮想化環境にSSH接続する
+***** コマンド
 #+begin_src bash
-cd ~/enpit
-vagrant destroy
-vagrant box update
+vagrant up
+vagrant ssh
 #+end_src
+
+* Part 2: Git/GitHub演習（別資料）
+** 第3章 Git/GitHub演習
+*** Git/GitHub演習の解説と演習
+**** Git/GitHub演習について
+***** Git/GitHub演習
+      GitとGitHubにとことん精通しよう
+***** 演習資料
+      [[https://github.com/ychubachi/github_practice][ychubachi/github_practice: Git/GitHub演習]]
+
+* Part 3: Sinatra/Heroku
+** 第4章 SinatraでWebアプリを作ろう
+*** クラウド環境のアカウント・設定
+**** GitHub/Herokuのアカウントを作成
+***** GitHub
+      - [[https://github.com/join][Join GitHub · GitHub]]
+***** Heroku
+      - [[https://id.heroku.com/signup][Heroku - Sign up]]
+***** Travis CI
+      - [[https://travis-ci.org/][Travis CI]]
+       	- Travis CIは，GitHubのアカウントでログインできる
+
+*** 仮想環境の準備から起動
 **** Port Forwardの設定(1)
 ***** 説明
       - Guest OSで実行するサーバに，Host OSからWebブラウザでアクセスできるようにしておく
@@ -158,36 +179,6 @@ vagrant box update
   config.vm.network "forwarded_port", guest: 4567, host: 4567
 #+end_src
 
-**** enPiT仮想化環境にログイン
-***** 作業内容
-      - 前の操作に引き続き，仮想化環境にSSH接続する
-***** コマンド
-#+begin_src bash
-vagrant up
-vagrant ssh
-#+end_src
-
-*** クラウド環境のアカウント・設定
-**** GitHub/Herokuのアカウントを作成
-***** GitHub
-      - [[https://github.com/join][Join GitHub · GitHub]]
-***** Heroku
-      - [[https://id.heroku.com/signup][Heroku - Sign up]]
-***** Travis CI
-      - [[https://travis-ci.org/][Travis CI]]
-       	- Travis CIは，GitHubのアカウントでログインできる
-
-* Part 2: Git/GitHub演習（別資料）
-** 第3章 Git/GitHub演習
-*** Git/GitHub演習の解説と演習
-**** Git/GitHub演習について
-***** Git/GitHub演習
-      GitとGitHubにとことん精通しよう
-***** 演習資料
-      [[https://github.com/ychubachi/github_practice][ychubachi/github_practice: Git/GitHub演習]]
-
-* Part 3: Sinatra/Heroku
-** 第4章 SinatraでWebアプリを作ろう
 *** Sinatraアプリケーションの作成
 **** Sinatraを使った簡単なWebアプリケーション
 ***** Sinatraとは？
