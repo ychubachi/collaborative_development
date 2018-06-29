@@ -244,29 +244,6 @@ git push
      - Webアプリは世界中からアクセスできるようになる
      - WebアプリをHeroku（などのアプリケーションサーバ）に
        設置することを配備（Deploy）と言う
-**** コマンドラインでHerokuにログインする
-      - enPiT環境には =heroku= コマンドをインストールしてある
-      - =heroku= コマンドを用いて，Herokuにログインできる
-	- HerokuのIDとPWを入力する
-      - 以後の作業はHerokuコマンドを利用する
-      - 次のコマンドで最新版にアップデートできる
-     	- sudo apt-get install heroku-toolbelt
-***** コマンド
-#+begin_src bash
-heroku auth:login
-#+end_src
-
-**** herokuにSSHの公開鍵を設定する
-     - Herokuもgitのリモートリポジトリである
-     - これを公開鍵でアクセスできるようにする
-***** コマンド
-#+begin_src bash
-heroku keys:add
-#+end_src
-***** 確認
-#+begin_src bash
-heroku keys
-#+end_src
 
 **** SinatraアプリをHerokuで動かせるようにする
      - SinatraアプリをHerokuで動作させるには，
@@ -311,8 +288,6 @@ git add .
 git commit -m 'Add configuration files for Heroku'
 git push
 #+end_src
-
-TODO
 
 **** Herokuにアプリを作る
 ***** Herokuでの操作
