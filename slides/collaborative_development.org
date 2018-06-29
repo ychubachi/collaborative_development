@@ -157,9 +157,6 @@ vagrant ssh
       - [[https://github.com/join][Join GitHub · GitHub]]
 ***** Heroku
       - [[https://id.heroku.com/signup][Heroku - Sign up]]
-***** Travis CI
-      - [[https://travis-ci.org/][Travis CI]]
-       	- Travis CIは，GitHubのアカウントでログインできる
 
 *** 仮想環境の準備から起動
 **** Port Forwardの設定(1)
