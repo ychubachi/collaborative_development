@@ -176,35 +176,6 @@ vagrant ssh
 ***** Travis CI
       - [[https://travis-ci.org/][Travis CI]]
        	- Travis CIは，GitHubのアカウントでログインできる
-# **** github-connectスクリプト
-# ***** URL
-#      - [[https://gist.github.com/ychubachi/6491682][github-connect.sh]]
-# ***** git conifgを代行
-#      - GitHubにログインし，名前とemailを読み込んでgitに設定
-# ***** SSHの鍵生成と登録
-#      - SSH鍵を作成し，公開鍵をGitHubに登録してくれる
-# **** github-connect.shの実行
-#     - スクリプトを起動し，設定を行う
-#     - GitHubのログイン名とパスワードを聞かれるので，入力する
-#     - rsa key pairのパスフレーズは入力しなくて構わない
-# ***** コマンド
-#
-# #+begin_src bash
-# github-connect.sh
-# #+end_src
-#
-# **** GitとGitHubの設定確認
-# ***** Gitの設定確認
-# #+begin_src bash
-# git config --list
-# #+end_src
-# ***** GitHubの設定確認
-#       - ブラウザでGitHubのSSH Keyページを開く
-# *** 演習: GitHubユーザ名の提出
-# **** 演習: GitHubユーザ名の提出
-#      - 次のURLから授業で利用するGitHubユーザ名と
-#       URLを登録してください．
-#       - [[https://goo.gl/forms/LOL7hOzVEKJeRk1t2][コラボレイティブ開発特論-GitHubユーザ名とURL]]
 
 * Part 2: Git/GitHub演習（別資料）
 ** 第3章 Git/GitHub演習
