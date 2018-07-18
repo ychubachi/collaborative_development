@@ -230,7 +230,7 @@ ruby hello.rb -o 0.0.0.0
 
 **** アプリをGitHubにpushする
      - GitHubにコードをpushしよう
-     
+
 ***** コマンド
 #+begin_src bash
 git add .
@@ -655,10 +655,11 @@ git branch -d books
       - ここまでのアプリをディプロイする
       - herokuにあるdbもmigrateする
       - Webブラウザで動作確認する
-***** コマンド
-#+begin_src bash
-git push heroku master
-heroku run rake db:migrate
+***** 設定ファイル(Procfile)
+
+#+begin_src
+release: bundle exec rake db:migrate
+web: bundle exec rails server -p $PORT
 #+end_src
 
 
