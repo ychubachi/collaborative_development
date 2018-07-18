@@ -726,10 +726,8 @@ test:
 
 **** GitHubとTravis CI連携
 ***** 説明
-      - ここまでの設定で，GitHubにpushされたコードは，
-       	Travis CIでテストされ，テストが通ったコミットが
-       	Herokuに送られるようになった
-      - WebブラウザでTravis CIを開いて確認する
+      - ここまでの設定で，GitHubにpushされたコードはTravis CIでテストされるようになった．
+      - GitHubにプッシュしてWebブラウザでTravis CIを開いて確認する
 ***** コマンド
 #+begin_src bash
 git add .
@@ -737,12 +735,10 @@ git commit -m 'Configure Travis CI'
 git push
 #+end_src
 
-**** Travis経由でのHerokuへのdeploy
-***** Travisのログを閲覧
-      - WebブラウザでTravis CIの画面を開き，ログを確認
+**** CI通過後のHerokuへの自動deploy
 ***** HerokuへのDeploy
-      - テストが通れば，自動でHerokuに配備される
-      - 配備できたらWebブラウザでアプリのページを開いて確認する
+      - テストが通れば，自動でHerokuに配備されるように、Herokuに設定を追加する
+
 *** 演習課題
 **** 演習課題7-1
 ***** =rails_enpit= の拡張
