@@ -685,34 +685,7 @@ bundle exec rake test
      - GitHubの認証ページが出るので，画面下部にある緑のボタンを押す
      - Travis CIから確認のメールが来るので，確認する
 
-**** Travisの初期化
-      - Travis の CI ツール
-       	- [[https://github.com/travis-ci/travis.rb][travis-ci/travis.rb]]
-      - Travisにログインして初期化を行う
-      - 設定ファイル =.travis.yml= は次のコマンドで生成できる
-
-**** =.travis.yml= の生成
-***** コマンド
-#+begin_src bash
-gem install travis
-travis login --auto
-travis init
-#+end_src
-      - 1行目: Travis CLIのアップデート
-      - 2行目: GitHubのログイン情報で自動ログイン
-      - 3行目: 設定ファイルの生成（質問には全てEnterを押す）
-
-**** Herokuとの連携
-      - Travis CIからHerokuへの接続を設定する
-       	- [[http://docs.travis-ci.com/user/deployment/heroku/][Travis CI: Heroku Deployment]]
-      - 次のコマンドで =.travis.xml= に設定が追加される
-
-***** コマンド
-#+begin_src bash
-travis setup heroku
-#+end_src
-
-**** Travisで動かすRubyのバージョン設定
+**** Travisの設定
 ***** 設定ファイルの変更
       - まず、Rubyのバージョンを指定する
       - 変更の際はYAMLのインデントに注意する
@@ -724,9 +697,25 @@ rvm:
 #+end_src
 
 **** Travis用DB設定ファイルと作成
-      - テストDB用の設定ファイルを追加する
+      * RubyのVersionなど
+      * テストDB用の設定ファイルを追加する
 
-***** =config/database.yml.travis=
+***** =.travis.yml=
+#+begin_src yaml
+language: ruby
+rvm:
+- 2.2.5
+services: postgresql
+bundler_args: "--without development --deployment -j4"
+cache: bundler
+before_script:
+  - cp config/database.travis.yml config/database.yml
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+script: bundle exec rake test
+#+end_src
+
+***** =config/database.travis.yml=
 #+begin_src yaml
 test:
   adapter: postgresql
@@ -734,17 +723,6 @@ test:
   username: postgres
 #+end_src
 
-**** =.travis.yml= への設定追加
-#+begin_src yaml
-addons:
-  postgresql: "9.3"
-before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
-  - cp config/database.yml.travis config/database.yml
-  - bundle exec rake db:migrate RAILS_ENV=test
-#+end_src
-     - 1行目: PostgreSQLのバージョン指定
-     - 4〜6行目: DBの作成・マイグレーション等
 
 **** GitHubとTravis CI連携
 ***** 説明
