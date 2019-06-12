@@ -17,8 +17,11 @@
       - 各自のPCに仮想環境をインストールしておいてください
       - インストールするソフトウェア
 	- Git
+	  - https://gitforwindows.org/
 	- VirtualBox
+	  - https://www.virtualbox.org/
 	- Vagrant
+	  - https://www.vagrantup.com/
 *** 授業の全体像
 **** 学習の目的
      - ビジネスアプリケーションを構築するための基礎力
