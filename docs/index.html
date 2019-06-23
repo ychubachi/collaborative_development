@@ -1,1 +1,1114 @@
-docs
+<h1 id="part-1-ガイダンスとモダンな道具達">Part 1: ガイダンスとモダンな道具達</h1>
+<h2 id="第1章-ガイダンス">第1章 ガイダンス</h2>
+<h3 id="連絡事項">連絡事項</h3>
+<h4 id="連絡事項1">連絡事項(1)</h4>
+<ol>
+<li><p>資料等の入手先</p>
+<ul>
+<li>GitHubの下記リポジトリにまとめておきます
+<ul>
+<li><a href="https://github.com/ychubachi/collaborative_development" class="uri">https://github.com/ychubachi/collaborative_development</a></li>
+</ul></li>
+<li>資料は随時updateするので，適宜，最新版をダウンロードしてください</li>
+</ul></li>
+</ol>
+<h4 id="連絡事項2">連絡事項(2)</h4>
+<ol>
+<li><p>仮想環境（Vagrant）</p>
+<ul>
+<li>各自のPCに仮想環境をインストールしておいてください</li>
+<li>インストールするソフトウェア</li>
+</ul>
+<ul>
+<li>Git
+<ul>
+<li><a href="https://gitforwindows.org/" class="uri">https://gitforwindows.org/</a></li>
+</ul></li>
+<li>VirtualBox
+<ul>
+<li><a href="https://www.virtualbox.org/" class="uri">https://www.virtualbox.org/</a></li>
+</ul></li>
+<li>Vagrant
+<ul>
+<li><a href="https://www.vagrantup.com/" class="uri">https://www.vagrantup.com/</a></li>
+</ul></li>
+</ul></li>
+</ol>
+<h3 id="授業の全体像">授業の全体像</h3>
+<h4 id="学習の目的">学習の目的</h4>
+<ul>
+<li>ビジネスアプリケーションを構築するための基礎力</li>
+<li>分散型PBLを実施する上で必要となる知識やツールの使い方</li>
+<li>これら活用するための自己組織的なチームワーク</li>
+</ul>
+<h4 id="学習の目標">学習の目標</h4>
+<ul>
+<li>分散ソフトウェア開発のための道具を学ぶ
+<ul>
+<li>開発環境（Ruby），VCSとリモートリポジトリ（GitHub）</li>
+<li>テスト自動化，継続的インテグレーション，PaaS</li>
+</ul></li>
+<li>これらのツールの <strong>設計思想</strong> に対する本質理解</li>
+</ul>
+<h4 id="前提知識と到達目標">前提知識と到達目標</h4>
+<ol>
+<li><p>前提とする知識</p>
+<ul>
+<li>情報系の学部レベルで基礎的な知識を持っていること</li>
+</ul></li>
+<li><p>最低到達目標</p>
+<ul>
+<li>授業で取り上げる各種ツールの基本的な使い方を身につける</li>
+</ul></li>
+<li><p>上位到達目標</p>
+<ul>
+<li>授業で取り上げる各種ツールの高度な使い方に習熟する．</li>
+</ul></li>
+</ol>
+<h4 id="授業の形態">授業の形態</h4>
+<ol>
+<li><p>対面授業</p>
+<ul>
+<li>担当教員による講義・演習</li>
+</ul></li>
+<li><p>個人演習</p>
+<ul>
+<li>個人によるソフトウエア開発</li>
+</ul></li>
+<li><p>グループ演習</p>
+<ul>
+<li>グループによるソフトウエア開発</li>
+</ul></li>
+</ol>
+<h3 id="授業の方法">授業の方法</h3>
+<h4 id="講義演習課題">講義・演習・課題</h4>
+<ol>
+<li><p>講義</p>
+<ul>
+<li>ツールの説明</li>
+<li>ツールの使い方</li>
+</ul></li>
+<li><p>演習</p>
+<ul>
+<li>個人でツールを使えるようになる</li>
+<li>グループでツールを使えるようになる</li>
+</ul></li>
+</ol>
+<h4 id="成績評価">成績評価</h4>
+<ol>
+<li><p>課題</p>
+<ul>
+<li>個人でソフトウエアを作る</li>
+<li>グループでソフトウエアを作る</li>
+</ul></li>
+<li><p>評価の方法</p>
+<ul>
+<li>課題提出と実技試験</li>
+</ul></li>
+<li><p>評価の観点</p>
+<ul>
+<li>分散PBLで役に立つ知識が習得できたかどうか</li>
+</ul></li>
+</ol>
+<h3 id="学びの共同体になろう">「学びの共同体」になろう</h3>
+<h4 id="共に学び共に教える場">共に学び、共に教える「場」</h4>
+<ul>
+<li>教室に集うメンバーで <strong>学びの共同体</strong> になろう</li>
+<li>困った時には助けを求める</li>
+<li>他人に教えること＝学び</li>
+</ul>
+<h4 id="チーム演習での問題解決理想の流れ">チーム演習での問題解決（理想の流れ）</h4>
+<ol>
+<li>困った時はメンバーに聞く</li>
+<li>わからなかったらチーム全員で考える</li>
+<li>それでもダメなら他のチームに相談</li>
+<li>講師・コーチに尋ねるのは最終手段！</li>
+<li>…となるのが理想</li>
+</ol>
+<ul>
+<li>授業の進め方などの質問は遠慮無く聞いてください</li>
+</ul>
+<h4 id="共同体になるためにお互いを知ろう">共同体になるためにお互いを知ろう</h4>
+<ul>
+<li>皆さんの自己紹介
+<ul>
+<li>名前（可能であれば所属も）</li>
+<li>どんな仕事をしているか（あるいは大学で学んだこと）</li>
+<li>この授業を履修した動機</li>
+</ul></li>
+</ul>
+<h2 id="第2章-コラボレイティブ開発の道具達">第2章 コラボレイティブ開発の道具達</h2>
+<h3 id="モダンなソフトウエア開発とは">モダンなソフトウエア開発とは</h3>
+<h4 id="ソフトウエア開発のための方法言語道具" beamer_env="fullframe">ソフトウエア開発のための方法・言語・道具</h4>
+<p><a href="./figures/FLT_framework.pdf" class="uri">./figures/FLT_framework.pdf</a></p>
+<h4 id="授業で取り上げる範囲">授業で取り上げる範囲</h4>
+<ol>
+<li><p>取り上げること</p>
+<ul>
+<li>良い道具には設計思想そのものに方法論が組み込まれている</li>
+<li>世界中の技術者の知恵が結晶した成果としてのOSSのツール</li>
+</ul></li>
+<li><p>取り扱わないこと</p>
+<ul>
+<li>方法論そのものについてはアジャイル開発特論で学ぶ</li>
+<li>プログラミングの初歩については教えない</li>
+</ul></li>
+</ol>
+<h4 id="scrumするためのモダンな道具たち" beamer_env="fullframe">Scrumするためのモダンな道具たち</h4>
+<p><a href="./figures/tools.pdf" class="uri">./figures/tools.pdf</a></p>
+<h4 id="モダンな開発環境の全体像">モダンな開発環境の全体像</h4>
+<ol>
+<li><p>仮想化技術（Virtualization）</p>
+<ul>
+<li>WindowsやMacでLinux上でのWebアプリケーション開発を学ぶことができる</li>
+<li>HerokuやTravis CI等のクラウドでの実行や検査環境として用いられている</li>
+</ul></li>
+<li><p>ソーシャルコーディング（Social Coding）</p>
+<ul>
+<li>LinuxのソースコードのVCSとして用いられているGitを学ぶ</li>
+<li>GitはGitHubと連携することでOSS型のチーム開発ができる</li>
+</ul></li>
+</ol>
+<h4 id="enpit仮想化環境">enPiT仮想化環境</h4>
+<ol>
+<li><p>仮想環境にインストール済みの道具</p>
+<ul>
+<li>エディタ（Emacs/Vim）</li>
+<li>Rubyの実行環境</li>
+<li>GitHub，Heroku，Travis CIと連携するための各種コマンド（github-connect.sh，hub，heroku，travis）</li>
+<li>PostgreSQLのクライアント・サーバーとDB</li>
+<li>各種設定ファイル（.bash_profile，.gemrc，.gitconfig）</li>
+<li>その他</li>
+</ul></li>
+<li><p>仮想化環境の構築用リポジトリ（参考）</p>
+<ul>
+<li><a href="https://github.com/ychubachi/vagrant_enpit">ychubachi/vagrant_enpit</a></li>
+</ul></li>
+</ol>
+<h4 id="enpit仮想化環境にログイン">enPiT仮想化環境にログイン</h4>
+<ol>
+<li><p>作業内容</p>
+<ul>
+<li>前の操作に引き続き，仮想化環境にSSH接続する</li>
+</ul></li>
+<li><p>コマンド</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">vagrant</span> up
+<span class="ex">vagrant</span> ssh</code></pre></div></li>
+</ol>
+<h1 id="part-2-gitgithub演習別資料">Part 2: Git/GitHub演習（別資料）</h1>
+<h2 id="第3章-gitgithub演習">第3章 Git/GitHub演習</h2>
+<h3 id="gitgithub演習の解説と演習">Git/GitHub演習の解説と演習</h3>
+<h4 id="gitgithub演習について">Git/GitHub演習について</h4>
+<ol>
+<li><p>Git/GitHub演習</p>
+<p>GitとGitHubにとことん精通しよう</p></li>
+<li><p>演習資料</p>
+<p><a href="https://github.com/ychubachi/github_practice">ychubachi/github_practice: Git/GitHub演習</a></p></li>
+</ol>
+<h1 id="part-3-sinatraheroku">Part 3: Sinatra/Heroku</h1>
+<h2 id="第4章-sinatraでwebアプリを作ろう">第4章 SinatraでWebアプリを作ろう</h2>
+<h3 id="クラウド環境のアカウント設定">クラウド環境のアカウント・設定</h3>
+<h4 id="githubherokuのアカウントを作成">GitHub/Herokuのアカウントを作成</h4>
+<ol>
+<li><p>GitHub</p>
+<ul>
+<li><a href="https://github.com/join">Join GitHub · GitHub</a></li>
+</ul></li>
+<li><p>Heroku</p>
+<ul>
+<li><a href="https://id.heroku.com/signup">Heroku - Sign up</a></li>
+</ul></li>
+</ol>
+<h3 id="仮想環境の準備から起動">仮想環境の準備から起動</h3>
+<h4 id="port-forwardの設定1">Port Forwardの設定(1)</h4>
+<ol>
+<li><p>説明</p>
+<ul>
+<li>Guest OSで実行するサーバに，Host OSからWebブラウザでアクセスできるようにしておく</li>
+<li>任意のエディタでVagrantfileの「config.vm.network」を変更</li>
+<li>任意のエディタでVagrantfileを変更</li>
+</ul></li>
+</ol>
+<h4 id="port-forwardの設定2">Port Forwardの設定(2)</h4>
+<ol>
+<li><p>変更前</p>
+<div class="sourceCode"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span class="co"># config.vm.network &quot;forwarded_port&quot;, guest: 80, host: 8080</span></code></pre></div></li>
+<li><p>変更後</p>
+<div class="sourceCode"><pre class="sourceCode ruby"><code class="sourceCode ruby">config.vm.network <span class="st">&quot;forwarded_port&quot;</span>, <span class="st">guest: </span><span class="dv">3000</span>, <span class="st">host: </span><span class="dv">3000</span>
+config.vm.network <span class="st">&quot;forwarded_port&quot;</span>, <span class="st">guest: </span><span class="dv">4567</span>, <span class="st">host: </span><span class="dv">4567</span></code></pre></div></li>
+</ol>
+<h3 id="sinatraアプリケーションの作成">Sinatraアプリケーションの作成</h3>
+<h4 id="sinatraを使った簡単なwebアプリケーション">Sinatraを使った簡単なWebアプリケーション</h4>
+<ol>
+<li><p>Sinatraとは？</p>
+<ul>
+<li>Webアプリケーションを作成するDSL</li>
+<li>Railsに比べ簡単で，学習曲線が緩やか</li>
+<li>素早くWebアプリを作ってHerokuで公開してみよう</li>
+</ul></li>
+<li><p>参考文献</p>
+<ul>
+<li><a href="http://www.sinatrarb.com/">Sinatra</a></li>
+<li><a href="http://www.sinatrarb.com/intro.html">Sinatra: README</a></li>
+</ul></li>
+</ol>
+<h4 id="sinatraアプリ用リポジトリを作成する">Sinatraアプリ用リポジトリを作成する</h4>
+<ul>
+<li>Sinatraアプリを作成するため，GitHubで新しいリポジトリを作る
+<ul>
+<li>名前は 「sinatra_enpit」とする</li>
+<li>できたらcloneする</li>
+</ul></li>
+</ul>
+<h4 id="sinatraアプリを作成する1">Sinatraアプリを作成する(1)</h4>
+<ul>
+<li>エディタを起動し，次のスライドにある 「hello.rb」のコードを入力</li>
+</ul>
+<ol>
+<li><p>コマンド</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">emacs</span> hello.rb
+<span class="fu">git</span> add hello.rb
+<span class="fu">git</span> commit -m <span class="st">&#39;Create hello.rb&#39;</span></code></pre></div></li>
+</ol>
+<h4 id="sinatraアプリを作成する2">Sinatraアプリを作成する(2)</h4>
+<ul>
+<li>Sinatraアプリ本体のコード（たった4行！）</li>
+</ul>
+<ol>
+<li><p>コード: <strong>hello.rb</strong></p>
+<div class="sourceCode"><pre class="sourceCode ruby"><code class="sourceCode ruby">require <span class="st">&#39;sinatra&#39;</span>
+
+get <span class="ch">&#39;/&#39;</span> <span class="kw">do</span>
+  <span class="st">&quot;Hello World!&quot;</span>
+<span class="kw">end</span></code></pre></div></li>
+</ol>
+<h4 id="sinatraアプリを起動する">Sinatraアプリを起動する</h4>
+<ul>
+<li>hello.rbをrubyで動かせば，サーバが立ち上がる
+<ul>
+<li>vagrantのport forwardを利用するため，「-o」オプションを指定する</li>
+</ul></li>
+</ul>
+<ol>
+<li><p>コマンド</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">ruby</span> hello.rb -o 0.0.0.0</code></pre></div></li>
+</ol>
+<h4 id="sinatraアプリの動作確認">Sinatraアプリの動作確認</h4>
+<ul>
+<li><strong>Host OS</strong> のWebブラウザで，http://localhost:4567 にアクセスする
+<ul>
+<li>「Hello World!」が表示されれば成功</li>
+</ul></li>
+<li>アクセスできない場合は <code>Vagrantfile</code> のPort Forwardの設定を見直すこと</li>
+</ul>
+<h4 id="sinatraのマニュアル">Sinatraのマニュアル</h4>
+<ul>
+<li><a href="http://sinatrarb.com/intro-ja.html" class="uri">http://sinatrarb.com/intro-ja.html</a></li>
+</ul>
+<h4 id="アプリをgithubにpushする">アプリをGitHubにpushする</h4>
+<ul>
+<li>GitHubにコードをpushしよう</li>
+</ul>
+<ol>
+<li><p>コマンド</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add .
+<span class="fu">git</span> commit -m <span class="st">&#39;My Sintra App&#39;</span>
+<span class="fu">git</span> push</code></pre></div></li>
+</ol>
+<h3 id="herokuでsinatraを動かす">HerokuでSinatraを動かす</h3>
+<h4 id="sinatraアプリのディプロイ">Sinatraアプリのディプロイ</h4>
+<ul>
+<li>SinatraアプリをHerokuで動作させてみよう</li>
+<li>Webアプリは世界中からアクセスできるようになる</li>
+<li>WebアプリをHeroku（などのアプリケーションサーバ）に 設置することを配備（Deploy）と言う</li>
+</ul>
+<h4 id="sinatraアプリをherokuで動かせるようにする">SinatraアプリをHerokuで動かせるようにする</h4>
+<ul>
+<li>SinatraアプリをHerokuで動作させるには， （少ないものの）追加の設定が必要
+<ul>
+<li>次スライドを見ながら，エディタを用いて，</li>
+</ul></li>
+</ul>
+<p>次の2つのファイルを作成する</p>
+<table>
+<thead>
+<tr class="header">
+<th>ファイル名</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>config.ru</code></td>
+<td>Webアプリサーバ（Rack）の設定</td>
+</tr>
+<tr class="even">
+<td><code>Gemfile</code></td>
+<td>他のメンバーやHeroku/Travis CIとで，</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Gemのバージョンを揃える</td>
+</tr>
+</tbody>
+</table>
+<h4 id="追加するコード">追加するコード</h4>
+<ol>
+<li><p>コード: <strong>config.ru</strong></p>
+<div class="sourceCode"><pre class="sourceCode ruby"><code class="sourceCode ruby">require <span class="st">&#39;./hello&#39;</span>
+run <span class="dt">Sinatra</span>::<span class="dt">Application</span></code></pre></div></li>
+<li><p>コード: <strong>Gemfile</strong></p>
+<div class="sourceCode"><pre class="sourceCode ruby"><code class="sourceCode ruby">source <span class="st">&#39;https://rubygems.org&#39;</span>
+gem <span class="st">&#39;sinatra&#39;</span></code></pre></div></li>
+</ol>
+<h4 id="関連するgemのインストール">関連するGemのインストール</h4>
+<ul>
+<li><code>Gemfile</code> の中身に基づき，必要なGem（ライブラリ）をダウンロードする
+<ul>
+<li><code>Gemfile.lock</code> というファイルができる</li>
+<li>このファイルもcommitの対象に含める</li>
+</ul></li>
+</ul>
+<ol>
+<li><p>コマンド</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">bundle</span> install</code></pre></div></li>
+</ol>
+<h4 id="アプリをgithubにpushする-1">アプリをGitHubにpushする</h4>
+<ul>
+<li>Herokuで動かす前に，commitが必要</li>
+</ul>
+<ol>
+<li><p>コマンド</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add .
+<span class="fu">git</span> commit -m <span class="st">&#39;Add configuration files for Heroku&#39;</span>
+<span class="fu">git</span> push</code></pre></div></li>
+</ol>
+<h4 id="herokuにアプリを作る">Herokuにアプリを作る</h4>
+<ol>
+<li><p>Herokuでの操作</p>
+<ul>
+<li>Heroku にログインする</li>
+<li>新しいアプリを作る</li>
+<li>GitHubと連携させる</li>
+<li>手動でディプロイする</li>
+<li>以降、GitHubにpushするとHerokuにも自動でディプロイされる</li>
+</ul></li>
+</ol>
+<h3 id="演習課題">演習課題</h3>
+<h4 id="演習課題4-1">演習課題4-1</h4>
+<ol>
+<li><p>Sinatraアプリの作成</p>
+<ul>
+<li>Sinatraアプリを作成して，Herokuで動作させなさい</li>
+<li>SinatraのDSLについて調べ，機能を追加しなさい</li>
+<li>コミットのログは詳細に記述し，どんな作業を行ったかが 他の人にも分かるようにしなさい</li>
+<li>完成したコードはGitHubにもpushしなさい</li>
+</ul></li>
+</ol>
+<h4 id="演習課題4-2-1">演習課題4-2 (1)</h4>
+<ol>
+<li><p>Sinatraアプリの共同開発</p>
+<ul>
+<li>グループメンバーでSinatraアプリを開発しなさい</li>
+<li>代表者がGitHubのリポジトリを作成し他のメンバーを Collaborators に追加する
+<ul>
+<li>他のメンバーは代表者のリポジトリをcloneする</li>
+</ul></li>
+<li>どんな機能をもたせるかをチームで相談しなさい
+<ul>
+<li>メンバーのスキルに合わせて，できるだけ簡単なもの（DBは使わない）</li>
+</ul></li>
+</ul></li>
+</ol>
+<h4 id="演習課題4-2-2">演習課題4-2 (2)</h4>
+<ol>
+<li><p>Sinatraアプリの共同開発（続き）</p>
+<ul>
+<li>慣れてきたらGitHub Flowをチームで回すことを目指す
+<ul>
+<li>ブランチを作成し，Pull Requestを送る</li>
+<li>他のメンバー（一人以上）からレビューを受けたら各自でマージ</li>
+</ul></li>
+<li>GitHubのURLとHerokuのURLを提出
+<ul>
+<li><a href="http://goo.gl/forms/p1SXNT2grM" class="uri">http://goo.gl/forms/p1SXNT2grM</a></li>
+</ul></li>
+</ul></li>
+</ol>
+<h1 id="part-3-ruby-on-railsheroku">Part 3: Ruby on Rails/Heroku</h1>
+<h2 id="第5章-ruby-on-railsアプリの開発">第5章 Ruby on Railsアプリの開発</h2>
+<h3 id="ruby-on-railsアプリの生成と実行">Ruby on Railsアプリの生成と実行</h3>
+<h4 id="rorを使ったwebアプリケーション">RoRを使ったWebアプリケーション</h4>
+<ol>
+<li><p>Ruby on Rails（RoR）とは？</p>
+<ul>
+<li>Webアプリケーションを作成するためのフレームワーク</li>
+</ul></li>
+<li><p>参考文献</p>
+<ul>
+<li><strong><a href="http://rubyonrails.org/">Ruby on Rails</a></strong></li>
+</ul></li>
+</ol>
+<h4 id="rails_enpit-アプリを作成する"><code>rails_enpit</code> アプリを作成する</h4>
+<ul>
+<li><code>rails</code> は予め，仮想化環境にインストールしてある</li>
+<li><code>rails new</code> コマンドを用いて，RoRアプリの雛形を作成する
+<ul>
+<li>コマンドは次スライド</li>
+</ul></li>
+</ul>
+<h4 id="rails_enpit-を作成するコマンド"><code>rails_enpit</code> を作成するコマンド</h4>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">rails</span> new ~/rails_enpit --database=postgresql
+<span class="bu">cd</span> ~/rails_enpit
+<span class="fu">git</span> init
+<span class="fu">git</span> create
+<span class="fu">git</span> add .
+<span class="fu">git</span> commit -m <span class="st">&#39;Generate a new rails app&#39;</span>
+<span class="fu">git</span> push -u origin master</code></pre></div>
+<h4 id="gemfileにjs用gemの設定">GemfileにJS用Gemの設定</h4>
+<ul>
+<li>GemfileにRails内部で動作するJavaScriptの実行環境を設定する
+<ul>
+<li>当該箇所のコメントを外す</li>
+</ul></li>
+</ul>
+<ol>
+<li><p>変更前</p>
+<div class="sourceCode"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span class="co"># gem &#39;therubyracer&#39;,  platforms: :ruby</span></code></pre></div></li>
+<li><p>変更後</p>
+<div class="sourceCode"><pre class="sourceCode ruby"><code class="sourceCode ruby">gem <span class="st">&#39;therubyracer&#39;</span>,  <span class="st">platforms: :ruby</span></code></pre></div></li>
+</ol>
+<h4 id="bundle-installの実行">Bundle installの実行</h4>
+<ul>
+<li>Gemfileを読み込み，必要なgemをインストールする
+<ul>
+<li><code>rails new</code> をした際にも， <code>bundle install</code> は実行されている</li>
+<li><code>therubyracer</code> と，それが依存しているgemで まだインストールしていないものをインストール</li>
+</ul></li>
+</ul>
+<ol>
+<li><p>コマンド</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> commit -a -m <span class="st">&#39;Run bundle install&#39;</span></code></pre></div></li>
+</ol>
+<h4 id="gemfile設定変更のコミット">Gemfile設定変更のコミット</h4>
+<ul>
+<li>ここまでの内容をコミットしておこう</li>
+</ul>
+<ol>
+<li><p>コマンド</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add .
+<span class="fu">git</span> commit -m <span class="st">&#39;Edit Gemfile to enable the rubyracer gem&#39;</span>
+<span class="fu">git</span> push -u origin master</code></pre></div></li>
+</ol>
+<h4 id="データベースの作成">データベースの作成</h4>
+<ul>
+<li>rails_enpitアプリの動作に必要なDBを作成する</li>
+<li>DatabeseはHerokuで標準のPostgreSQLを使用する
+<ul>
+<li>RoR標準のsqliteは使わない</li>
+</ul></li>
+<li>enPiT仮想環境にはPostgreSQLインストール済み</li>
+</ul>
+<h4 id="postgresqlにdbを作成">PostgreSQLにDBを作成</h4>
+<ol>
+<li><p>開発で利用するDB</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>rails_enpit_development</td>
+<td>開発作業中に利用</td>
+</tr>
+<tr class="even">
+<td>rails_enpit_test</td>
+<td>テスト用に利用</td>
+</tr>
+<tr class="odd">
+<td>(rails_enpit_production)</td>
+<td>（本番環境用）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>本番環境用DBは <strong>Herokuでのみ</strong> 用いる</li>
+</ul></li>
+<li><p>コマンド</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">createdb</span> rails_enpit_development
+<span class="ex">createdb</span> rails_enpit_test</code></pre></div></li>
+</ol>
+<h4 id="postgeresqlクライアントのコマンド">PostgereSQLクライアントのコマンド</h4>
+<ol>
+<li><p>クライアントの起動</p>
+<ul>
+<li><code>psql</code> コマンドでクライアントが起動</li>
+</ul></li>
+<li><p>psqlクライアンで利用できるコマンド</p>
+<table>
+<thead>
+<tr class="header">
+<th>Backslashコマンド</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>l</td>
+<td>DBの一覧</td>
+</tr>
+<tr class="even">
+<td>c</td>
+<td>DBに接続</td>
+</tr>
+<tr class="odd">
+<td>d</td>
+<td>リレーションの一覧</td>
+</tr>
+<tr class="even">
+<td>q</td>
+<td>終了</td>
+</tr>
+</tbody>
+</table></li>
+</ol>
+<h4 id="rails-serverの起動">Rails serverの起動</h4>
+<ul>
+<li>次のコマンドでアプリケーションを起動できる</li>
+</ul>
+<ol>
+<li><p>コマンド</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">bundle</span> exec rails server -b 0.0.0.0</code></pre></div></li>
+</ol>
+<h4 id="webアプリの動作確認">Webアプリの動作確認</h4>
+<ul>
+<li>Host OSのWebブラウザで， <code>http://localhost:3000</code> にアクセスして確認</li>
+<li>端末にもログが表示される</li>
+<li>確認したら，端末でCtrl-Cを押してサーバを停止する</li>
+</ul>
+<h3 id="controllerviewの作成">Controller/Viewの作成</h3>
+<h4 id="hello-worldを表示するcontroller">Hello Worldを表示するController</h4>
+<ul>
+<li>HTTPのリクエストを処理し，Viewに引き渡す
+<ul>
+<li>MVC構造でいうControllerである</li>
+</ul></li>
+<li><code>rails generate controller</code> コマンドで作成する</li>
+</ul>
+<ol>
+<li><p>コマンド</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">bundle</span> exec rails generate controller welcome</code></pre></div></li>
+</ol>
+<h4 id="生成されたcontrollerの確認とコミット">生成されたControllerの確認とコミット</h4>
+<ul>
+<li>git statusコマンドでどのようなコードができたか確認</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> status</code></pre></div>
+<ul>
+<li>Controllerのコードを作成した作業をコミット</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add .
+<span class="fu">git</span> commit -m <span class="st">&#39;Generate the welcome controller&#39;</span></code></pre></div>
+<h4 id="hello-worldを表示するview">Hello Worldを表示するView</h4>
+<ul>
+<li>HTML等で結果をレンダリングして表示する
+<ul>
+<li>erbで作成するのが一般的で，内部でRubyコードを動作させることができる</li>
+</ul></li>
+<li><code>app/views/welcome/index.html.erb</code> を（手動で）作成する
+<ul>
+<li>コードは次スライド</li>
+</ul></li>
+</ul>
+<h4 id="hello-worldを表示するviewのコード">Hello Worldを表示するViewのコード</h4>
+<ol>
+<li><p><strong>index.html.erb</strong></p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;h2&gt;</span>Hello World<span class="kw">&lt;/h2&gt;</span>
+<span class="kw">&lt;p&gt;</span>
+  The time is now: <span class="er">&lt;</span>%= Time.now %&gt;
+<span class="kw">&lt;/p&gt;</span></code></pre></div></li>
+</ol>
+<h4 id="作成したviewの確認とコミット">作成したViewの確認とコミット</h4>
+<ul>
+<li>git statusコマンドで変更内容を確認</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> status</code></pre></div>
+<ul>
+<li>Viewのコードを作成した作業をコミット</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add .
+<span class="fu">git</span> commit -m <span class="st">&#39;Add the welcome view&#39;</span></code></pre></div>
+<h4 id="routeの設定">routeの設定</h4>
+<ul>
+<li>Routeとは？</li>
+</ul>
+<ul>
+<li>HTTPのリクエスト（URL）とコントローラを紐付ける設定
+<ul>
+<li>ここでは <code>root</code> へのリクエスト（ <code>GET /</code> ）を</li>
+</ul></li>
+</ul>
+<p><code>welcome</code> コントローラの <code>index</code> メソッドに紐付ける</p>
+<ul>
+<li><code>config/routes.rb</code> の当該箇所をアンコメント</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode ruby"><code class="sourceCode ruby">root <span class="st">&#39;welcome#index&#39;</span></code></pre></div>
+<ul>
+<li><code>bundle exec rake routes</code> コマンドで確認できる</li>
+</ul>
+<h4 id="routes.rbの設定変更の確認">routes.rbの設定変更の確認</h4>
+<ul>
+<li><code>routes.rb</code> は既にトラッキングされているので， git diffコマンドで変更内容を確認できる</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> diff</code></pre></div>
+<ul>
+<li>routes.rbを変更した作業をコミット</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add .
+<span class="fu">git</span> commit -m <span class="st">&#39;Edit routes.rb for the root controller&#39;</span></code></pre></div>
+<h4 id="controllerとviewの動作確認">ControllerとViewの動作確認</h4>
+<ul>
+<li>再度， <code>rails server</code> でアプリを起動し，動作を確認しよう</li>
+<li>Webブラウザで <code>http://localhost:3000/</code> を開ぐ</li>
+</ul>
+<ol>
+<li><p>コマンド</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">bundle</span> exec rails server -b 0.0.0.0</code></pre></div></li>
+</ol>
+<h4 id="githubへのpush">GitHubへのPush</h4>
+<ul>
+<li>ここまでの作業で，controllerとviewを1つ備えるRoRアプリができた</li>
+<li>作業が一区切りしたので，GitHubへのpushもしておく
+<ul>
+<li>一連の作業を <code>git log</code> コマンドで確認してみると良い</li>
+</ul></li>
+</ul>
+<ol>
+<li><p>コマンド</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> push</code></pre></div></li>
+</ol>
+<h3 id="herokuにディプロイする">Herokuにディプロイする</h3>
+<h4 id="rorをherokuで動かす">RoRをHerokuで動かす</h4>
+<ul>
+<li>作成しとRoRアプリをHerokuで動作させよう</li>
+</ul>
+<ol>
+<li><p>Getting Started</p>
+<ul>
+<li><strong><a href="https://devcenter.heroku.com/articles/getting-started-with-rails4">Getting Started with Rails 4.x on Heroku</a></strong></li>
+</ul></li>
+</ol>
+<h4 id="heroku用設定をgemfileに追加">Heroku用設定をGemfileに追加</h4>
+<ul>
+<li><code>Gemfile</code> に <code>rails_12factor</code> を追加する</li>
+<li>Rubyのバージョンも指定しておく</li>
+<li><code>Gemfile</code> を変更したら必ず <code>bundle install</code> すること</li>
+</ul>
+<ol>
+<li><p><code>Gemfile</code> に追加する内容</p>
+<div class="sourceCode"><pre class="sourceCode ruby"><code class="sourceCode ruby">gem <span class="st">&#39;rails_12factor&#39;</span>, <span class="st">group: :production</span>
+ruby <span class="st">&#39;2.2.5&#39;</span></code></pre></div></li>
+</ol>
+<h4 id="productionを除いたbundle-install">productionを除いたbundle install</h4>
+<ul>
+<li><code>rils_12factor</code> は開発時には利用しない
+<ul>
+<li><code>Gemfile</code> では「 <code>group: production</code> 」を指定してある</li>
+</ul></li>
+<li>次のコマンドでproduction以外のGemをインストール</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">bundle</span> install --without production</code></pre></div>
+<ul>
+<li>このオプションは記憶されるので， 2回目以降 <code>--without production</code> は不要</li>
+</ul>
+<h4 id="デプロイ前にgitにコミット">デプロイ前にGitにコミット</h4>
+<ul>
+<li>Herokuにコードを送るには，gitを用いる
+<ul>
+<li>従って，最新版をcommitしておく必要がある</li>
+</ul></li>
+<li>commitし，まずはGitHubにpushしておく</li>
+</ul>
+<ol>
+<li><p>コマンド</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> commit -a -m <span class="st">&#39;Set up for Heroku&#39;</span>
+<span class="fu">git</span> push</code></pre></div>
+<ul>
+<li>2行目: pushする先はorigin（=GitHub）である</li>
+</ul></li>
+</ol>
+<h4 id="herokuアプリの作成とディプロイ">Herokuアプリの作成とディプロイ</h4>
+<ul>
+<li><code>heroku</code> コマンドを利用してアプリを作成する</li>
+</ul>
+<ol>
+<li><p>コマンド</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">heroku</span> create
+<span class="fu">git</span> push heroku master</code></pre></div>
+<ul>
+<li>1行目: <code>heroku create</code> で表示されたURLを開く</li>
+<li>2行目: <code>git push</code> はherokuのmasterを指定． ディプロイすると，Herokuからのログが流れてくる</li>
+</ul></li>
+</ol>
+<h3 id="演習課題-1">演習課題</h3>
+<h4 id="演習課題6">演習課題6</h4>
+<ol>
+<li><p>RoRアプリの作成</p>
+<ul>
+<li>ここまでの説明に従い，Herokuで動作するRoRアプリ（ <code>rails_enpit</code> ）を完成させなさい</li>
+</ul></li>
+</ol>
+<h2 id="第6章-dbを使うアプリの開発と継続的統合">第6章 DBを使うアプリの開発と継続的統合</h2>
+<h3 id="dbとscaffoldの作成">DBとScaffoldの作成</h3>
+<h4 id="scaffold">Scaffold</h4>
+<ol>
+<li><p>Scaffoldとは</p>
+<ul>
+<li><a href="https://www.google.co.jp/search?q=scaffold&amp;client=ubuntu&amp;hs=PiK&amp;channel=fs&amp;hl=ja&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=smUdVKaZKY7s8AXew4LwDw&amp;ved=0CAgQ_AUoAQ&amp;biw=1195&amp;bih=925">scaffold - Google 検索</a></li>
+</ul></li>
+<li><p>RoRでは，MVCの雛形のこと</p>
+<ul>
+<li>CRUD処理が全て自動で実装される</li>
+</ul></li>
+</ol>
+<h4 id="scaffoldの生成方法">Scaffoldの生成方法</h4>
+<ol>
+<li><p>コマンド</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> checkout -b books
+<span class="ex">bundle</span> exec rails generate scaffold book title:string author:string</code></pre></div>
+<ul>
+<li>多くのコードが自動生成されるので，branchを切っておくと良い
+<ul>
+<li>動作が確認できたらbranchをマージ</li>
+<li>うまく行かなかったらbranchごと削除すれば良い</li>
+</ul></li>
+</ul></li>
+</ol>
+<h4 id="routeの確認">routeの確認</h4>
+<ul>
+<li>Scaffoldの生成で追加されたルーティングの設定を確認</li>
+</ul>
+<ol>
+<li><p>コマンド</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">bundle</span> exec rake routes</code></pre></div>
+<ul>
+<li><code>git diff</code> でも確認してみよう</li>
+</ul></li>
+</ol>
+<h4 id="dbのmigrate">DBのMigrate</h4>
+<ol>
+<li><p>migrateとは</p>
+<ul>
+<li>Databaseのスキーマ定義の更新</li>
+<li>Scaffoldを追加したり，属性を追加したりした際に行う</li>
+</ul></li>
+<li><p>コマンド</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">bundle</span> exec rake db:migrate</code></pre></div></li>
+</ol>
+<h4 id="参考migrateの取り消しの方法">参考：Migrateの取り消しの方法</h4>
+<ul>
+<li>DBのmigrationを取り消したいときは次のコマンドで取り消せる</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">bundle</span> exec rake db:rollback</code></pre></div>
+<ul>
+<li>再度，migrateすれば再実行される</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">bundle</span> exec rake db:migrate</code></pre></div>
+<h4 id="参考scaffold作成の取り消しの方法">参考：Scaffold作成の取り消しの方法</h4>
+<ol>
+<li><p>コマンド</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add .
+<span class="fu">git</span> commit -m <span class="st">&#39;Cancel&#39;</span>
+<span class="fu">git</span> checkout master
+<span class="fu">git</span> branch -D books</code></pre></div>
+<ul>
+<li>1〜2行目：自動生成されたScaffoldのコードをbranchに一旦コミット</li>
+<li>3行目：masterブランチに移動</li>
+<li>4行目：branchを削除（ <strong><code>-D</code></strong> オプション使用 ）</li>
+</ul></li>
+</ol>
+<h4 id="動作確認">動作確認</h4>
+<ol>
+<li><p>動作確認の方法</p>
+<ul>
+<li>Webブラウザで <a href="http://localhost:3000/books" class="uri">http://localhost:3000/books</a> を開く</li>
+<li>CRUD処理が完成していることを確かめる</li>
+</ul></li>
+<li><p>コマンド</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">bundle</span> exec rails server</code></pre></div></li>
+</ol>
+<h4 id="完成したコードをマージ">完成したコードをマージ</h4>
+<ol>
+<li><p>ブランチをマージ</p>
+<ul>
+<li>動作確認できたので， <code>books</code> branchをマージする</li>
+<li>不要になったブランチは， <code>git branch -d</code> で削除する</li>
+</ul></li>
+<li><p>コマンド</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add .
+<span class="fu">git</span> commit -m <span class="st">&#39;Generate books scaffold&#39;</span>
+<span class="fu">git</span> checkout master
+<span class="fu">git</span> merge books
+<span class="fu">git</span> branch -d books</code></pre></div></li>
+</ol>
+<h4 id="herokuにディプロイ">Herokuにディプロイ</h4>
+<ol>
+<li><p>ディプロイ</p>
+<ul>
+<li>ここまでのアプリをディプロイする</li>
+<li>herokuにあるdbもmigrateする</li>
+<li>Webブラウザで動作確認する</li>
+</ul></li>
+<li><p>設定ファイル(Procfile)</p>
+<pre><code>release: bundle exec rake db:migrate
+web: bundle exec rails server -p $PORT
+</code></pre></li>
+</ol>
+<h3 id="rorアプリのテスト">RoRアプリのテスト</h3>
+<h4 id="テストについて">テストについて</h4>
+<ol>
+<li><p>ガイド</p>
+<ul>
+<li><a href="http://guides.rubyonrails.org/testing.html">A Guide to Testing Rails Applications — Ruby on Rails Guides</a></li>
+</ul></li>
+</ol>
+<h4 id="テストの実行">テストの実行</h4>
+<ol>
+<li><p>テストコード</p>
+<ul>
+<li>Scaffoldはテストコードも作成してくれる</li>
+<li>テスト用のDB（ <code>rails_enpit_test</code> ）が更新される</li>
+</ul></li>
+<li><p>コマンド</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">bundle</span> exec rake test</code></pre></div></li>
+</ol>
+<h3 id="travis-ciとの連携">Travis CIとの連携</h3>
+<h4 id="travis-ciのアカウント作成">Travis CIのアカウント作成</h4>
+<ol>
+<li><p>アカウントの作り方</p>
+<ul>
+<li>次のページにアクセスし，画面右上の「Sign in with GitHub」のボタンを押す
+<ul>
+<li><a href="https://travis-ci.org/">Travis CI - Free Hosted Continuous Integration Platform for the Open Source Community</a></li>
+</ul></li>
+<li>GitHubの認証ページが出るので，画面下部にある緑のボタンを押す</li>
+<li>Travis CIから確認のメールが来るので，確認する</li>
+</ul></li>
+</ol>
+<h4 id="travisの設定">Travisの設定</h4>
+<ol>
+<li><p>設定ファイルの変更</p>
+<ul>
+<li>まず、Rubyのバージョンを指定する</li>
+<li>変更の際はYAMLのインデントに注意する</li>
+</ul></li>
+<li><p>.travis.yml を書き換える</p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="fu">language:</span><span class="at"> ruby</span>
+<span class="fu">rvm:</span>
+<span class="kw">-</span> 2.2.5</code></pre></div></li>
+</ol>
+<h4 id="travis用db設定ファイルと作成">Travis用DB設定ファイルと作成</h4>
+<ul>
+<li>RubyのVersionなど</li>
+<li>テストDB用の設定ファイルを追加する</li>
+</ul>
+<ol>
+<li><p><code>.travis.yml</code></p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="fu">language:</span><span class="at"> ruby</span>
+<span class="fu">rvm:</span>
+<span class="kw">-</span> 2.2.5
+<span class="fu">services:</span><span class="at"> postgresql</span>
+<span class="fu">bundler_args:</span><span class="at"> </span><span class="st">&quot;--without development --deployment -j4&quot;</span>
+<span class="fu">cache:</span><span class="at"> bundler</span>
+<span class="fu">before_script:</span>
+  <span class="kw">-</span> cp config/database.travis.yml config/database.yml
+  <span class="kw">-</span> <span class="fu">bundle exec rake db:</span><span class="at">create</span>
+  <span class="kw">-</span> <span class="fu">bundle exec rake db:</span><span class="at">migrate</span>
+<span class="fu">script:</span><span class="at"> bundle exec rake test</span></code></pre></div></li>
+<li><p><code>config/database.travis.yml</code></p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="fu">test:</span>
+  <span class="fu">adapter:</span><span class="at"> postgresql</span>
+  <span class="fu">database:</span><span class="at"> travis_ci_test</span>
+  <span class="fu">username:</span><span class="at"> postgres</span></code></pre></div></li>
+</ol>
+<h4 id="githubとtravis-ci連携">GitHubとTravis CI連携</h4>
+<ol>
+<li><p>説明</p>
+<ul>
+<li>ここまでの設定で，GitHubにpushされたコードはTravis CIでテストされるようになった．</li>
+<li>GitHubにプッシュしてWebブラウザでTravis CIを開いて確認する</li>
+</ul></li>
+<li><p>コマンド</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add .
+<span class="fu">git</span> commit -m <span class="st">&#39;Configure Travis CI&#39;</span>
+<span class="fu">git</span> push</code></pre></div></li>
+</ol>
+<h4 id="ci通過後のherokuへの自動deploy">CI通過後のHerokuへの自動deploy</h4>
+<ol>
+<li><p>HerokuへのDeploy</p>
+<ul>
+<li>テストが通れば，自動でHerokuに配備されるように、Herokuに設定を追加する</li>
+</ul></li>
+</ol>
+<h3 id="演習課題-2">演習課題</h3>
+<h4 id="演習課題7-1">演習課題7-1</h4>
+<ol>
+<li><p><code>rails_enpit</code> の拡張</p>
+<ul>
+<li>Viewを変更
+<ul>
+<li>welcomeコントローラのviewから， booksコントローラのviewへのリンクを追加する etc</li>
+</ul></li>
+<li>Scaffoldの追加
+<ul>
+<li>任意のScaffoldを追加してみなさい</li>
+<li>DBのmigrationを行い，動作確認しなさい</li>
+</ul></li>
+<li>Herokuへの配備
+<ul>
+<li>Travis経由でHerokuへdeployできるようにする</li>
+</ul></li>
+</ul></li>
+</ol>
+<h1 id="補足資料">補足資料</h1>
+<h2 id="補足資料-1">補足資料</h2>
+<h3 id="vagrant関連">Vagrant関連</h3>
+<h4 id="vagrantの補足">Vagrantの補足</h4>
+<ol>
+<li><p>仮想環境とのファイル共有</p>
+<ul>
+<li>Guest OS内に <code>/vagrant</code> という共有フォルダがある</li>
+<li>このフォルダはHost OSからアクセスできる</li>
+<li>場所はVagrantfileがあるフォルダ</li>
+<li>共有したいファイル（画像など）をここに置く</li>
+</ul></li>
+</ol>
+<h3 id="git関連">Git関連</h3>
+<h4 id="gitの補足">Gitの補足</h4>
+<ol>
+<li><p>元いたbranchに素早く戻る方法</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> checkout other_branch <span class="co"># masterで</span>
+<span class="co"># 編集作業とcommit</span>
+<span class="fu">git</span> checkout - <span class="co"># masterに戻る</span></code></pre></div></li>
+<li><p>Git brame</p>
+<ul>
+<li>だれがどの作業をしたかわかる（誰がバグを仕込んだのかも）
+<ul>
+<li><a href="https://help.github.com/articles/using-git-blame-to-trace-changes-in-a-file">Using git blame to trace changes in a file · GitHub Help</a></li>
+</ul></li>
+</ul></li>
+</ol>
+<h4 id="バイナリのコンフリクト1">バイナリのコンフリクト(1)</h4>
+<ul>
+<li>git mergeでバイナリファイルがコンフリクトした場合、 ファイルはgit merge実行前のままとなります<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>。</li>
+<li>以下を実行してコンフリクトが発生したとします。</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> checkout master
+<span class="fu">git</span> merge branch_aaa</code></pre></div>
+<h4 id="バイナリのコンフリクト2">バイナリのコンフリクト(2)</h4>
+<ul>
+<li>そのままにしたいとき(=masterを採用）は</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> checkout --ours <span class="op">&lt;</span>binaryfile<span class="op">&gt;</span> <span class="co">#明示的な実行は不要</span>
+<span class="fu">git</span> add <span class="op">&lt;</span>binaryfile<span class="op">&gt;</span>
+<span class="fu">git</span> commit</code></pre></div>
+<ul>
+<li>branch_aaaのファイルを採用したいときは</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> checkout --theirs <span class="op">&lt;</span>binaryfile<span class="op">&gt;</span>
+<span class="fu">git</span> add <span class="op">&lt;</span>binaryfile<span class="op">&gt;</span>
+<span class="fu">git</span> commit</code></pre></div>
+<h4 id="hubコマンドについて">Hubコマンドについて</h4>
+<ul>
+<li>enPiT環境にはHubコマンドが仕込んである
+<ul>
+<li><a href="https://github.com/github/hub">github/hub</a></li>
+</ul></li>
+<li>通常のGitの機能に加えて，GitHub用のコマンドが利用できる
+<ul>
+<li>コマンド名は「git」のまま（エイリアス設定済み）</li>
+</ul></li>
+<li>確認方法</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> version
+<span class="bu">alias</span> git</code></pre></div>
+<h3 id="github関連">GitHub関連</h3>
+<h4 id="githubの補足1">GitHubの補足(1)</h4>
+<ol>
+<li><p>Issue</p>
+<ul>
+<li>課題管理（ITS: Issue Tracking System）</li>
+<li>コミットのメッセージでcloseできる
+<ul>
+<li><a href="https://help.github.com/articles/closing-issues-via-commit-messages">Closing issues via commit messages · GitHub Help</a></li>
+</ul></li>
+</ul></li>
+<li><p>Wiki</p>
+<ul>
+<li>GitHubのリポジトリにWikiを作る
+<ul>
+<li><a href="https://help.github.com/articles/about-github-wikis">About GitHub Wikis · GitHub Help</a></li>
+</ul></li>
+</ul></li>
+</ol>
+<h4 id="githubの補足2">GitHubの補足(2)</h4>
+<ol>
+<li><p>GitHub Pages</p>
+<ul>
+<li>特殊なブランチを作成すると，Webページが構築できる
+<ul>
+<li><a href="https://pages.github.com/">GitHub Pages</a></li>
+</ul></li>
+</ul></li>
+</ol>
+<h3 id="heroku関連">Heroku関連</h3>
+<h4 id="herokuの補足">Herokuの補足</h4>
+<ol>
+<li><p>HerokuのアプリのURL確認</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">heroku</span> apps:info</code></pre></div></li>
+<li><p><code>rails generate</code> などが動かない</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">spring</span> stop</code></pre></div></li>
+</ol>
+<h3 id="travis-ci関連">Travis CI関連</h3>
+<h4 id="travis-ciの補足">Travis CIの補足</h4>
+<ol>
+<li><p>Status Image</p>
+<ul>
+<li>README.mdを編集し，Travisのテスト状況を表示するStatus Imageを追加する</li>
+<li><a href="http://docs.travis-ci.com/user/status-images/">Travis CI: Status Images</a></li>
+</ul></li>
+<li><p>Deploy後、自動で heroku の db:migrate</p>
+<ul>
+<li>次のURLの「Running-commands」の箇所を参照
+<ul>
+<li><a href="http://docs.travis-ci.com/user/deployment/heroku/">Heroku Deployment - Travis CI</a></li>
+</ul></li>
+</ul></li>
+</ol>
+<h4 id="sinatraでテストを実行可能に">Sinatraでテストを実行可能に</h4>
+<ul>
+<li><code>Gemfile</code> に <code>rake</code> を追加する</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">gem</span> <span class="st">&#39;rake&#39;</span></code></pre></div>
+<ul>
+<li><code>Rakefile</code> を作成する</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode ruby"><code class="sourceCode ruby">task <span class="st">:default</span> =&gt; <span class="st">:test</span>
+
+require <span class="st">&#39;rake/testtask&#39;</span>
+
+<span class="dt">Rake</span>::<span class="dt">TestTask</span>.new <span class="kw">do</span> |t|
+  t.pattern = <span class="st">&quot;./*_test.rb&quot;</span>
+<span class="kw">end</span></code></pre></div>
+<h4 id="travxs-setup-のトラブル"><span class="todo TODO">TODO</span> =travxs setup= のトラブル</h4>
+<ul>
+<li>次のようなトラブルが発生することがある
+<ul>
+<li><a href="https://github.com/ychubachi/collaborative_development/issues/17">TravisとGitHubのリポジトリの同期 · Issue #17</a></li>
+<li><a href="https://github.com/ychubachi/collaborative_development/issues/18">楽天APIサンプルのfork · Issue #18</a></li>
+</ul></li>
+<li>Travis CIからHerokuにディプロイするのではなく， HerokuからGitHubを監視させるようにしたほうがよいかも・・・</li>
+</ul>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p><a href="https://github.com/ychubachi/collaborative_development/issues/6">git mergeでバイナリファイルがコンフリクトした場合 · Issue #6</a><a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
