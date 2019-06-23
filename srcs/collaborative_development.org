@@ -1,9 +1,3 @@
-#+STARTUP: overview hidestars
-#+TITLE: コラボレイティブ開発特論
-#+AUTHOR: 産業技術大学院大学 \linebreak 中鉢 欣秀
-#+DATE: 2018年度
-#+OPTIONS: H:4 ^:nil
-
 * Part 1: ガイダンスとモダンな道具達
 ** 第1章 ガイダンス
 *** 連絡事項

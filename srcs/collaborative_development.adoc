@@ -1,29 +1,16 @@
-[[part-1-ガイダンスとモダンな道具達]]
-Part 1: ガイダンスとモダンな道具達
-----------------------------------
+== Part 1: ガイダンスとモダンな道具達
 
-[[第1章-ガイダンス]]
-第1章 ガイダンス
-~~~~~~~~~~~~~~~~
+=== 第1章 ガイダンス
 
-[[連絡事項]]
-連絡事項
-^^^^^^^^
+==== 連絡事項
 
-[[連絡事項1]]
-連絡事項(1)
-+++++++++++
-
-1.  資料等の入手先
+. 連絡事項(1)
+.. 資料等の入手先
 * GitHubの下記リポジトリにまとめておきます
 ** https://github.com/ychubachi/collaborative_development
 * 資料は随時updateするので，適宜，最新版をダウンロードしてください
-
-[[連絡事項2]]
-連絡事項(2)
-+++++++++++
-
-1.  仮想環境（Vagrant）
+. 連絡事項(2)
+.. 仮想環境（Vagrant）
 * 各自のPCに仮想環境をインストールしておいてください
 * インストールするソフトウェア
 * Git
@@ -33,173 +20,196 @@ Part 1: ガイダンスとモダンな道具達
 * Vagrant
 ** https://www.vagrantup.com/
 
-[[授業の全体像]]
-授業の全体像
-^^^^^^^^^^^^
+==== 授業の全体像
 
-[[学習の目的]]
-学習の目的
-++++++++++
-
+. 学習の目的
 * ビジネスアプリケーションを構築するための基礎力
 * 分散型PBLを実施する上で必要となる知識やツールの使い方
 * これら活用するための自己組織的なチームワーク
-
-[[学習の目標]]
-学習の目標
-++++++++++
-
+. 学習の目標
 * 分散ソフトウェア開発のための道具を学ぶ
 ** 開発環境（Ruby），VCSとリモートリポジトリ（GitHub）
 ** テスト自動化，継続的インテグレーション，PaaS
 * これらのツールの *設計思想* に対する本質理解
-
-[[前提知識と到達目標]]
-前提知識と到達目標
-++++++++++++++++++
-
-1.  前提とする知識
+. 前提知識と到達目標
+.. 前提とする知識
 * 情報系の学部レベルで基礎的な知識を持っていること
-2.  最低到達目標
+.. 最低到達目標
 * 授業で取り上げる各種ツールの基本的な使い方を身につける
-3.  上位到達目標
+.. 上位到達目標
 * 授業で取り上げる各種ツールの高度な使い方に習熟する．
-
-[[授業の形態]]
-授業の形態
-++++++++++
-
-1.  対面授業
+. 授業の形態
+.. 対面授業
 * 担当教員による講義・演習
-2.  個人演習
+.. 個人演習
 * 個人によるソフトウエア開発
-3.  グループ演習
+.. グループ演習
 * グループによるソフトウエア開発
 
-[[授業の方法]]
-授業の方法
-^^^^^^^^^^
+==== 授業の方法
 
-[[講義演習課題]]
-講義・演習・課題
-++++++++++++++++
-
-1.  講義
+. 講義・演習・課題
+.. 講義
 * ツールの説明
 * ツールの使い方
-2.  演習
+.. 演習
 * 個人でツールを使えるようになる
 * グループでツールを使えるようになる
-
-[[成績評価]]
-成績評価
-++++++++
-
-1.  課題
+. 成績評価
+.. 課題
 * 個人でソフトウエアを作る
 * グループでソフトウエアを作る
-2.  評価の方法
+.. 評価の方法
 * 課題提出と実技試験
-3.  評価の観点
+.. 評価の観点
 * 分散PBLで役に立つ知識が習得できたかどうか
++
+==== 自己紹介
++
+===== 自己紹介
++
+====== 名前
+* 中鉢 欣秀（ちゅうばち よしひで）
++
+====== 出身地
+* 宮城県仙台市
++
+====== 肩書
+* 産業技術大学院大学 産業技術研究科 \\ 情報アーキテクチャ専攻 准教授
++
+===== 連絡先
++
+E-Mail::
+  yc@aiit…
+Facebook::
+  ychubachi
+Twitter::
+  ychubachi （あんまり使ってない）
+Skype::
+  ychubachi （あんまり使ってない）
++
+===== 学歴
++
+[cols=",,",]
+|===
+|1991年 |4月 |慶應義塾大学環境情報学部 入学
+|1995年 |*10月* |同大大学院 政策・メディア研究科
+| | |修士課程 入学
+|1997年 |10月 |同大大学院 政策・メディア研究科
+| | |後期博士課程 入学
+|2004年 |10月 |同大大学院 政策・メディア研究科
+| | |後期博士課程 卒業
+| | |学位：博士（政策・メディア）
+|===
++
+===== 職歴
++
+[cols=",,",]
+|===
+|1997年 |10月 |合資会社ニューメリック設立
+| | |*社長就任*
+|2005年 |4月 |独立行政法人科学技術振興機構
+| | |PD級研究員
+| | |（長岡技術科学大学）
+|2006年 |4月 |産業技術大学院大学 産業技術研究科
+| | |情報アーキテクチャ専攻 准教授
+|===
++
+===== 起業経験
++
+====== 社名
+* 合資会社ニューメリック
++
+====== 設立
+* 1997年
++
+====== 資本金
+* *18万円*
++
+===== 起業の背景
++
+====== 設立当時の状況
+* Windows 95が普及（初期状態でインターネットは使えなかった）
+* 後輩のやっていたベンチャーの仕事を手伝って面白かった
++
+====== 会社設立の理由
+* 「やってみたかった」から
+* 少しプログラムがかければ仕事はいくらでもあった
+* 後輩にそそのかされた・笑
++
+===== 起業から学んだこと
+* 実プロジェクトの経験
+* 使える技術
+* お金は簡単には儲からない
++
+===== 教育における関心事
++
+====== 情報技術産業の変化
+* 情報技術のマーケットが変化
+* ユーザ・ベンダ型モデルの終焉
++
+====== モダンなソフトウエア開発者
+* 新しいサービスの企画から，ソフトウエアの実装まで何でもこなせる開発者
+* このような人材の育成方法
 
-[[学びの共同体になろう]]
-「学びの共同体」になろう
-^^^^^^^^^^^^^^^^^^^^^^^^
+==== 「学びの共同体」になろう
 
-[[共に学び共に教える場]]
-共に学び、共に教える「場」
-++++++++++++++++++++++++++
-
+. 共に学び、共に教える「場」
 * 教室に集うメンバーで *学びの共同体* になろう
 * 困った時には助けを求める
 * 他人に教えること＝学び
-
-[[チーム演習での問題解決理想の流れ]]
-チーム演習での問題解決（理想の流れ）
-++++++++++++++++++++++++++++++++++++
-
-1.  困った時はメンバーに聞く
-2.  わからなかったらチーム全員で考える
-3.  それでもダメなら他のチームに相談
-4.  講師・コーチに尋ねるのは最終手段！
-5.  …となるのが理想
-
+. チーム演習での問題解決（理想の流れ）
+.. 困った時はメンバーに聞く
+.. わからなかったらチーム全員で考える
+.. それでもダメなら他のチームに相談
+.. 講師・コーチに尋ねるのは最終手段！
+.. …となるのが理想
 * 授業の進め方などの質問は遠慮無く聞いてください
-
-[[共同体になるためにお互いを知ろう]]
-共同体になるためにお互いを知ろう
-++++++++++++++++++++++++++++++++
-
+. 共同体になるためにお互いを知ろう
 * 皆さんの自己紹介
 ** 名前（可能であれば所属も）
 ** どんな仕事をしているか（あるいは大学で学んだこと）
 ** この授業を履修した動機
 
-[[第2章-コラボレイティブ開発の道具達]]
-第2章 コラボレイティブ開発の道具達
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== 第2章 コラボレイティブ開発の道具達
 
-[[モダンなソフトウエア開発とは]]
-モダンなソフトウエア開発とは
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== モダンなソフトウエア開発とは
 
-[[ソフトウエア開発のための方法言語道具]]
-ソフトウエア開発のための方法・言語・道具
-++++++++++++++++++++++++++++++++++++++++
-
+. ソフトウエア開発のための方法・言語・道具
++
 ./figures/FLT_framework.pdf
-
-[[授業で取り上げる範囲]]
-授業で取り上げる範囲
-++++++++++++++++++++
-
-1.  取り上げること
+. 授業で取り上げる範囲
+.. 取り上げること
 * 良い道具には設計思想そのものに方法論が組み込まれている
 * 世界中の技術者の知恵が結晶した成果としてのOSSのツール
-2.  取り扱わないこと
+.. 取り扱わないこと
 * 方法論そのものについてはアジャイル開発特論で学ぶ
 * プログラミングの初歩については教えない
-
-[[scrumするためのモダンな道具たち]]
-Scrumするためのモダンな道具たち
-+++++++++++++++++++++++++++++++
-
+. Scrumするためのモダンな道具たち
++
 ./figures/tools.pdf
-
-[[モダンな開発環境の全体像]]
-モダンな開発環境の全体像
-++++++++++++++++++++++++
-
-1.  仮想化技術（Virtualization）
+. モダンな開発環境の全体像
+.. 仮想化技術（Virtualization）
 * WindowsやMacでLinux上でのWebアプリケーション開発を学ぶことができる
 * HerokuやTravis CI等のクラウドでの実行や検査環境として用いられている
-2.  ソーシャルコーディング（Social Coding）
+.. ソーシャルコーディング（Social Coding）
 * LinuxのソースコードのVCSとして用いられているGitを学ぶ
 * GitはGitHubと連携することでOSS型のチーム開発ができる
-
-[[enpit仮想化環境]]
-enPiT仮想化環境
-+++++++++++++++
-
-1.  仮想環境にインストール済みの道具
+. enPiT仮想化環境
+.. 仮想環境にインストール済みの道具
 * エディタ（Emacs/Vim）
 * Rubyの実行環境
 * GitHub，Heroku，Travis
 CIと連携するための各種コマンド（github-connect.sh，hub，heroku，travis）
 * PostgreSQLのクライアント・サーバーとDB
-* 各種設定ファイル（.bash_profile，.gemrc，.gitconfig）
+* 各種設定ファイル（.bash~profile~，.gemrc，.gitconfig）
 * その他
-2.  仮想化環境の構築用リポジトリ（参考）
-* https://github.com/ychubachi/vagrant_enpit[ychubachi/vagrant_enpit]
-
-[[enpit仮想化環境にログイン]]
-enPiT仮想化環境にログイン
-+++++++++++++++++++++++++
-
-1.  作業内容
+.. 仮想化環境の構築用リポジトリ（参考）
+* https://github.com/ychubachi/vagrant_enpit[ychubachi/vagrant~enpit~]
+. enPiT仮想化環境にログイン
+.. 作業内容
 * 前の操作に引き続き，仮想化環境にSSH接続する
-2.  コマンド
+.. コマンド
 +
 [source,bash]
 ----
@@ -207,76 +217,49 @@ vagrant up
 vagrant ssh
 ----
 
-[[part-2-gitgithub演習別資料]]
-Part 2: Git/GitHub演習（別資料）
---------------------------------
+== Part 2: Git/GitHub演習（別資料）
 
-[[第3章-gitgithub演習]]
-第3章 Git/GitHub演習
-~~~~~~~~~~~~~~~~~~~~
+=== 第3章 Git/GitHub演習
 
-[[gitgithub演習の解説と演習]]
-Git/GitHub演習の解説と演習
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Git/GitHub演習の解説と演習
 
-[[gitgithub演習について]]
-Git/GitHub演習について
-++++++++++++++++++++++
-
-1.  Git/GitHub演習
+. Git/GitHub演習について
+.. Git/GitHub演習
 +
 GitとGitHubにとことん精通しよう
-2.  演習資料
+.. 演習資料
 +
-https://github.com/ychubachi/github_practice[ychubachi/github_practice:
+https://github.com/ychubachi/github_practice[ychubachi/github~practice~:
 Git/GitHub演習]
 
-[[part-3-sinatraheroku]]
-Part 3: Sinatra/Heroku
-----------------------
+== Part 3: Sinatra/Heroku
 
-[[第4章-sinatraでwebアプリを作ろう]]
-第4章 SinatraでWebアプリを作ろう
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== 第4章 SinatraでWebアプリを作ろう
 
-[[クラウド環境のアカウント設定]]
-クラウド環境のアカウント・設定
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== クラウド環境のアカウント・設定
 
-[[githubherokuのアカウントを作成]]
-GitHub/Herokuのアカウントを作成
-+++++++++++++++++++++++++++++++
-
-1.  GitHub
+. GitHub/Herokuのアカウントを作成
+.. GitHub
 * https://github.com/join[Join GitHub · GitHub]
-2.  Heroku
+.. Heroku
 * https://id.heroku.com/signup[Heroku - Sign up]
 
-[[仮想環境の準備から起動]]
-仮想環境の準備から起動
-^^^^^^^^^^^^^^^^^^^^^^
+==== 仮想環境の準備から起動
 
-[[port-forwardの設定1]]
-Port Forwardの設定(1)
-+++++++++++++++++++++
-
-1.  説明
+. Port Forwardの設定(1)
+.. 説明
 * Guest OSで実行するサーバに，Host
 OSからWebブラウザでアクセスできるようにしておく
 * 任意のエディタでVagrantfileの「config.vm.network」を変更
 * 任意のエディタでVagrantfileを変更
-
-[[port-forwardの設定2]]
-Port Forwardの設定(2)
-+++++++++++++++++++++
-
-1.  変更前
+. Port Forwardの設定(2)
+.. 変更前
 +
 [source,ruby]
 ----
 # config.vm.network "forwarded_port", guest: 80, host: 8080
 ----
-2.  変更後
+.. 変更後
 +
 [source,ruby]
 ----
@@ -284,37 +267,23 @@ config.vm.network "forwarded_port", guest: 3000, host: 3000
 config.vm.network "forwarded_port", guest: 4567, host: 4567
 ----
 
-[[sinatraアプリケーションの作成]]
-Sinatraアプリケーションの作成
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Sinatraアプリケーションの作成
 
-[[sinatraを使った簡単なwebアプリケーション]]
-Sinatraを使った簡単なWebアプリケーション
-++++++++++++++++++++++++++++++++++++++++
-
-1.  Sinatraとは？
+. Sinatraを使った簡単なWebアプリケーション
+.. Sinatraとは？
 * Webアプリケーションを作成するDSL
 * Railsに比べ簡単で，学習曲線が緩やか
 * 素早くWebアプリを作ってHerokuで公開してみよう
-2.  参考文献
+.. 参考文献
 * http://www.sinatrarb.com/[Sinatra]
 * http://www.sinatrarb.com/intro.html[Sinatra: README]
-
-[[sinatraアプリ用リポジトリを作成する]]
-Sinatraアプリ用リポジトリを作成する
-+++++++++++++++++++++++++++++++++++
-
+. Sinatraアプリ用リポジトリを作成する
 * Sinatraアプリを作成するため，GitHubで新しいリポジトリを作る
-** 名前は 「sinatra_enpit」とする
+** 名前は 「sinatra~enpit~」とする
 ** できたらcloneする
-
-[[sinatraアプリを作成する1]]
-Sinatraアプリを作成する(1)
-++++++++++++++++++++++++++
-
+. Sinatraアプリを作成する(1)
 * エディタを起動し，次のスライドにある 「hello.rb」のコードを入力
-
-1.  コマンド
+.. コマンド
 +
 [source,bash]
 ----
@@ -322,14 +291,9 @@ emacs hello.rb
 git add hello.rb
 git commit -m 'Create hello.rb'
 ----
-
-[[sinatraアプリを作成する2]]
-Sinatraアプリを作成する(2)
-++++++++++++++++++++++++++
-
+. Sinatraアプリを作成する(2)
 * Sinatraアプリ本体のコード（たった4行！）
-
-1.  コード: *hello.rb*
+.. コード: *hello.rb*
 +
 [source,ruby]
 ----
@@ -339,42 +303,25 @@ get '/' do
   "Hello World!"
 end
 ----
-
-[[sinatraアプリを起動する]]
-Sinatraアプリを起動する
-+++++++++++++++++++++++
-
+. Sinatraアプリを起動する
 * hello.rbをrubyで動かせば，サーバが立ち上がる
 ** vagrantのport forwardを利用するため，「-o」オプションを指定する
-
-1.  コマンド
+.. コマンド
 +
 [source,bash]
 ----
 ruby hello.rb -o 0.0.0.0
 ----
-
-[[sinatraアプリの動作確認]]
-Sinatraアプリの動作確認
-+++++++++++++++++++++++
-
+. Sinatraアプリの動作確認
 * *Host OS* のWebブラウザで，http://localhost:4567 にアクセスする
 ** 「Hello World!」が表示されれば成功
-* アクセスできない場合は `Vagrantfile` のPort Forwardの設定を見直すこと
-
-[[sinatraのマニュアル]]
-Sinatraのマニュアル
-+++++++++++++++++++
-
+* アクセスできない場合は `+Vagrantfile+` のPort
+Forwardの設定を見直すこと
+. Sinatraのマニュアル
 * http://sinatrarb.com/intro-ja.html
-
-[[アプリをgithubにpushする]]
-アプリをGitHubにpushする
-++++++++++++++++++++++++
-
+. アプリをGitHubにpushする
 * GitHubにコードをpushしよう
-
-1.  コマンド
+.. コマンド
 +
 [source,bash]
 ----
@@ -383,78 +330,55 @@ git commit -m 'My Sintra App'
 git push
 ----
 
-[[herokuでsinatraを動かす]]
-HerokuでSinatraを動かす
-^^^^^^^^^^^^^^^^^^^^^^^
+==== HerokuでSinatraを動かす
 
-[[sinatraアプリのディプロイ]]
-Sinatraアプリのディプロイ
-+++++++++++++++++++++++++
-
+. Sinatraアプリのディプロイ
 * SinatraアプリをHerokuで動作させてみよう
 * Webアプリは世界中からアクセスできるようになる
 * WebアプリをHeroku（などのアプリケーションサーバ）に
 設置することを配備（Deploy）と言う
-
-[[sinatraアプリをherokuで動かせるようにする]]
-SinatraアプリをHerokuで動かせるようにする
-+++++++++++++++++++++++++++++++++++++++++
-
+. SinatraアプリをHerokuで動かせるようにする
 * SinatraアプリをHerokuで動作させるには，
 （少ないものの）追加の設定が必要
 ** 次スライドを見ながら，エディタを用いて，
-
++
 次の2つのファイルを作成する
-
++
 [cols=",",options="header",]
-|===============================================
+|===
 |ファイル名 |内容
-|`config.ru` |Webアプリサーバ（Rack）の設定
-|`Gemfile` |他のメンバーやHeroku/Travis CIとで，
+|`+config.ru+` |Webアプリサーバ（Rack）の設定
+|`+Gemfile+` |他のメンバーやHeroku/Travis CIとで，
 | |Gemのバージョンを揃える
-|===============================================
-
-[[追加するコード]]
-追加するコード
-++++++++++++++
-
-1.  コード: *config.ru*
+|===
+. 追加するコード
+.. コード: *config.ru*
 +
 [source,ruby]
 ----
 require './hello'
 run Sinatra::Application
 ----
-2.  コード: *Gemfile*
+.. コード: *Gemfile*
 +
 [source,ruby]
 ----
 source 'https://rubygems.org'
 gem 'sinatra'
 ----
-
-[[関連するgemのインストール]]
-関連するGemのインストール
-+++++++++++++++++++++++++
-
-* `Gemfile` の中身に基づき，必要なGem（ライブラリ）をダウンロードする
-** `Gemfile.lock` というファイルができる
+. 関連するGemのインストール
+* `+Gemfile+` の中身に基づき，必要なGem（ライブラリ）をダウンロードする
+** `+Gemfile.lock+` というファイルができる
 ** このファイルもcommitの対象に含める
-
-1.  コマンド
+.. コマンド
 +
 [source,bash]
 ----
 bundle install
 ----
-
-[[アプリをgithubにpushする-1]]
-アプリをGitHubにpushする
-++++++++++++++++++++++++
-
+. アプリをGitHubにpushする
 * Herokuで動かす前に，commitが必要
-
-1.  コマンド
+.. コマンド
 +
 [source,bash]
 ----
@@ -462,89 +386,56 @@ git add .
 git commit -m 'Add configuration files for Heroku'
 git push
 ----
-
-[[herokuにアプリを作る]]
-Herokuにアプリを作る
-++++++++++++++++++++
-
-1.  Herokuでの操作
+. Herokuにアプリを作る
+.. Herokuでの操作
 * Heroku にログインする
 * 新しいアプリを作る
 * GitHubと連携させる
 * 手動でディプロイする
 * 以降、GitHubにpushするとHerokuにも自動でディプロイされる
 
-[[演習課題]]
-演習課題
-^^^^^^^^
+==== 演習課題
 
-[[演習課題4-1]]
-演習課題4-1
-+++++++++++
-
-1.  Sinatraアプリの作成
+. 演習課題4-1
+.. Sinatraアプリの作成
 * Sinatraアプリを作成して，Herokuで動作させなさい
 * SinatraのDSLについて調べ，機能を追加しなさい
 * コミットのログは詳細に記述し，どんな作業を行ったかが
 他の人にも分かるようにしなさい
 * 完成したコードはGitHubにもpushしなさい
-
-[[演習課題4-2-1]]
-演習課題4-2 (1)
-+++++++++++++++
-
-1.  Sinatraアプリの共同開発
+. 演習課題4-2 (1)
+.. Sinatraアプリの共同開発
 * グループメンバーでSinatraアプリを開発しなさい
 * 代表者がGitHubのリポジトリを作成し他のメンバーを Collaborators
 に追加する
 ** 他のメンバーは代表者のリポジトリをcloneする
 * どんな機能をもたせるかをチームで相談しなさい
 ** メンバーのスキルに合わせて，できるだけ簡単なもの（DBは使わない）
-
-[[演習課題4-2-2]]
-演習課題4-2 (2)
-+++++++++++++++
-
-1.  Sinatraアプリの共同開発（続き）
+. 演習課題4-2 (2)
+.. Sinatraアプリの共同開発（続き）
 * 慣れてきたらGitHub Flowをチームで回すことを目指す
 ** ブランチを作成し，Pull Requestを送る
 ** 他のメンバー（一人以上）からレビューを受けたら各自でマージ
 * GitHubのURLとHerokuのURLを提出
 ** http://goo.gl/forms/p1SXNT2grM
 
-[[part-3-ruby-on-railsheroku]]
-Part 3: Ruby on Rails/Heroku
-----------------------------
+== Part 3: Ruby on Rails/Heroku
 
-[[第5章-ruby-on-railsアプリの開発]]
-第5章 Ruby on Railsアプリの開発
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== 第5章 Ruby on Railsアプリの開発
 
-[[ruby-on-railsアプリの生成と実行]]
-Ruby on Railsアプリの生成と実行
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Ruby on Railsアプリの生成と実行
 
-[[rorを使ったwebアプリケーション]]
-RoRを使ったWebアプリケーション
-++++++++++++++++++++++++++++++
-
-1.  Ruby on Rails（RoR）とは？
+. RoRを使ったWebアプリケーション
+.. Ruby on Rails（RoR）とは？
 * Webアプリケーションを作成するためのフレームワーク
-2.  参考文献
-* *http://rubyonrails.org/[Ruby on Rails]*
-
-[[rails_enpit-アプリを作成する]]
-`rails_enpit` アプリを作成する
-++++++++++++++++++++++++++++++
-
-* `rails` は予め，仮想化環境にインストールしてある
-* `rails new` コマンドを用いて，RoRアプリの雛形を作成する
+.. 参考文献
+* [.underline]#http://rubyonrails.org/[Ruby on Rails]#
+. `+rails_enpit+` アプリを作成する
+* `+rails+` は予め，仮想化環境にインストールしてある
+* `+rails new+` コマンドを用いて，RoRアプリの雛形を作成する
 ** コマンドは次スライド
-
-[[rails_enpit-を作成するコマンド]]
-`rails_enpit` を作成するコマンド
-++++++++++++++++++++++++++++++++
-
+. `+rails_enpit+` を作成するコマンド
++
 [source,bash]
 ----
 rails new ~/rails_enpit --database=postgresql
@@ -555,50 +446,35 @@ git add .
 git commit -m 'Generate a new rails app'
 git push -u origin master
 ----
-
-[[gemfileにjs用gemの設定]]
-GemfileにJS用Gemの設定
-++++++++++++++++++++++
-
+. GemfileにJS用Gemの設定
 * GemfileにRails内部で動作するJavaScriptの実行環境を設定する
 ** 当該箇所のコメントを外す
-
-1.  変更前
+.. 変更前
 +
 [source,ruby]
 ----
 # gem 'therubyracer',  platforms: :ruby
 ----
-2.  変更後
+.. 変更後
 +
 [source,ruby]
 ----
 gem 'therubyracer',  platforms: :ruby
 ----
-
-[[bundle-installの実行]]
-Bundle installの実行
-++++++++++++++++++++
-
+. Bundle installの実行
 * Gemfileを読み込み，必要なgemをインストールする
-** `rails new` をした際にも， `bundle install` は実行されている
-** `therubyracer` と，それが依存しているgemで
+** `+rails new+` をした際にも， `+bundle install+` は実行されている
+** `+therubyracer+` と，それが依存しているgemで
 まだインストールしていないものをインストール
-
-1.  コマンド
+.. コマンド
 +
 [source,bash]
 ----
 git commit -a -m 'Run bundle install'
 ----
-
-[[gemfile設定変更のコミット]]
-Gemfile設定変更のコミット
-+++++++++++++++++++++++++
-
+. Gemfile設定変更のコミット
 * ここまでの内容をコミットしておこう
-
-1.  コマンド
+.. コマンド
 +
 [source,bash]
 ----
@@ -606,127 +482,87 @@ git add .
 git commit -m 'Edit Gemfile to enable the rubyracer gem'
 git push -u origin master
 ----
-
-[[データベースの作成]]
-データベースの作成
-++++++++++++++++++
-
-* rails_enpitアプリの動作に必要なDBを作成する
+. データベースの作成
+* rails~enpitアプリの動作に必要なDBを作成する~
 * DatabeseはHerokuで標準のPostgreSQLを使用する
 ** RoR標準のsqliteは使わない
 * enPiT仮想環境にはPostgreSQLインストール済み
-
-[[postgresqlにdbを作成]]
-PostgreSQLにDBを作成
-++++++++++++++++++++
-
-1.  開発で利用するDB
+. PostgreSQLにDBを作成
+.. 開発で利用するDB
 +
 [cols=",",]
-|=========================================
-|rails_enpit_development |開発作業中に利用
-|rails_enpit_test |テスト用に利用
-|(rails_enpit_production) |（本番環境用）
-|=========================================
+|===
+|rails~enpitdevelopment~ |開発作業中に利用
+|rails~enpittest~ |テスト用に利用
+|(rails~enpitproduction~) |（本番環境用）
+|===
 * 本番環境用DBは *Herokuでのみ* 用いる
-2.  コマンド
+.. コマンド
 +
 [source,bash]
 ----
 createdb rails_enpit_development
 createdb rails_enpit_test
 ----
-
-[[postgeresqlクライアントのコマンド]]
-PostgereSQLクライアントのコマンド
-+++++++++++++++++++++++++++++++++
-
-1.  クライアントの起動
-* `psql` コマンドでクライアントが起動
-2.  psqlクライアンで利用できるコマンド
+. PostgereSQLクライアントのコマンド
+.. クライアントの起動
+* `+psql+` コマンドでクライアントが起動
+.. psqlクライアンで利用できるコマンド
 +
 [cols=",",options="header",]
-|=======================
+|===
 |Backslashコマンド |説明
 |l |DBの一覧
 |c |DBに接続
 |d |リレーションの一覧
 |q |終了
-|=======================
-
-[[rails-serverの起動]]
-Rails serverの起動
-++++++++++++++++++
-
+|===
+. Rails serverの起動
 * 次のコマンドでアプリケーションを起動できる
-
-1.  コマンド
+.. コマンド
 +
 [source,bash]
 ----
 bundle exec rails server -b 0.0.0.0
 ----
-
-[[webアプリの動作確認]]
-Webアプリの動作確認
-+++++++++++++++++++
-
-* Host OSのWebブラウザで， `http://localhost:3000` にアクセスして確認
+. Webアプリの動作確認
+* Host OSのWebブラウザで， `+http://localhost:3000+` にアクセスして確認
 * 端末にもログが表示される
 * 確認したら，端末でCtrl-Cを押してサーバを停止する
 
-[[controllerviewの作成]]
-Controller/Viewの作成
-^^^^^^^^^^^^^^^^^^^^^
+==== Controller/Viewの作成
 
-[[hello-worldを表示するcontroller]]
-Hello Worldを表示するController
-+++++++++++++++++++++++++++++++
-
+. Hello Worldを表示するController
 * HTTPのリクエストを処理し，Viewに引き渡す
 ** MVC構造でいうControllerである
-* `rails generate controller` コマンドで作成する
-
-1.  コマンド
+* `+rails generate controller+` コマンドで作成する
+.. コマンド
 +
 [source,bash]
 ----
 bundle exec rails generate controller welcome
 ----
-
-[[生成されたcontrollerの確認とコミット]]
-生成されたControllerの確認とコミット
-++++++++++++++++++++++++++++++++++++
-
+. 生成されたControllerの確認とコミット
 * git statusコマンドでどのようなコードができたか確認
-
++
 [source,bash]
 ----
 git status
 ----
-
 * Controllerのコードを作成した作業をコミット
-
++
 [source,bash]
 ----
 git add .
 git commit -m 'Generate the welcome controller'
 ----
-
-[[hello-worldを表示するview]]
-Hello Worldを表示するView
-+++++++++++++++++++++++++
-
+. Hello Worldを表示するView
 * HTML等で結果をレンダリングして表示する
 ** erbで作成するのが一般的で，内部でRubyコードを動作させることができる
-* `app/views/welcome/index.html.erb` を（手動で）作成する
+* `+app/views/welcome/index.html.erb+` を（手動で）作成する
 ** コードは次スライド
-
-[[hello-worldを表示するviewのコード]]
-Hello Worldを表示するViewのコード
-+++++++++++++++++++++++++++++++++
-
-1.  *index.html.erb*
+. Hello Worldを表示するViewのコード
+.. *index.html.erb*
 +
 [source,html]
 ----
@@ -735,150 +571,102 @@ Hello Worldを表示するViewのコード
   The time is now: <%= Time.now %>
 </p>
 ----
-
-[[作成したviewの確認とコミット]]
-作成したViewの確認とコミット
-++++++++++++++++++++++++++++
-
+. 作成したViewの確認とコミット
 * git statusコマンドで変更内容を確認
-
++
 [source,bash]
 ----
 git status
 ----
-
 * Viewのコードを作成した作業をコミット
-
++
 [source,bash]
 ----
 git add .
 git commit -m 'Add the welcome view'
 ----
-
-[[routeの設定]]
-routeの設定
-+++++++++++
-
+. routeの設定
 * Routeとは？
-
 * HTTPのリクエスト（URL）とコントローラを紐付ける設定
-** ここでは `root` へのリクエスト（ `GET /` ）を
-
-`welcome` コントローラの `index` メソッドに紐付ける
-
-* `config/routes.rb` の当該箇所をアンコメント
-
+** ここでは `+root+` へのリクエスト（ `+GET /+` ）を
++
+`+welcome+` コントローラの `+index+` メソッドに紐付ける
+* `+config/routes.rb+` の当該箇所をアンコメント
++
 [source,ruby]
 ----
 root 'welcome#index'
 ----
-
-* `bundle exec rake routes` コマンドで確認できる
-
-[[routes.rbの設定変更の確認]]
-routes.rbの設定変更の確認
-+++++++++++++++++++++++++
-
-* `routes.rb` は既にトラッキングされているので， git
+* `+bundle exec rake routes+` コマンドで確認できる
+. routes.rbの設定変更の確認
+* `+routes.rb+` は既にトラッキングされているので， git
 diffコマンドで変更内容を確認できる
-
++
 [source,bash]
 ----
 git diff
 ----
-
 * routes.rbを変更した作業をコミット
-
++
 [source,bash]
 ----
 git add .
 git commit -m 'Edit routes.rb for the root controller'
 ----
-
-[[controllerとviewの動作確認]]
-ControllerとViewの動作確認
-++++++++++++++++++++++++++
-
-* 再度， `rails server` でアプリを起動し，動作を確認しよう
-* Webブラウザで `http://localhost:3000/` を開ぐ
-
-1.  コマンド
+. ControllerとViewの動作確認
+* 再度， `+rails server+` でアプリを起動し，動作を確認しよう
+* Webブラウザで `+http://localhost:3000/+` を開ぐ
+.. コマンド
 +
 [source,bash]
 ----
 bundle exec rails server -b 0.0.0.0
 ----
-
-[[githubへのpush]]
-GitHubへのPush
-++++++++++++++
-
+. GitHubへのPush
 * ここまでの作業で，controllerとviewを1つ備えるRoRアプリができた
 * 作業が一区切りしたので，GitHubへのpushもしておく
-** 一連の作業を `git log` コマンドで確認してみると良い
-
-1.  コマンド
+** 一連の作業を `+git log+` コマンドで確認してみると良い
+.. コマンド
 +
 [source,bash]
 ----
 git push
 ----
 
-[[herokuにディプロイする]]
-Herokuにディプロイする
-^^^^^^^^^^^^^^^^^^^^^^
+==== Herokuにディプロイする
 
-[[rorをherokuで動かす]]
-RoRをHerokuで動かす
-+++++++++++++++++++
-
+. RoRをHerokuで動かす
 * 作成しとRoRアプリをHerokuで動作させよう
-
-1.  Getting Started
-* *https://devcenter.heroku.com/articles/getting-started-with-rails4[Getting
-Started with Rails 4.x on Heroku]*
-
-[[heroku用設定をgemfileに追加]]
-Heroku用設定をGemfileに追加
-+++++++++++++++++++++++++++
-
-* `Gemfile` に `rails_12factor` を追加する
+.. Getting Started
+* [.underline]#https://devcenter.heroku.com/articles/getting-started-with-rails4[Getting
+Started with Rails 4.x on Heroku]#
+. Heroku用設定をGemfileに追加
+* `+Gemfile+` に `+rails_12factor+` を追加する
 * Rubyのバージョンも指定しておく
-* `Gemfile` を変更したら必ず `bundle install` すること
-
-1.  `Gemfile` に追加する内容
+* `+Gemfile+` を変更したら必ず `+bundle install+` すること
+.. `+Gemfile+` に追加する内容
 +
 [source,ruby]
 ----
 gem 'rails_12factor', group: :production
 ruby '2.2.5'
 ----
-
-[[productionを除いたbundle-install]]
-productionを除いたbundle install
-++++++++++++++++++++++++++++++++
-
-* `rils_12factor` は開発時には利用しない
-** `Gemfile` では「 `group: production` 」を指定してある
+. productionを除いたbundle install
+* `+rils_12factor+` は開発時には利用しない
+** `+Gemfile+` では「 `+group: production+` 」を指定してある
 * 次のコマンドでproduction以外のGemをインストール
-
++
 [source,bash]
 ----
 bundle install --without production
 ----
-
-* このオプションは記憶されるので， 2回目以降 `--without production`
+* このオプションは記憶されるので， 2回目以降 `+--without production+`
 は不要
-
-[[デプロイ前にgitにコミット]]
-デプロイ前にGitにコミット
-+++++++++++++++++++++++++
-
+. デプロイ前にGitにコミット
 * Herokuにコードを送るには，gitを用いる
 ** 従って，最新版をcommitしておく必要がある
 * commitし，まずはGitHubにpushしておく
-
-1.  コマンド
+.. コマンド
 +
 [source,bash]
 ----
@@ -886,59 +674,38 @@ git commit -a -m 'Set up for Heroku'
 git push
 ----
 * 2行目: pushする先はorigin（=GitHub）である
-
-[[herokuアプリの作成とディプロイ]]
-Herokuアプリの作成とディプロイ
-++++++++++++++++++++++++++++++
-
-* `heroku` コマンドを利用してアプリを作成する
-
-1.  コマンド
+. Herokuアプリの作成とディプロイ
+* `+heroku+` コマンドを利用してアプリを作成する
+.. コマンド
 +
 [source,bash]
 ----
 heroku create
 git push heroku master
 ----
-* 1行目: `heroku create` で表示されたURLを開く
-* 2行目: `git push` はherokuのmasterを指定．
+* 1行目: `+heroku create+` で表示されたURLを開く
+* 2行目: `+git push+` はherokuのmasterを指定．
 ディプロイすると，Herokuからのログが流れてくる
 
-[[演習課題-1]]
-演習課題
-^^^^^^^^
+==== 演習課題
 
-[[演習課題6]]
-演習課題6
-+++++++++
-
-1.  RoRアプリの作成
-* ここまでの説明に従い，Herokuで動作するRoRアプリ（ `rails_enpit`
+. 演習課題6
+.. RoRアプリの作成
+* ここまでの説明に従い，Herokuで動作するRoRアプリ（ `+rails_enpit+`
 ）を完成させなさい
 
-[[第6章-dbを使うアプリの開発と継続的統合]]
-第6章 DBを使うアプリの開発と継続的統合
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== 第6章 DBを使うアプリの開発と継続的統合
 
-[[dbとscaffoldの作成]]
-DBとScaffoldの作成
-^^^^^^^^^^^^^^^^^^
+==== DBとScaffoldの作成
 
-[[scaffold]]
-Scaffold
-++++++++
-
-1.  Scaffoldとは
+. Scaffold
+.. Scaffoldとは
 * https://www.google.co.jp/search?q=scaffold&client=ubuntu&hs=PiK&channel=fs&hl=ja&source=lnms&tbm=isch&sa=X&ei=smUdVKaZKY7s8AXew4LwDw&ved=0CAgQ_AUoAQ&biw=1195&bih=925[scaffold
 - Google 検索]
-2.  RoRでは，MVCの雛形のこと
+.. RoRでは，MVCの雛形のこと
 * CRUD処理が全て自動で実装される
-
-[[scaffoldの生成方法]]
-Scaffoldの生成方法
-++++++++++++++++++
-
-1.  コマンド
+. Scaffoldの生成方法
+.. コマンド
 +
 [source,bash]
 ----
@@ -948,58 +715,40 @@ bundle exec rails generate scaffold book title:string author:string
 * 多くのコードが自動生成されるので，branchを切っておくと良い
 ** 動作が確認できたらbranchをマージ
 ** うまく行かなかったらbranchごと削除すれば良い
-
-[[routeの確認]]
-routeの確認
-+++++++++++
-
+. routeの確認
 * Scaffoldの生成で追加されたルーティングの設定を確認
-
-1.  コマンド
+.. コマンド
 +
 [source,bash]
 ----
 bundle exec rake routes
 ----
-* `git diff` でも確認してみよう
-
-[[dbのmigrate]]
-DBのMigrate
-+++++++++++
-
-1.  migrateとは
+* `+git diff+` でも確認してみよう
+. DBのMigrate
+.. migrateとは
 * Databaseのスキーマ定義の更新
 * Scaffoldを追加したり，属性を追加したりした際に行う
-2.  コマンド
+.. コマンド
 +
 [source,bash]
 ----
 bundle exec rake db:migrate
 ----
-
-[[参考migrateの取り消しの方法]]
-参考：Migrateの取り消しの方法
-+++++++++++++++++++++++++++++
-
+. 参考：Migrateの取り消しの方法
 * DBのmigrationを取り消したいときは次のコマンドで取り消せる
-
++
 [source,bash]
 ----
 bundle exec rake db:rollback
 ----
-
 * 再度，migrateすれば再実行される
-
++
 [source,bash]
 ----
 bundle exec rake db:migrate
 ----
-
-[[参考scaffold作成の取り消しの方法]]
-参考：Scaffold作成の取り消しの方法
-++++++++++++++++++++++++++++++++++
-
-1.  コマンド
+. 参考：Scaffold作成の取り消しの方法
+.. コマンド
 +
 [source,bash]
 ----
@@ -1010,30 +759,22 @@ git branch -D books
 ----
 * 1〜2行目：自動生成されたScaffoldのコードをbranchに一旦コミット
 * 3行目：masterブランチに移動
-* 4行目：branchを削除（ *`-D`* オプション使用 ）
-
-[[動作確認]]
-動作確認
-++++++++
-
-1.  動作確認の方法
+* 4行目：branchを削除（ *`+-D+`* オプション使用 ）
+. 動作確認
+.. 動作確認の方法
 * Webブラウザで http://localhost:3000/books を開く
 * CRUD処理が完成していることを確かめる
-2.  コマンド
+.. コマンド
 +
 [source,bash]
 ----
 bundle exec rails server
 ----
-
-[[完成したコードをマージ]]
-完成したコードをマージ
-++++++++++++++++++++++
-
-1.  ブランチをマージ
-* 動作確認できたので， `books` branchをマージする
-* 不要になったブランチは， `git branch -d` で削除する
-2.  コマンド
+. 完成したコードをマージ
+.. ブランチをマージ
+* 動作確認できたので， `+books+` branchをマージする
+* 不要になったブランチは， `+git branch -d+` で削除する
+.. コマンド
 +
 [source,bash]
 ----
@@ -1043,72 +784,50 @@ git checkout master
 git merge books
 git branch -d books
 ----
-
-[[herokuにディプロイ]]
-Herokuにディプロイ
-++++++++++++++++++
-
-1.  ディプロイ
+. Herokuにディプロイ
+.. ディプロイ
 * ここまでのアプリをディプロイする
 * herokuにあるdbもmigrateする
 * Webブラウザで動作確認する
-2.  設定ファイル(Procfile)
+.. 設定ファイル(Procfile)
 +
 ....
 release: bundle exec rake db:migrate
 web: bundle exec rails server -p $PORT
 ....
 
-[[rorアプリのテスト]]
-RoRアプリのテスト
-^^^^^^^^^^^^^^^^^
+==== RoRアプリのテスト
 
-[[テストについて]]
-テストについて
-++++++++++++++
-
-1.  ガイド
+. テストについて
+.. ガイド
 * http://guides.rubyonrails.org/testing.html[A Guide to Testing Rails
 Applications — Ruby on Rails Guides]
-
-[[テストの実行]]
-テストの実行
-++++++++++++
-
-1.  テストコード
+. テストの実行
+.. テストコード
 * Scaffoldはテストコードも作成してくれる
-* テスト用のDB（ `rails_enpit_test` ）が更新される
-2.  コマンド
+* テスト用のDB（ `+rails_enpit_test+` ）が更新される
+.. コマンド
 +
 [source,bash]
 ----
 bundle exec rake test
 ----
 
-[[travis-ciとの連携]]
-Travis CIとの連携
-^^^^^^^^^^^^^^^^^
+==== Travis CIとの連携
 
-[[travis-ciのアカウント作成]]
-Travis CIのアカウント作成
-+++++++++++++++++++++++++
-
-1.  アカウントの作り方
+. Travis CIのアカウント作成
+.. アカウントの作り方
 * 次のページにアクセスし，画面右上の「Sign in with
 GitHub」のボタンを押す
 ** https://travis-ci.org/[Travis CI - Free Hosted Continuous Integration
 Platform for the Open Source Community]
 * GitHubの認証ページが出るので，画面下部にある緑のボタンを押す
 * Travis CIから確認のメールが来るので，確認する
-
-[[travisの設定]]
-Travisの設定
-++++++++++++
-
-1.  設定ファイルの変更
+. Travisの設定
+.. 設定ファイルの変更
 * まず、Rubyのバージョンを指定する
 * 変更の際はYAMLのインデントに注意する
-2.  .travis.yml を書き換える
+.. .travis.yml を書き換える
 +
 [source,yaml]
 ----
@@ -1116,15 +835,10 @@ language: ruby
 rvm:
 - 2.2.5
 ----
-
-[[travis用db設定ファイルと作成]]
-Travis用DB設定ファイルと作成
-++++++++++++++++++++++++++++
-
+. Travis用DB設定ファイルと作成
 * RubyのVersionなど
 * テストDB用の設定ファイルを追加する
-
-1.  `.travis.yml`
+.. `+.travis.yml+`
 +
 [source,yaml]
 ----
@@ -1140,7 +854,7 @@ before_script:
   - bundle exec rake db:migrate
 script: bundle exec rake test
 ----
-2.  `config/database.travis.yml`
+.. `+config/database.travis.yml+`
 +
 [source,yaml]
 ----
@@ -1149,16 +863,12 @@ test:
   database: travis_ci_test
   username: postgres
 ----
-
-[[githubとtravis-ci連携]]
-GitHubとTravis CI連携
-+++++++++++++++++++++
-
-1.  説明
+. GitHubとTravis CI連携
+.. 説明
 * ここまでの設定で，GitHubにpushされたコードはTravis
 CIでテストされるようになった．
 * GitHubにプッシュしてWebブラウザでTravis CIを開いて確認する
-2.  コマンド
+.. コマンド
 +
 [source,bash]
 ----
@@ -1166,23 +876,14 @@ git add .
 git commit -m 'Configure Travis CI'
 git push
 ----
-
-[[ci通過後のherokuへの自動deploy]]
-CI通過後のHerokuへの自動deploy
-++++++++++++++++++++++++++++++
-
-1.  HerokuへのDeploy
+. CI通過後のHerokuへの自動deploy
+.. HerokuへのDeploy
 * テストが通れば，自動でHerokuに配備されるように、Herokuに設定を追加する
 
-[[演習課題-2]]
-演習課題
-^^^^^^^^
+==== 演習課題
 
-[[演習課題7-1]]
-演習課題7-1
-+++++++++++
-
-1.  `rails_enpit` の拡張
+. 演習課題7-1
+.. `+rails_enpit+` の拡張
 * Viewを変更
 ** welcomeコントローラのviewから，
 booksコントローラのviewへのリンクを追加する etc
@@ -1192,37 +893,23 @@ booksコントローラのviewへのリンクを追加する etc
 * Herokuへの配備
 ** Travis経由でHerokuへdeployできるようにする
 
-[[補足資料]]
-補足資料
---------
+== 補足資料
 
-[[補足資料-1]]
-補足資料
-~~~~~~~~
+=== 補足資料
 
-[[vagrant関連]]
-Vagrant関連
-^^^^^^^^^^^
+==== Vagrant関連
 
-[[vagrantの補足]]
-Vagrantの補足
-+++++++++++++
-
-1.  仮想環境とのファイル共有
-* Guest OS内に `/vagrant` という共有フォルダがある
+. Vagrantの補足
+.. 仮想環境とのファイル共有
+* Guest OS内に `+/vagrant+` という共有フォルダがある
 * このフォルダはHost OSからアクセスできる
 * 場所はVagrantfileがあるフォルダ
 * 共有したいファイル（画像など）をここに置く
 
-[[git関連]]
-Git関連
-^^^^^^^
+==== Git関連
 
-[[gitの補足]]
-Gitの補足
-+++++++++
-
-1.  元いたbranchに素早く戻る方法
+. Gitの補足
+.. 元いたbranchに素早く戻る方法
 +
 [source,bash]
 ----
@@ -1230,141 +917,104 @@ git checkout other_branch # masterで
 # 編集作業とcommit
 git checkout - # masterに戻る
 ----
-2.  Git brame
+.. Git brame
 * だれがどの作業をしたかわかる（誰がバグを仕込んだのかも）
 ** https://help.github.com/articles/using-git-blame-to-trace-changes-in-a-file[Using
 git blame to trace changes in a file · GitHub Help]
-
-[[バイナリのコンフリクト1]]
-バイナリのコンフリクト(1)
-+++++++++++++++++++++++++
-
+. バイナリのコンフリクト(1)
 * git mergeでバイナリファイルがコンフリクトした場合、 ファイルはgit
 merge実行前のままとなりますfootnote:[https://github.com/ychubachi/collaborative_development/issues/6[git
 mergeでバイナリファイルがコンフリクトした場合 · Issue #6]]。
 * 以下を実行してコンフリクトが発生したとします。
-
++
 [source,bash]
 ----
 git checkout master
 git merge branch_aaa
 ----
-
-[[バイナリのコンフリクト2]]
-バイナリのコンフリクト(2)
-+++++++++++++++++++++++++
-
+. バイナリのコンフリクト(2)
 * そのままにしたいとき(=masterを採用）は
-
++
 [source,bash]
 ----
 git checkout --ours <binaryfile> #明示的な実行は不要
 git add <binaryfile>
 git commit
 ----
-
-* branch_aaaのファイルを採用したいときは
-
+* branch~aaaのファイルを採用したいときは~
++
 [source,bash]
 ----
 git checkout --theirs <binaryfile>
 git add <binaryfile>
 git commit
 ----
-
-[[hubコマンドについて]]
-Hubコマンドについて
-+++++++++++++++++++
-
+. Hubコマンドについて
 * enPiT環境にはHubコマンドが仕込んである
 ** https://github.com/github/hub[github/hub]
 * 通常のGitの機能に加えて，GitHub用のコマンドが利用できる
 ** コマンド名は「git」のまま（エイリアス設定済み）
 * 確認方法
-
++
 [source,bash]
 ----
 git version
 alias git
 ----
 
-[[github関連]]
-GitHub関連
-^^^^^^^^^^
+==== GitHub関連
 
-[[githubの補足1]]
-GitHubの補足(1)
-+++++++++++++++
-
-1.  Issue
+. GitHubの補足(1)
+.. Issue
 * 課題管理（ITS: Issue Tracking System）
 * コミットのメッセージでcloseできる
 ** https://help.github.com/articles/closing-issues-via-commit-messages[Closing
 issues via commit messages · GitHub Help]
-2.  Wiki
+.. Wiki
 * GitHubのリポジトリにWikiを作る
 ** https://help.github.com/articles/about-github-wikis[About GitHub
 Wikis · GitHub Help]
-
-[[githubの補足2]]
-GitHubの補足(2)
-+++++++++++++++
-
-1.  GitHub Pages
+. GitHubの補足(2)
+.. GitHub Pages
 * 特殊なブランチを作成すると，Webページが構築できる
 ** https://pages.github.com/[GitHub Pages]
 
-[[heroku関連]]
-Heroku関連
-^^^^^^^^^^
+==== Heroku関連
 
-[[herokuの補足]]
-Herokuの補足
-++++++++++++
-
-1.  HerokuのアプリのURL確認
+. Herokuの補足
+.. HerokuのアプリのURL確認
 +
 [source,bash]
 ----
 heroku apps:info
 ----
-2.  `rails generate` などが動かない
+.. `+rails generate+` などが動かない
 +
 [source,bash]
 ----
 spring stop
 ----
 
-[[travis-ci関連]]
-Travis CI関連
-^^^^^^^^^^^^^
+==== Travis CI関連
 
-[[travis-ciの補足]]
-Travis CIの補足
-+++++++++++++++
-
-1.  Status Image
+. Travis CIの補足
+.. Status Image
 * README.mdを編集し，Travisのテスト状況を表示するStatus Imageを追加する
 * http://docs.travis-ci.com/user/status-images/[Travis CI: Status
 Images]
-2.  Deploy後、自動で heroku の db:migrate
+.. Deploy後、自動で heroku の db:migrate
 * 次のURLの「Running-commands」の箇所を参照
 ** http://docs.travis-ci.com/user/deployment/heroku/[Heroku Deployment -
 Travis CI]
-
-[[sinatraでテストを実行可能に]]
-Sinatraでテストを実行可能に
-+++++++++++++++++++++++++++
-
-* `Gemfile` に `rake` を追加する
-
+. Sinatraでテストを実行可能に
+* `+Gemfile+` に `+rake+` を追加する
++
 [source,bash]
 ----
 gem 'rake'
 ----
-
-* `Rakefile` を作成する
-
+* `+Rakefile+` を作成する
++
 [source,ruby]
 ----
 task :default => :test
@@ -1375,11 +1025,7 @@ Rake::TestTask.new do |t|
   t.pattern = "./*_test.rb"
 end
 ----
-
-[[travxs-setup-のトラブル]]
-TODO =travxs setup= のトラブル
-++++++++++++++++++++++++++++++
-
+. [.todo .TODO]#TODO# `+travxs setup+` のトラブル
 * 次のようなトラブルが発生することがある
 ** https://github.com/ychubachi/collaborative_development/issues/17[TravisとGitHubのリポジトリの同期
 · Issue #17]
