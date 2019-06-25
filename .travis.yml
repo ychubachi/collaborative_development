@@ -1,6 +1,4 @@
-sudo: required
 language: ruby
-cache: bundler
 
 before_install:
   - gem update --system
