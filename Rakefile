@@ -8,6 +8,7 @@ task :html do
   Asciidoctor.convert_file MASTER_FILENAME,
     safe: :unsafe,
     to_dir: BUILD_DIR,
+    to_file: 'index.html',
     mkdirs: true
 end
 
@@ -21,4 +22,4 @@ task :pdf do
     mkdirs: true
 end
 
-task default: [:html, :pdf]
+task default: [:html,:pdf]
