@@ -10,4 +10,4 @@ after_success:
   - git conifg --local user.email $GH_USER_EMAIL
   - git add docs/
   - git commit -m 'Update by Travis CI'
-  - git push https://$GH_USER_NAME:$GH_TOKEN@$GH_REF HEAD:master
+#  - git push https://$GH_USER_NAME:$GH_TOKEN@$GH_REF HEAD:master
