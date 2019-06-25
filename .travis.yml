@@ -11,4 +11,4 @@ after_success:
   - git init
   - git add .
   - git commit -m "Publishing site on `date "+%Y-%m-%d %H:%M:%S"`"
-  - git push https://$GH_USER_NAME:$GH_TOKEN@$GH_REF master:gh-pages
+  - git push -f https://$GH_USER_NAME:$GH_TOKEN@$GH_REF master:gh-pages
