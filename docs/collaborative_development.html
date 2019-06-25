@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.7.1">
-<title>Part 1: ガイダンスとモダンな道具達</title>
+<title>コラボレイティブ開発特論</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -430,8 +430,41 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
+<h1>コラボレイティブ開発特論</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_part_1_ガイダンスとモダンな道具達">Part 1: ガイダンスとモダンな道具達</a>
+<ul class="sectlevel2">
+<li><a href="#_第1章_ガイダンス">第1章 ガイダンス</a></li>
+<li><a href="#_第2章_コラボレイティブ開発の道具達">第2章 コラボレイティブ開発の道具達</a></li>
+</ul>
+</li>
+<li><a href="#_part_2_gitgithub演習別資料">Part 2: Git/GitHub演習（別資料）</a>
+<ul class="sectlevel2">
+<li><a href="#_第3章_gitgithub演習">第3章 Git/GitHub演習</a></li>
+</ul>
+</li>
+<li><a href="#_part_3_sinatraheroku">Part 3: Sinatra/Heroku</a>
+<ul class="sectlevel2">
+<li><a href="#_第4章_sinatraでwebアプリを作ろう">第4章 SinatraでWebアプリを作ろう</a></li>
+</ul>
+</li>
+<li><a href="#_part_3_ruby_on_railsheroku">Part 3: Ruby on Rails/Heroku</a>
+<ul class="sectlevel2">
+<li><a href="#_第5章_ruby_on_railsアプリの開発">第5章 Ruby on Railsアプリの開発</a></li>
+<li><a href="#_第6章_dbを使うアプリの開発と継続的統合">第6章 DBを使うアプリの開発と継続的統合</a></li>
+</ul>
+</li>
+<li><a href="#_補足資料">補足資料</a>
+<ul class="sectlevel2">
+<li><a href="#_補足資料_2">補足資料</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
@@ -441,12 +474,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h3 id="_第1章_ガイダンス">第1章 ガイダンス</h3>
 <div class="sect3">
 <h4 id="_連絡事項">連絡事項</h4>
+<div class="sect4">
+<h5 id="_連絡事項1">連絡事項(1)</h5>
 <div class="olist arabic">
 <ol class="arabic">
-<li>
-<p>連絡事項(1)</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p>資料等の入手先</p>
 <div class="ulist">
@@ -469,11 +500,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>連絡事項(2)</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</div>
+<div class="sect4">
+<h5 id="_連絡事項2">連絡事項(2)</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>仮想環境（Vagrant）</p>
 <div class="ulist">
@@ -519,16 +550,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ol>
 </div>
-</li>
-</ol>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_授業の全体像">授業の全体像</h4>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>学習の目的</p>
+<div class="sect4">
+<h5 id="_学習の目的">学習の目的</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -542,9 +569,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>学習の目標</p>
+</div>
+<div class="sect4">
+<h5 id="_学習の目標">学習の目標</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -565,11 +592,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>前提知識と到達目標</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</div>
+<div class="sect4">
+<h5 id="_前提知識と到達目標">前提知識と到達目標</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>前提とする知識</p>
 <div class="ulist">
@@ -602,11 +629,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>授業の形態</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</div>
+<div class="sect4">
+<h5 id="_授業の形態">授業の形態</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>対面授業</p>
 <div class="ulist">
@@ -639,18 +666,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ol>
 </div>
-</li>
-</ol>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_授業の方法">授業の方法</h4>
+<div class="sect4">
+<h5 id="_講義演習課題">講義・演習・課題</h5>
 <div class="olist arabic">
 <ol class="arabic">
-<li>
-<p>講義・演習・課題</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p>講義</p>
 <div class="ulist">
@@ -679,11 +702,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>成績評価</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</div>
+<div class="sect4">
+<h5 id="_成績評価">成績評価</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>課題</p>
 <div class="ulist">
@@ -943,16 +966,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ol>
 </div>
-</li>
-</ol>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_学びの共同体になろう">「学びの共同体」になろう</h4>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>共に学び、共に教える「場」</p>
+<div class="sect4">
+<h5 id="_共に学び共に教える場">共に学び、共に教える「場」</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -966,11 +985,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>チーム演習での問題解決（理想の流れ）</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</div>
+<div class="sect4">
+<h5 id="_チーム演習での問題解決理想の流れ">チーム演習での問題解決（理想の流れ）</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>困った時はメンバーに聞く</p>
 </li>
@@ -995,9 +1014,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>共同体になるためにお互いを知ろう</p>
+</div>
+<div class="sect4">
+<h5 id="_共同体になるためにお互いを知ろう">共同体になるためにお互いを知ろう</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1018,8 +1037,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-</li>
-</ol>
 </div>
 </div>
 </div>
@@ -1027,15 +1044,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h3 id="_第2章_コラボレイティブ開発の道具達">第2章 コラボレイティブ開発の道具達</h3>
 <div class="sect3">
 <h4 id="_モダンなソフトウエア開発とは">モダンなソフトウエア開発とは</h4>
+<div class="sect4">
+<h5 id="_ソフトウエア開発のための方法言語道具">ソフトウエア開発のための方法・言語・道具</h5>
+
+</div>
+<div class="sect4">
+<h5 id="_授業で取り上げる範囲">授業で取り上げる範囲</h5>
 <div class="olist arabic">
+<div class="title">/figures/FLT_framework.pdf</div>
 <ol class="arabic">
-<li>
-<p>ソフトウエア開発のための方法・言語・道具</p>
-</li>
-<li>
-<p>授業で取り上げる範囲</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p>取り上げること</p>
 <div class="ulist">
@@ -1064,14 +1081,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>Scrumするためのモダンな道具たち</p>
-</li>
-<li>
-<p>モダンな開発環境の全体像</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</div>
+<div class="sect4">
+<h5 id="_scrumするためのモダンな道具たち">Scrumするためのモダンな道具たち</h5>
+
+</div>
+<div class="sect4">
+<h5 id="_モダンな開発環境の全体像">モダンな開発環境の全体像</h5>
+<div class="olist arabic">
+<div class="title">/figures/tools.pdf</div>
+<ol class="arabic">
 <li>
 <p>仮想化技術（Virtualization）</p>
 <div class="ulist">
@@ -1100,11 +1119,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>enPiT仮想化環境</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</div>
+<div class="sect4">
+<h5 id="_enpit仮想化環境">enPiT仮想化環境</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>仮想環境にインストール済みの道具</p>
 <div class="ulist">
@@ -1123,7 +1142,7 @@ CIと連携するための各種コマンド（github-connect.sh，hub，heroku�
 <p>PostgreSQLのクライアント・サーバーとDB</p>
 </li>
 <li>
-<p>各種設定ファイル（.bash<sub>profile</sub>，.gemrc，.gitconfig）</p>
+<p>各種設定ファイル（.bash_profile，.gemrc，.gitconfig）</p>
 </li>
 <li>
 <p>その他</p>
@@ -1136,18 +1155,18 @@ CIと連携するための各種コマンド（github-connect.sh，hub，heroku�
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/ychubachi/vagrant_enpit">ychubachi/vagrant<sub>enpit</sub></a></p>
+<p><a href="https://github.com/ychubachi/vagrant_enpit">ychubachi/vagrant_enpit</a></p>
 </li>
 </ul>
 </div>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>enPiT仮想化環境にログイン</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</div>
+<div class="sect4">
+<h5 id="_enpit仮想化環境にログイン">enPiT仮想化環境にログイン</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>作業内容</p>
 <div class="ulist">
@@ -1169,8 +1188,6 @@ vagrant ssh</code></pre>
 </li>
 </ol>
 </div>
-</li>
-</ol>
 </div>
 </div>
 </div>
@@ -1183,12 +1200,10 @@ vagrant ssh</code></pre>
 <h3 id="_第3章_gitgithub演習">第3章 Git/GitHub演習</h3>
 <div class="sect3">
 <h4 id="_gitgithub演習の解説と演習">Git/GitHub演習の解説と演習</h4>
+<div class="sect4">
+<h5 id="_gitgithub演習について">Git/GitHub演習について</h5>
 <div class="olist arabic">
 <ol class="arabic">
-<li>
-<p>Git/GitHub演習について</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p>Git/GitHub演習</p>
 <div class="paragraph">
@@ -1198,14 +1213,12 @@ vagrant ssh</code></pre>
 <li>
 <p>演習資料</p>
 <div class="paragraph">
-<p><a href="https://github.com/ychubachi/github_practice">ychubachi/github<sub>practice</sub>:
+<p><a href="https://github.com/ychubachi/github_practice">ychubachi/github_practice:
 Git/GitHub演習</a></p>
 </div>
 </li>
 </ol>
 </div>
-</li>
-</ol>
 </div>
 </div>
 </div>
@@ -1218,12 +1231,10 @@ Git/GitHub演習</a></p>
 <h3 id="_第4章_sinatraでwebアプリを作ろう">第4章 SinatraでWebアプリを作ろう</h3>
 <div class="sect3">
 <h4 id="_クラウド環境のアカウント設定">クラウド環境のアカウント・設定</h4>
+<div class="sect4">
+<h5 id="_githubherokuのアカウントを作成">GitHub/Herokuのアカウントを作成</h5>
 <div class="olist arabic">
 <ol class="arabic">
-<li>
-<p>GitHub/Herokuのアカウントを作成</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p>GitHub</p>
 <div class="ulist">
@@ -1246,18 +1257,14 @@ Git/GitHub演習</a></p>
 </li>
 </ol>
 </div>
-</li>
-</ol>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_仮想環境の準備から起動">仮想環境の準備から起動</h4>
+<div class="sect4">
+<h5 id="_port_forwardの設定1">Port Forwardの設定(1)</h5>
 <div class="olist arabic">
 <ol class="arabic">
-<li>
-<p>Port Forwardの設定(1)</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p>説明</p>
 <div class="ulist">
@@ -1277,11 +1284,11 @@ OSからWebブラウザでアクセスできるようにしておく</p>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>Port Forwardの設定(2)</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</div>
+<div class="sect4">
+<h5 id="_port_forwardの設定2">Port Forwardの設定(2)</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>変更前</p>
 <div class="listingblock">
@@ -1301,18 +1308,14 @@ config.vm.network "forwarded_port", guest: 4567, host: 4567</code></pre>
 </li>
 </ol>
 </div>
-</li>
-</ol>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_sinatraアプリケーションの作成">Sinatraアプリケーションの作成</h4>
+<div class="sect4">
+<h5 id="_sinatraを使った簡単なwebアプリケーション">Sinatraを使った簡単なWebアプリケーション</h5>
 <div class="olist arabic">
 <ol class="arabic">
-<li>
-<p>Sinatraを使った簡単なWebアプリケーション</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p>Sinatraとは？</p>
 <div class="ulist">
@@ -1344,9 +1347,9 @@ config.vm.network "forwarded_port", guest: 4567, host: 4567</code></pre>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>Sinatraアプリ用リポジトリを作成する</p>
+</div>
+<div class="sect4">
+<h5 id="_sinatraアプリ用リポジトリを作成する">Sinatraアプリ用リポジトリを作成する</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1354,7 +1357,7 @@ config.vm.network "forwarded_port", guest: 4567, host: 4567</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>名前は 「sinatra<sub>enpit</sub>」とする</p>
+<p>名前は 「sinatra_enpit」とする</p>
 </li>
 <li>
 <p>できたらcloneする</p>
@@ -1364,15 +1367,15 @@ config.vm.network "forwarded_port", guest: 4567, host: 4567</code></pre>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Sinatraアプリを作成する(1)</p>
+</div>
+<div class="sect4">
+<h5 id="_sinatraアプリを作成する1">Sinatraアプリを作成する(1)</h5>
 <div class="ulist">
 <ul>
 <li>
 <p>エディタを起動し，次のスライドにある 「hello.rb」のコードを入力</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>コマンド</p>
 <div class="listingblock">
@@ -1388,15 +1391,15 @@ git commit -m 'Create hello.rb'</code></pre>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Sinatraアプリを作成する(2)</p>
+</div>
+<div class="sect4">
+<h5 id="_sinatraアプリを作成する2">Sinatraアプリを作成する(2)</h5>
 <div class="ulist">
 <ul>
 <li>
 <p>Sinatraアプリ本体のコード（たった4行！）</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>コード: <strong>hello.rb</strong></p>
 <div class="listingblock">
@@ -1414,9 +1417,9 @@ end</code></pre>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Sinatraアプリを起動する</p>
+</div>
+<div class="sect4">
+<h5 id="_sinatraアプリを起動する">Sinatraアプリを起動する</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1425,8 +1428,8 @@ end</code></pre>
 <ul>
 <li>
 <p>vagrantのport forwardを利用するため，「-o」オプションを指定する</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>コマンド</p>
 <div class="listingblock">
@@ -1443,9 +1446,9 @@ end</code></pre>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Sinatraアプリの動作確認</p>
+</div>
+<div class="sect4">
+<h5 id="_sinatraアプリの動作確認">Sinatraアプリの動作確認</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1464,9 +1467,9 @@ Forwardの設定を見直すこと</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Sinatraのマニュアル</p>
+</div>
+<div class="sect4">
+<h5 id="_sinatraのマニュアル">Sinatraのマニュアル</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1474,15 +1477,15 @@ Forwardの設定を見直すこと</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>アプリをGitHubにpushする</p>
+</div>
+<div class="sect4">
+<h5 id="_アプリをgithubにpushする">アプリをGitHubにpushする</h5>
 <div class="ulist">
 <ul>
 <li>
 <p>GitHubにコードをpushしよう</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>コマンド</p>
 <div class="listingblock">
@@ -1498,16 +1501,12 @@ git push</code></pre>
 </li>
 </ul>
 </div>
-</li>
-</ol>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_herokuでsinatraを動かす">HerokuでSinatraを動かす</h4>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Sinatraアプリのディプロイ</p>
+<div class="sect4">
+<h5 id="_sinatraアプリのディプロイ">Sinatraアプリのディプロイ</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1522,9 +1521,9 @@ git push</code></pre>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>SinatraアプリをHerokuで動かせるようにする</p>
+</div>
+<div class="sect4">
+<h5 id="_sinatraアプリをherokuで動かせるようにする">SinatraアプリをHerokuで動かせるようにする</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1534,6 +1533,12 @@ git push</code></pre>
 <ul>
 <li>
 <p>次スライドを見ながら，エディタを用いて，</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p>次の2つのファイルを作成する</p>
 </div>
@@ -1563,17 +1568,11 @@ git push</code></pre>
 </tr>
 </tbody>
 </table>
-</li>
-</ul>
 </div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>追加するコード</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="sect4">
+<h5 id="_追加するコード">追加するコード</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>コード: <strong>config.ru</strong></p>
 <div class="listingblock">
@@ -1594,9 +1593,9 @@ gem 'sinatra'</code></pre>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>関連するGemのインストール</p>
+</div>
+<div class="sect4">
+<h5 id="_関連するgemのインストール">関連するGemのインストール</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1608,8 +1607,8 @@ gem 'sinatra'</code></pre>
 </li>
 <li>
 <p>このファイルもcommitの対象に含める</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>コマンド</p>
 <div class="listingblock">
@@ -1626,15 +1625,15 @@ gem 'sinatra'</code></pre>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>アプリをGitHubにpushする</p>
+</div>
+<div class="sect4">
+<h5 id="_アプリをgithubにpushする_2">アプリをGitHubにpushする</h5>
 <div class="ulist">
 <ul>
 <li>
 <p>Herokuで動かす前に，commitが必要</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>コマンド</p>
 <div class="listingblock">
@@ -1650,11 +1649,11 @@ git push</code></pre>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Herokuにアプリを作る</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</div>
+<div class="sect4">
+<h5 id="_herokuにアプリを作る">Herokuにアプリを作る</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Herokuでの操作</p>
 <div class="ulist">
@@ -1679,18 +1678,14 @@ git push</code></pre>
 </li>
 </ol>
 </div>
-</li>
-</ol>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_演習課題">演習課題</h4>
+<div class="sect4">
+<h5 id="_演習課題4_1">演習課題4-1</h5>
 <div class="olist arabic">
 <ol class="arabic">
-<li>
-<p>演習課題4-1</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p>Sinatraアプリの作成</p>
 <div class="ulist">
@@ -1713,11 +1708,11 @@ git push</code></pre>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>演習課題4-2 (1)</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</div>
+<div class="sect4">
+<h5 id="_演習課題4_2_1">演習課題4-2 (1)</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Sinatraアプリの共同開発</p>
 <div class="ulist">
@@ -1751,11 +1746,11 @@ git push</code></pre>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>演習課題4-2 (2)</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</div>
+<div class="sect4">
+<h5 id="_演習課題4_2_2">演習課題4-2 (2)</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Sinatraアプリの共同開発（続き）</p>
 <div class="ulist">
@@ -1788,8 +1783,6 @@ git push</code></pre>
 </li>
 </ol>
 </div>
-</li>
-</ol>
 </div>
 </div>
 </div>
@@ -1802,12 +1795,10 @@ git push</code></pre>
 <h3 id="_第5章_ruby_on_railsアプリの開発">第5章 Ruby on Railsアプリの開発</h3>
 <div class="sect3">
 <h4 id="_ruby_on_railsアプリの生成と実行">Ruby on Railsアプリの生成と実行</h4>
+<div class="sect4">
+<h5 id="_rorを使ったwebアプリケーション">RoRを使ったWebアプリケーション</h5>
 <div class="olist arabic">
 <ol class="arabic">
-<li>
-<p>RoRを使ったWebアプリケーション</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p>Ruby on Rails（RoR）とは？</p>
 <div class="ulist">
@@ -1830,9 +1821,9 @@ git push</code></pre>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p><code>rails_enpit</code> アプリを作成する</p>
+</div>
+<div class="sect4">
+<h5 id="_rails_enpit_アプリを作成する"><code>rails_enpit</code> アプリを作成する</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1850,9 +1841,9 @@ git push</code></pre>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p><code>rails_enpit</code> を作成するコマンド</p>
+</div>
+<div class="sect4">
+<h5 id="_rails_enpit_を作成するコマンド"><code>rails_enpit</code> を作成するコマンド</h5>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-bash" data-lang="bash">rails new ~/rails_enpit --database=postgresql
@@ -1864,9 +1855,9 @@ git commit -m 'Generate a new rails app'
 git push -u origin master</code></pre>
 </div>
 </div>
-</li>
-<li>
-<p>GemfileにJS用Gemの設定</p>
+</div>
+<div class="sect4">
+<h5 id="_gemfileにjs用gemの設定">GemfileにJS用Gemの設定</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1875,8 +1866,8 @@ git push -u origin master</code></pre>
 <ul>
 <li>
 <p>当該箇所のコメントを外す</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>変更前</p>
 <div class="listingblock">
@@ -1901,9 +1892,9 @@ git push -u origin master</code></pre>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Bundle installの実行</p>
+</div>
+<div class="sect4">
+<h5 id="_bundle_installの実行">Bundle installの実行</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1916,8 +1907,8 @@ git push -u origin master</code></pre>
 <li>
 <p><code>therubyracer</code> と，それが依存しているgemで
 まだインストールしていないものをインストール</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>コマンド</p>
 <div class="listingblock">
@@ -1934,15 +1925,15 @@ git push -u origin master</code></pre>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Gemfile設定変更のコミット</p>
+</div>
+<div class="sect4">
+<h5 id="_gemfile設定変更のコミット">Gemfile設定変更のコミット</h5>
 <div class="ulist">
 <ul>
 <li>
 <p>ここまでの内容をコミットしておこう</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>コマンド</p>
 <div class="listingblock">
@@ -1958,13 +1949,13 @@ git push -u origin master</code></pre>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>データベースの作成</p>
+</div>
+<div class="sect4">
+<h5 id="_データベースの作成">データベースの作成</h5>
 <div class="ulist">
 <ul>
 <li>
-<p>rails<sub>enpitアプリの動作に必要なDBを作成する</sub></p>
+<p>rails_enpitアプリの動作に必要なDBを作成する</p>
 </li>
 <li>
 <p>DatabeseはHerokuで標準のPostgreSQLを使用する</p>
@@ -1981,11 +1972,11 @@ git push -u origin master</code></pre>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>PostgreSQLにDBを作成</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</div>
+<div class="sect4">
+<h5 id="_postgresqlにdbを作成">PostgreSQLにDBを作成</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>開発で利用するDB</p>
 <table class="tableblock frame-all grid-all stretch">
@@ -1995,15 +1986,15 @@ git push -u origin master</code></pre>
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">rails<sub>enpitdevelopment</sub></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rails_enpit_development</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">開発作業中に利用</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">rails<sub>enpittest</sub></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rails_enpit_test</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">テスト用に利用</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">(rails<sub>enpitproduction</sub>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(rails_enpit_production)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">（本番環境用）</p></td>
 </tr>
 </tbody>
@@ -2027,11 +2018,11 @@ createdb rails_enpit_test</code></pre>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>PostgereSQLクライアントのコマンド</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</div>
+<div class="sect4">
+<h5 id="_postgeresqlクライアントのコマンド">PostgereSQLクライアントのコマンド</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>クライアントの起動</p>
 <div class="ulist">
@@ -2077,15 +2068,15 @@ createdb rails_enpit_test</code></pre>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>Rails serverの起動</p>
+</div>
+<div class="sect4">
+<h5 id="_rails_serverの起動">Rails serverの起動</h5>
 <div class="ulist">
 <ul>
 <li>
 <p>次のコマンドでアプリケーションを起動できる</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>コマンド</p>
 <div class="listingblock">
@@ -2099,9 +2090,9 @@ createdb rails_enpit_test</code></pre>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Webアプリの動作確認</p>
+</div>
+<div class="sect4">
+<h5 id="_webアプリの動作確認">Webアプリの動作確認</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -2115,16 +2106,12 @@ createdb rails_enpit_test</code></pre>
 </li>
 </ul>
 </div>
-</li>
-</ol>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_controllerviewの作成">Controller/Viewの作成</h4>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Hello Worldを表示するController</p>
+<div class="sect4">
+<h5 id="_hello_worldを表示するcontroller">Hello Worldを表示するController</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -2139,8 +2126,8 @@ createdb rails_enpit_test</code></pre>
 </li>
 <li>
 <p><code>rails generate controller</code> コマンドで作成する</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>コマンド</p>
 <div class="listingblock">
@@ -2154,33 +2141,37 @@ createdb rails_enpit_test</code></pre>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>生成されたControllerの確認とコミット</p>
+</div>
+<div class="sect4">
+<h5 id="_生成されたcontrollerの確認とコミット">生成されたControllerの確認とコミット</h5>
 <div class="ulist">
 <ul>
 <li>
 <p>git statusコマンドでどのようなコードができたか確認</p>
+</li>
+</ul>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-bash" data-lang="bash">git status</code></pre>
 </div>
 </div>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p>Controllerのコードを作成した作業をコミット</p>
+</li>
+</ul>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-bash" data-lang="bash">git add .
 git commit -m 'Generate the welcome controller'</code></pre>
 </div>
 </div>
-</li>
-</ul>
 </div>
-</li>
-<li>
-<p>Hello Worldを表示するView</p>
+<div class="sect4">
+<h5 id="_hello_worldを表示するview">Hello Worldを表示するView</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -2205,11 +2196,11 @@ git commit -m 'Generate the welcome controller'</code></pre>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Hello Worldを表示するViewのコード</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</div>
+<div class="sect4">
+<h5 id="_hello_worldを表示するviewのコード">Hello Worldを表示するViewのコード</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p><strong>index.html.erb</strong></p>
 <div class="listingblock">
@@ -2223,33 +2214,37 @@ git commit -m 'Generate the welcome controller'</code></pre>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>作成したViewの確認とコミット</p>
+</div>
+<div class="sect4">
+<h5 id="_作成したviewの確認とコミット">作成したViewの確認とコミット</h5>
 <div class="ulist">
 <ul>
 <li>
 <p>git statusコマンドで変更内容を確認</p>
+</li>
+</ul>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-bash" data-lang="bash">git status</code></pre>
 </div>
 </div>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p>Viewのコードを作成した作業をコミット</p>
+</li>
+</ul>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-bash" data-lang="bash">git add .
 git commit -m 'Add the welcome view'</code></pre>
 </div>
 </div>
-</li>
-</ul>
 </div>
-</li>
-<li>
-<p>routeの設定</p>
+<div class="sect4">
+<h5 id="_routeの設定">routeの設定</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -2261,54 +2256,66 @@ git commit -m 'Add the welcome view'</code></pre>
 <ul>
 <li>
 <p>ここでは <code>root</code> へのリクエスト（ <code>GET /</code> ）を</p>
-<div class="paragraph">
-<p><code>welcome</code> コントローラの <code>index</code> メソッドに紐付ける</p>
-</div>
 </li>
 </ul>
 </div>
 </li>
+</ul>
+</div>
+<div class="paragraph">
+<p><code>welcome</code> コントローラの <code>index</code> メソッドに紐付ける</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><code>config/routes.rb</code> の当該箇所をアンコメント</p>
+</li>
+</ul>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-ruby" data-lang="ruby">root 'welcome#index'</code></pre>
 </div>
 </div>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><code>bundle exec rake routes</code> コマンドで確認できる</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>routes.rbの設定変更の確認</p>
+</div>
+<div class="sect4">
+<h5 id="_routes_rbの設定変更の確認">routes.rbの設定変更の確認</h5>
 <div class="ulist">
 <ul>
 <li>
 <p><code>routes.rb</code> は既にトラッキングされているので， git
 diffコマンドで変更内容を確認できる</p>
+</li>
+</ul>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-bash" data-lang="bash">git diff</code></pre>
 </div>
 </div>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p>routes.rbを変更した作業をコミット</p>
+</li>
+</ul>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-bash" data-lang="bash">git add .
 git commit -m 'Edit routes.rb for the root controller'</code></pre>
 </div>
 </div>
-</li>
-</ul>
 </div>
-</li>
-<li>
-<p>ControllerとViewの動作確認</p>
+<div class="sect4">
+<h5 id="_controllerとviewの動作確認">ControllerとViewの動作確認</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -2316,8 +2323,8 @@ git commit -m 'Edit routes.rb for the root controller'</code></pre>
 </li>
 <li>
 <p>Webブラウザで <code>http://localhost:3000/</code> を開ぐ</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>コマンド</p>
 <div class="listingblock">
@@ -2331,9 +2338,9 @@ git commit -m 'Edit routes.rb for the root controller'</code></pre>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>GitHubへのPush</p>
+</div>
+<div class="sect4">
+<h5 id="_githubへのpush">GitHubへのPush</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -2345,8 +2352,8 @@ git commit -m 'Edit routes.rb for the root controller'</code></pre>
 <ul>
 <li>
 <p>一連の作業を <code>git log</code> コマンドで確認してみると良い</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>コマンド</p>
 <div class="listingblock">
@@ -2363,22 +2370,18 @@ git commit -m 'Edit routes.rb for the root controller'</code></pre>
 </li>
 </ul>
 </div>
-</li>
-</ol>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_herokuにディプロイする">Herokuにディプロイする</h4>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>RoRをHerokuで動かす</p>
+<div class="sect4">
+<h5 id="_rorをherokuで動かす">RoRをHerokuで動かす</h5>
 <div class="ulist">
 <ul>
 <li>
 <p>作成しとRoRアプリをHerokuで動作させよう</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Getting Started</p>
 </li>
@@ -2391,9 +2394,9 @@ Started with Rails 4.x on Heroku</a></span></p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Heroku用設定をGemfileに追加</p>
+</div>
+<div class="sect4">
+<h5 id="_heroku用設定をgemfileに追加">Heroku用設定をGemfileに追加</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -2404,8 +2407,8 @@ Started with Rails 4.x on Heroku</a></span></p>
 </li>
 <li>
 <p><code>Gemfile</code> を変更したら必ず <code>bundle install</code> すること</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p><code>Gemfile</code> に追加する内容</p>
 <div class="listingblock">
@@ -2420,9 +2423,9 @@ ruby '2.2.5'</code></pre>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>productionを除いたbundle install</p>
+</div>
+<div class="sect4">
+<h5 id="_productionを除いたbundle_install">productionを除いたbundle install</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -2437,21 +2440,25 @@ ruby '2.2.5'</code></pre>
 </li>
 <li>
 <p>次のコマンドでproduction以外のGemをインストール</p>
+</li>
+</ul>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-bash" data-lang="bash">bundle install --without production</code></pre>
 </div>
 </div>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p>このオプションは記憶されるので， 2回目以降 <code>--without production</code>
 は不要</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>デプロイ前にGitにコミット</p>
+</div>
+<div class="sect4">
+<h5 id="_デプロイ前にgitにコミット">デプロイ前にGitにコミット</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -2466,8 +2473,8 @@ ruby '2.2.5'</code></pre>
 </li>
 <li>
 <p>commitし，まずはGitHubにpushしておく</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>コマンド</p>
 <div class="listingblock">
@@ -2485,15 +2492,15 @@ git push</code></pre>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Herokuアプリの作成とディプロイ</p>
+</div>
+<div class="sect4">
+<h5 id="_herokuアプリの作成とディプロイ">Herokuアプリの作成とディプロイ</h5>
 <div class="ulist">
 <ul>
 <li>
 <p><code>heroku</code> コマンドを利用してアプリを作成する</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>コマンド</p>
 <div class="listingblock">
@@ -2515,18 +2522,14 @@ git push heroku master</code></pre>
 </li>
 </ul>
 </div>
-</li>
-</ol>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_演習課題_2">演習課題</h4>
+<div class="sect4">
+<h5 id="_演習課題6">演習課題6</h5>
 <div class="olist arabic">
 <ol class="arabic">
-<li>
-<p>演習課題6</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p>RoRアプリの作成</p>
 <div class="ulist">
@@ -2540,8 +2543,6 @@ git push heroku master</code></pre>
 </li>
 </ol>
 </div>
-</li>
-</ol>
 </div>
 </div>
 </div>
@@ -2549,12 +2550,10 @@ git push heroku master</code></pre>
 <h3 id="_第6章_dbを使うアプリの開発と継続的統合">第6章 DBを使うアプリの開発と継続的統合</h3>
 <div class="sect3">
 <h4 id="_dbとscaffoldの作成">DBとScaffoldの作成</h4>
+<div class="sect4">
+<h5 id="_scaffold">Scaffold</h5>
 <div class="olist arabic">
 <ol class="arabic">
-<li>
-<p>Scaffold</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p>Scaffoldとは</p>
 <div class="ulist">
@@ -2584,11 +2583,11 @@ git push heroku master</code></pre>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>Scaffoldの生成方法</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</div>
+<div class="sect4">
+<h5 id="_scaffoldの生成方法">Scaffoldの生成方法</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>コマンド</p>
 <div class="listingblock">
@@ -2617,15 +2616,15 @@ bundle exec rails generate scaffold book title:string author:string</code></pre>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>routeの確認</p>
+</div>
+<div class="sect4">
+<h5 id="_routeの確認">routeの確認</h5>
 <div class="ulist">
 <ul>
 <li>
 <p>Scaffoldの生成で追加されたルーティングの設定を確認</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>コマンド</p>
 <div class="listingblock">
@@ -2642,11 +2641,11 @@ bundle exec rails generate scaffold book title:string author:string</code></pre>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>DBのMigrate</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</div>
+<div class="sect4">
+<h5 id="_dbのmigrate">DBのMigrate</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>migrateとは</p>
 <div class="ulist">
@@ -2670,34 +2669,38 @@ bundle exec rails generate scaffold book title:string author:string</code></pre>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>参考：Migrateの取り消しの方法</p>
+</div>
+<div class="sect4">
+<h5 id="_参考migrateの取り消しの方法">参考：Migrateの取り消しの方法</h5>
 <div class="ulist">
 <ul>
 <li>
 <p>DBのmigrationを取り消したいときは次のコマンドで取り消せる</p>
+</li>
+</ul>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-bash" data-lang="bash">bundle exec rake db:rollback</code></pre>
 </div>
 </div>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p>再度，migrateすれば再実行される</p>
+</li>
+</ul>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-bash" data-lang="bash">bundle exec rake db:migrate</code></pre>
 </div>
 </div>
-</li>
-</ul>
 </div>
-</li>
-<li>
-<p>参考：Scaffold作成の取り消しの方法</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="sect4">
+<h5 id="_参考scaffold作成の取り消しの方法">参考：Scaffold作成の取り消しの方法</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>コマンド</p>
 <div class="listingblock">
@@ -2724,11 +2727,11 @@ git branch -D books</code></pre>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>動作確認</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</div>
+<div class="sect4">
+<h5 id="_動作確認">動作確認</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>動作確認の方法</p>
 <div class="ulist">
@@ -2752,11 +2755,11 @@ git branch -D books</code></pre>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>完成したコードをマージ</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</div>
+<div class="sect4">
+<h5 id="_完成したコードをマージ">完成したコードをマージ</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>ブランチをマージ</p>
 <div class="ulist">
@@ -2784,11 +2787,11 @@ git branch -d books</code></pre>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>Herokuにディプロイ</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</div>
+<div class="sect4">
+<h5 id="_herokuにディプロイ">Herokuにディプロイ</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>ディプロイ</p>
 <div class="ulist">
@@ -2816,18 +2819,14 @@ web: bundle exec rails server -p $PORT</pre>
 </li>
 </ol>
 </div>
-</li>
-</ol>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_rorアプリのテスト">RoRアプリのテスト</h4>
+<div class="sect4">
+<h5 id="_テストについて">テストについて</h5>
 <div class="olist arabic">
 <ol class="arabic">
-<li>
-<p>テストについて</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p>ガイド</p>
 <div class="ulist">
@@ -2841,11 +2840,11 @@ Applications — Ruby on Rails Guides</a></p>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>テストの実行</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</div>
+<div class="sect4">
+<h5 id="_テストの実行">テストの実行</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>テストコード</p>
 <div class="ulist">
@@ -2869,18 +2868,14 @@ Applications — Ruby on Rails Guides</a></p>
 </li>
 </ol>
 </div>
-</li>
-</ol>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_travis_ciとの連携">Travis CIとの連携</h4>
+<div class="sect4">
+<h5 id="_travis_ciのアカウント作成">Travis CIのアカウント作成</h5>
 <div class="olist arabic">
 <ol class="arabic">
-<li>
-<p>Travis CIのアカウント作成</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p>アカウントの作り方</p>
 <div class="ulist">
@@ -2908,11 +2903,11 @@ Platform for the Open Source Community</a></p>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>Travisの設定</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</div>
+<div class="sect4">
+<h5 id="_travisの設定">Travisの設定</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>設定ファイルの変更</p>
 <div class="ulist">
@@ -2938,9 +2933,9 @@ rvm:
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>Travis用DB設定ファイルと作成</p>
+</div>
+<div class="sect4">
+<h5 id="_travis用db設定ファイルと作成">Travis用DB設定ファイルと作成</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -2948,8 +2943,8 @@ rvm:
 </li>
 <li>
 <p>テストDB用の設定ファイルを追加する</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p><code>.travis.yml</code></p>
 <div class="listingblock">
@@ -2984,11 +2979,11 @@ script: bundle exec rake test</code></pre>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>GitHubとTravis CI連携</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</div>
+<div class="sect4">
+<h5 id="_githubとtravis_ci連携">GitHubとTravis CI連携</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>説明</p>
 <div class="ulist">
@@ -3015,11 +3010,11 @@ git push</code></pre>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>CI通過後のHerokuへの自動deploy</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</div>
+<div class="sect4">
+<h5 id="_ci通過後のherokuへの自動deploy">CI通過後のHerokuへの自動deploy</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>HerokuへのDeploy</p>
 <div class="ulist">
@@ -3032,18 +3027,14 @@ git push</code></pre>
 </li>
 </ol>
 </div>
-</li>
-</ol>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_演習課題_3">演習課題</h4>
+<div class="sect4">
+<h5 id="_演習課題7_1">演習課題7-1</h5>
 <div class="olist arabic">
 <ol class="arabic">
-<li>
-<p>演習課題7-1</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p><code>rails_enpit</code> の拡張</p>
 <div class="ulist">
@@ -3087,8 +3078,6 @@ booksコントローラのviewへのリンクを追加する etc</p>
 </li>
 </ol>
 </div>
-</li>
-</ol>
 </div>
 </div>
 </div>
@@ -3101,12 +3090,10 @@ booksコントローラのviewへのリンクを追加する etc</p>
 <h3 id="_補足資料_2">補足資料</h3>
 <div class="sect3">
 <h4 id="_vagrant関連">Vagrant関連</h4>
+<div class="sect4">
+<h5 id="_vagrantの補足">Vagrantの補足</h5>
 <div class="olist arabic">
 <ol class="arabic">
-<li>
-<p>Vagrantの補足</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p>仮想環境とのファイル共有</p>
 <div class="ulist">
@@ -3128,18 +3115,14 @@ booksコントローラのviewへのリンクを追加する etc</p>
 </li>
 </ol>
 </div>
-</li>
-</ol>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_git関連">Git関連</h4>
+<div class="sect4">
+<h5 id="_gitの補足">Gitの補足</h5>
 <div class="olist arabic">
 <ol class="arabic">
-<li>
-<p>Gitの補足</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p>元いたbranchに素早く戻る方法</p>
 <div class="listingblock">
@@ -3170,9 +3153,9 @@ git blame to trace changes in a file · GitHub Help</a></p>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>バイナリのコンフリクト(1)</p>
+</div>
+<div class="sect4">
+<h5 id="_バイナリのコンフリクト1">バイナリのコンフリクト(1)</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -3181,22 +3164,25 @@ merge実行前のままとなります<sup class="footnote">[<a id="_footnoteref
 </li>
 <li>
 <p>以下を実行してコンフリクトが発生したとします。</p>
+</li>
+</ul>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-bash" data-lang="bash">git checkout master
 git merge branch_aaa</code></pre>
 </div>
 </div>
-</li>
-</ul>
 </div>
-</li>
-<li>
-<p>バイナリのコンフリクト(2)</p>
+<div class="sect4">
+<h5 id="_バイナリのコンフリクト2">バイナリのコンフリクト(2)</h5>
 <div class="ulist">
 <ul>
 <li>
 <p>そのままにしたいとき(=masterを採用）は</p>
+</li>
+</ul>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-bash" data-lang="bash">git checkout --ours &lt;binaryfile&gt; #明示的な実行は不要
@@ -3204,9 +3190,13 @@ git add &lt;binaryfile&gt;
 git commit</code></pre>
 </div>
 </div>
-</li>
+<div class="ulist">
+<ul>
 <li>
-<p>branch<sub>aaaのファイルを採用したいときは</sub></p>
+<p>branch_aaaのファイルを採用したいときは</p>
+</li>
+</ul>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-bash" data-lang="bash">git checkout --theirs &lt;binaryfile&gt;
@@ -3214,12 +3204,9 @@ git add &lt;binaryfile&gt;
 git commit</code></pre>
 </div>
 </div>
-</li>
-</ul>
 </div>
-</li>
-<li>
-<p>Hubコマンドについて</p>
+<div class="sect4">
+<h5 id="_hubコマンドについて">Hubコマンドについて</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -3244,27 +3231,23 @@ git commit</code></pre>
 </li>
 <li>
 <p>確認方法</p>
+</li>
+</ul>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-bash" data-lang="bash">git version
 alias git</code></pre>
 </div>
 </div>
-</li>
-</ul>
-</div>
-</li>
-</ol>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_github関連">GitHub関連</h4>
+<div class="sect4">
+<h5 id="_githubの補足1">GitHubの補足(1)</h5>
 <div class="olist arabic">
 <ol class="arabic">
-<li>
-<p>GitHubの補足(1)</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p>Issue</p>
 <div class="ulist">
@@ -3306,11 +3289,11 @@ Wikis · GitHub Help</a></p>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>GitHubの補足(2)</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</div>
+<div class="sect4">
+<h5 id="_githubの補足2">GitHubの補足(2)</h5>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>GitHub Pages</p>
 <div class="ulist">
@@ -3330,18 +3313,14 @@ Wikis · GitHub Help</a></p>
 </li>
 </ol>
 </div>
-</li>
-</ol>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_heroku関連">Heroku関連</h4>
+<div class="sect4">
+<h5 id="_herokuの補足">Herokuの補足</h5>
 <div class="olist arabic">
 <ol class="arabic">
-<li>
-<p>Herokuの補足</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p>HerokuのアプリのURL確認</p>
 <div class="listingblock">
@@ -3360,18 +3339,14 @@ Wikis · GitHub Help</a></p>
 </li>
 </ol>
 </div>
-</li>
-</ol>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_travis_ci関連">Travis CI関連</h4>
+<div class="sect4">
+<h5 id="_travis_ciの補足">Travis CIの補足</h5>
 <div class="olist arabic">
 <ol class="arabic">
-<li>
-<p>Travis CIの補足</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p>Status Image</p>
 <div class="ulist">
@@ -3406,21 +3381,28 @@ Travis CI</a></p>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>Sinatraでテストを実行可能に</p>
+</div>
+<div class="sect4">
+<h5 id="_sinatraでテストを実行可能に">Sinatraでテストを実行可能に</h5>
 <div class="ulist">
 <ul>
 <li>
 <p><code>Gemfile</code> に <code>rake</code> を追加する</p>
+</li>
+</ul>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-bash" data-lang="bash">gem 'rake'</code></pre>
 </div>
 </div>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><code>Rakefile</code> を作成する</p>
+</li>
+</ul>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-ruby" data-lang="ruby">task :default =&gt; :test
@@ -3432,12 +3414,9 @@ Rake::TestTask.new do |t|
 end</code></pre>
 </div>
 </div>
-</li>
-</ul>
 </div>
-</li>
-<li>
-<p><span class="todo  TODO">TODO</span> <code>travxs setup</code> のトラブル</p>
+<div class="sect4">
+<h5 id="travxs-setup-のトラブル"><span class="todo  TODO">TODO</span> <code>travxs setup</code> のトラブル</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -3461,8 +3440,6 @@ HerokuからGitHubを監視させるようにしたほうがよいかも・・�
 </li>
 </ul>
 </div>
-</li>
-</ol>
 </div>
 </div>
 </div>
@@ -3477,7 +3454,7 @@ HerokuからGitHubを監視させるようにしたほうがよいかも・・�
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-06-24 01:31:12 DST
+Last updated 2019-06-24 10:10:42 DST
 </div>
 </div>
 </body>
