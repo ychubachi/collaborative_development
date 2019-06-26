@@ -1,0 +1,572 @@
+== Ruby on Rails/Heroku
+
+=== Ruby on Railsアプリの開発
+
+==== Ruby on Railsアプリの生成と実行
+
+===== RoRを使ったWebアプリケーション
+
+. Ruby on Rails（RoR）とは？
+* Webアプリケーションを作成するためのフレームワーク
+. 参考文献
+* [.underline]#http://rubyonrails.org/[Ruby on Rails]#
+
+===== `+rails_enpit+` アプリを作成する
+
+* `+rails+` は予め，仮想化環境にインストールしてある
+* `+rails new+` コマンドを用いて，RoRアプリの雛形を作成する
+** コマンドは次スライド
+
+===== `+rails_enpit+` を作成するコマンド
+
+[source,bash]
+----
+rails new ~/rails_enpit --database=postgresql
+cd ~/rails_enpit
+git init
+git create
+git add .
+git commit -m 'Generate a new rails app'
+git push -u origin master
+----
+
+===== GemfileにJS用Gemの設定
+
+* GemfileにRails内部で動作するJavaScriptの実行環境を設定する
+** 当該箇所のコメントを外す
+
+. 変更前
++
+[source,ruby]
+----
+# gem 'therubyracer',  platforms: :ruby
+----
+. 変更後
++
+[source,ruby]
+----
+gem 'therubyracer',  platforms: :ruby
+----
+
+===== Bundle installの実行
+
+* Gemfileを読み込み，必要なgemをインストールする
+** `+rails new+` をした際にも， `+bundle install+` は実行されている
+** `+therubyracer+` と，それが依存しているgemで
+まだインストールしていないものをインストール
+
+. コマンド
++
+[source,bash]
+----
+git commit -a -m 'Run bundle install'
+----
+
+===== Gemfile設定変更のコミット
+
+* ここまでの内容をコミットしておこう
+
+. コマンド
++
+[source,bash]
+----
+git add .
+git commit -m 'Edit Gemfile to enable the rubyracer gem'
+git push -u origin master
+----
+
+===== データベースの作成
+
+* rails_enpitアプリの動作に必要なDBを作成する
+* DatabeseはHerokuで標準のPostgreSQLを使用する
+** RoR標準のsqliteは使わない
+* enPiT仮想環境にはPostgreSQLインストール済み
+
+===== PostgreSQLにDBを作成
+
+. 開発で利用するDB
++
+[cols=",",]
+|===
+|rails_enpit_development |開発作業中に利用
+|rails_enpit_test |テスト用に利用
+|(rails_enpit_production) |（本番環境用）
+|===
+* 本番環境用DBは**Herokuでのみ**用いる
+. コマンド
++
+[source,bash]
+----
+createdb rails_enpit_development
+createdb rails_enpit_test
+----
+
+===== PostgereSQLクライアントのコマンド
+
+. クライアントの起動
+* `+psql+` コマンドでクライアントが起動
+. psqlクライアンで利用できるコマンド
++
+[cols=",",options="header",]
+|===
+|Backslashコマンド |説明
+|l |DBの一覧
+|c |DBに接続
+|d |リレーションの一覧
+|q |終了
+|===
+
+===== Rails serverの起動
+
+* 次のコマンドでアプリケーションを起動できる
+
+. コマンド
++
+[source,bash]
+----
+bundle exec rails server -b 0.0.0.0
+----
+
+===== Webアプリの動作確認
+
+* Host OSのWebブラウザで， `+http://localhost:3000+` にアクセスして確認
+* 端末にもログが表示される
+* 確認したら，端末でCtrl-Cを押してサーバを停止する
+
+==== Controller/Viewの作成
+
+===== Hello Worldを表示するController
+
+* HTTPのリクエストを処理し，Viewに引き渡す
+** MVC構造でいうControllerである
+* `+rails generate controller+` コマンドで作成する
+
+. コマンド
++
+[source,bash]
+----
+bundle exec rails generate controller welcome
+----
+
+===== 生成されたControllerの確認とコミット
+
+* git statusコマンドでどのようなコードができたか確認
+
+[source,bash]
+----
+git status
+----
+
+* Controllerのコードを作成した作業をコミット
+
+[source,bash]
+----
+git add .
+git commit -m 'Generate the welcome controller'
+----
+
+===== Hello Worldを表示するView
+
+* HTML等で結果をレンダリングして表示する
+** erbで作成するのが一般的で，内部でRubyコードを動作させることができる
+* `+app/views/welcome/index.html.erb+` を（手動で）作成する
+** コードは次スライド
+
+===== Hello Worldを表示するViewのコード
+
+. *index.html.erb*
++
+[source,html]
+----
+<h2>Hello World</h2>
+<p>
+  The time is now: <%= Time.now %>
+</p>
+----
+
+===== 作成したViewの確認とコミット
+
+* git statusコマンドで変更内容を確認
+
+[source,bash]
+----
+git status
+----
+
+* Viewのコードを作成した作業をコミット
+
+[source,bash]
+----
+git add .
+git commit -m 'Add the welcome view'
+----
+
+===== routeの設定
+
+* Routeとは？
+
+* HTTPのリクエスト（URL）とコントローラを紐付ける設定
+** ここでは `+root+` へのリクエスト（ `+GET /+` ）を
+
+`+welcome+` コントローラの `+index+` メソッドに紐付ける
+
+* `+config/routes.rb+` の当該箇所をアンコメント
+
+[source,ruby]
+----
+root 'welcome#index'
+----
+
+* `+bundle exec rake routes+` コマンドで確認できる
+
+===== routes.rbの設定変更の確認
+
+* `+routes.rb+` は既にトラッキングされているので， git
+diffコマンドで変更内容を確認できる
+
+[source,bash]
+----
+git diff
+----
+
+* routes.rbを変更した作業をコミット
+
+[source,bash]
+----
+git add .
+git commit -m 'Edit routes.rb for the root controller'
+----
+
+===== ControllerとViewの動作確認
+
+* 再度， `+rails server+` でアプリを起動し，動作を確認しよう
+* Webブラウザで `+http://localhost:3000/+` を開ぐ
+
+. コマンド
++
+[source,bash]
+----
+bundle exec rails server -b 0.0.0.0
+----
+
+===== GitHubへのPush
+
+* ここまでの作業で，controllerとviewを1つ備えるRoRアプリができた
+* 作業が一区切りしたので，GitHubへのpushもしておく
+** 一連の作業を `+git log+` コマンドで確認してみると良い
+
+. コマンド
++
+[source,bash]
+----
+git push
+----
+
+==== Herokuにディプロイする
+
+===== RoRをHerokuで動かす
+
+* 作成しとRoRアプリをHerokuで動作させよう
+
+. Getting Started
+* [.underline]#https://devcenter.heroku.com/articles/getting-started-with-rails4[Getting
+Started with Rails 4.x on Heroku]#
+
+===== Heroku用設定をGemfileに追加
+
+* `+Gemfile+` に `+rails_12factor+` を追加する
+* Rubyのバージョンも指定しておく
+* `+Gemfile+` を変更したら必ず `+bundle install+` すること
+
+. `+Gemfile+` に追加する内容
++
+[source,ruby]
+----
+gem 'rails_12factor', group: :production
+ruby '2.2.5'
+----
+
+===== productionを除いたbundle install
+
+* `+rils_12factor+` は開発時には利用しない
+** `+Gemfile+` では「 `+group: production+` 」を指定してある
+* 次のコマンドでproduction以外のGemをインストール
+
+[source,bash]
+----
+bundle install --without production
+----
+
+* このオプションは記憶されるので， 2回目以降 `+--without production+`
+は不要
+
+===== デプロイ前にGitにコミット
+
+* Herokuにコードを送るには，gitを用いる
+** 従って，最新版をcommitしておく必要がある
+* commitし，まずはGitHubにpushしておく
+
+. コマンド
++
+[source,bash]
+----
+git commit -a -m 'Set up for Heroku'
+git push
+----
+* 2行目: pushする先はorigin（=GitHub）である
+
+===== Herokuアプリの作成とディプロイ
+
+* `+heroku+` コマンドを利用してアプリを作成する
+
+. コマンド
++
+[source,bash]
+----
+heroku create
+git push heroku master
+----
+* 1行目: `+heroku create+` で表示されたURLを開く
+* 2行目: `+git push+` はherokuのmasterを指定．
+ディプロイすると，Herokuからのログが流れてくる
+
+==== 演習課題
+
+===== 演習課題6
+
+. RoRアプリの作成
+* ここまでの説明に従い，Herokuで動作するRoRアプリ（ `+rails_enpit+`
+）を完成させなさい
+
+=== 第6章 DBを使うアプリの開発と継続的統合
+
+==== DBとScaffoldの作成
+
+===== Scaffold
+
+. Scaffoldとは
+* https://www.google.co.jp/search?q=scaffold&client=ubuntu&hs=PiK&channel=fs&hl=ja&source=lnms&tbm=isch&sa=X&ei=smUdVKaZKY7s8AXew4LwDw&ved=0CAgQ_AUoAQ&biw=1195&bih=925[scaffold
+- Google 検索]
+. RoRでは，MVCの雛形のこと
+* CRUD処理が全て自動で実装される
+
+===== Scaffoldの生成方法
+
+. コマンド
++
+[source,bash]
+----
+git checkout -b books
+bundle exec rails generate scaffold book title:string author:string
+----
+* 多くのコードが自動生成されるので，branchを切っておくと良い
+** 動作が確認できたらbranchをマージ
+** うまく行かなかったらbranchごと削除すれば良い
+
+===== routeの確認
+
+* Scaffoldの生成で追加されたルーティングの設定を確認
+
+. コマンド
++
+[source,bash]
+----
+bundle exec rake routes
+----
+* `+git diff+` でも確認してみよう
+
+===== DBのMigrate
+
+. migrateとは
+* Databaseのスキーマ定義の更新
+* Scaffoldを追加したり，属性を追加したりした際に行う
+. コマンド
++
+[source,bash]
+----
+bundle exec rake db:migrate
+----
+
+===== 参考：Migrateの取り消しの方法
+
+* DBのmigrationを取り消したいときは次のコマンドで取り消せる
+
+[source,bash]
+----
+bundle exec rake db:rollback
+----
+
+* 再度，migrateすれば再実行される
+
+[source,bash]
+----
+bundle exec rake db:migrate
+----
+
+===== 参考：Scaffold作成の取り消しの方法
+
+. コマンド
++
+[source,bash]
+----
+git add .
+git commit -m 'Cancel'
+git checkout master
+git branch -D books
+----
+* 1〜2行目：自動生成されたScaffoldのコードをbranchに一旦コミット
+* 3行目：masterブランチに移動
+* 4行目：branchを削除（ *`+-D+`* オプション使用 ）
+
+===== 動作確認
+
+. 動作確認の方法
+* Webブラウザで http://localhost:3000/books を開く
+* CRUD処理が完成していることを確かめる
+. コマンド
++
+[source,bash]
+----
+bundle exec rails server
+----
+
+===== 完成したコードをマージ
+
+. ブランチをマージ
+* 動作確認できたので， `+books+` branchをマージする
+* 不要になったブランチは， `+git branch -d+` で削除する
+. コマンド
++
+[source,bash]
+----
+git add .
+git commit -m 'Generate books scaffold'
+git checkout master
+git merge books
+git branch -d books
+----
+
+===== Herokuにディプロイ
+
+. ディプロイ
+* ここまでのアプリをディプロイする
+* herokuにあるdbもmigrateする
+* Webブラウザで動作確認する
+. 設定ファイル(Procfile)
++
+....
+release: bundle exec rake db:migrate
+web: bundle exec rails server -p $PORT
+....
+
+==== RoRアプリのテスト
+
+===== テストについて
+
+. ガイド
+* http://guides.rubyonrails.org/testing.html[A Guide to Testing Rails
+Applications — Ruby on Rails Guides]
+
+===== テストの実行
+
+. テストコード
+* Scaffoldはテストコードも作成してくれる
+* テスト用のDB（ `+rails_enpit_test+` ）が更新される
+. コマンド
++
+[source,bash]
+----
+bundle exec rake test
+----
+
+==== Travis CIとの連携
+
+===== Travis CIのアカウント作成
+
+. アカウントの作り方
+* 次のページにアクセスし，画面右上の「Sign in with
+GitHub」のボタンを押す
+** https://travis-ci.org/[Travis CI - Free Hosted Continuous Integration
+Platform for the Open Source Community]
+* GitHubの認証ページが出るので，画面下部にある緑のボタンを押す
+* Travis CIから確認のメールが来るので，確認する
+
+===== Travisの設定
+
+. 設定ファイルの変更
+* まず、Rubyのバージョンを指定する
+* 変更の際はYAMLのインデントに注意する
+. .travis.yml を書き換える
++
+[source,yaml]
+----
+language: ruby
+rvm:
+- 2.2.5
+----
+
+===== Travis用DB設定ファイルと作成
+
+* RubyのVersionなど
+* テストDB用の設定ファイルを追加する
+
+. `+.travis.yml+`
++
+[source,yaml]
+----
+language: ruby
+rvm:
+- 2.2.5
+services: postgresql
+bundler_args: "--without development --deployment -j4"
+cache: bundler
+before_script:
+  - cp config/database.travis.yml config/database.yml
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+script: bundle exec rake test
+----
+. `+config/database.travis.yml+`
++
+[source,yaml]
+----
+test:
+  adapter: postgresql
+  database: travis_ci_test
+  username: postgres
+----
+
+===== GitHubとTravis CI連携
+
+. 説明
+* ここまでの設定で，GitHubにpushされたコードはTravis
+CIでテストされるようになった．
+* GitHubにプッシュしてWebブラウザでTravis CIを開いて確認する
+. コマンド
++
+[source,bash]
+----
+git add .
+git commit -m 'Configure Travis CI'
+git push
+----
+
+===== CI通過後のHerokuへの自動deploy
+
+. HerokuへのDeploy
+* テストが通れば，自動でHerokuに配備されるように、Herokuに設定を追加する
+
+==== 演習課題
+
+===== 演習課題7-1
+
+. `+rails_enpit+` の拡張
+* Viewを変更
+** welcomeコントローラのviewから，
+booksコントローラのviewへのリンクを追加する etc
+* Scaffoldの追加
+** 任意のScaffoldを追加してみなさい
+** DBのmigrationを行い，動作確認しなさい
+* Herokuへの配備
+** Travis経由でHerokuへdeployできるようにする
+
