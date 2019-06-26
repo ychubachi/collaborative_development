@@ -1,0 +1,24 @@
+== ガイダンス/モダンな道具達
+
+=== ガイダンス
+
+==== 連絡事項
+
+===== 連絡事項(1)
+
+. 資料等の入手先
+* GitHubの下記リポジトリにまとめておきます
+** https://github.com/ychubachi/collaborative_development
+* 資料は随時updateするので，適宜，最新版をダウンロードしてください
+
+===== 連絡事項(2)
+
+. 仮想環境（Vagrant）
+* 各自のPCに仮想環境をインストールしておいてください
+* インストールするソフトウェア
+* Git
+** https://gitforwindows.org/
+* VirtualBox
+** https://www.virtualbox.org/
+* Vagrant
+** https://www.vagrantup.com/

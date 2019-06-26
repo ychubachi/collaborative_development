@@ -1,0 +1,15 @@
+== Git/GitHub演習（別資料）
+
+=== 第3章 Git/GitHub演習
+
+==== Git/GitHub演習の解説と演習
+
+===== Git/GitHub演習について
+
+. Git/GitHub演習
+
+GitとGitHubにとことん精通しよう
+
+. 演習資料
+
+https://github.com/ychubachi/github_practice[Git/GitHub演習]

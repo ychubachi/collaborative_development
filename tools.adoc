@@ -1,0 +1,55 @@
+=== コラボレイティブ開発の道具達
+
+==== モダンなソフトウエア開発とは
+
+===== ソフトウエア開発のための方法・言語・道具
+
+image::FLT_framework.svg[]
+
+===== 授業で取り上げる範囲
+
+. 取り上げること
+* 良い道具には設計思想そのものに方法論が組み込まれている
+* 世界中の技術者の知恵が結晶した成果としてのOSSのツール
+. 取り扱わないこと
+* 方法論そのものについてはアジャイル開発特論で学ぶ
+* プログラミングの初歩については教えない
+
+===== Scrumするためのモダンな道具たち
+
+image::tools.svg[]
+
+===== モダンな開発環境の全体像
+
+. 仮想化技術（Virtualization）
+* WindowsやMacでLinux上でのWebアプリケーション開発を学ぶことができる
+* HerokuやTravis CI等のクラウドでの実行や検査環境として用いられている
+. ソーシャルコーディング（Social Coding）
+* LinuxのソースコードのVCSとして用いられているGitを学ぶ
+* GitはGitHubと連携することでOSS型のチーム開発ができる
+
+===== enPiT仮想化環境
+
+. 仮想環境にインストール済みの道具
+* エディタ（Emacs/Vim）
+* Rubyの実行環境
+// * GitHub，Heroku，Travis
+// CIと連携するための各種コマンド（github-connect.sh，hub，heroku，travis）
+* PostgreSQLのクライアント・サーバーとDB
+* 各種設定ファイル（.bash_profile，.gemrc，.gitconfig）
+* その他
+
+. 仮想化環境の構築用リポジトリ（参考）
+* https://github.com/ychubachi/vagrant_enpit[ychubachi/vagrant_enpit]
+
+===== enPiT仮想化環境にログイン
+
+. 作業内容
+* 前の操作に引き続き，仮想化環境にSSH接続する
+. コマンド
++
+[source,bash]
+----
+vagrant up
+vagrant ssh
+----

@@ -1,0 +1,140 @@
+== 補足資料
+
+=== 補足資料
+
+==== Vagrant関連
+
+===== Vagrantの補足
+
+. 仮想環境とのファイル共有
+* Guest OS内に `+/vagrant+` という共有フォルダがある
+* このフォルダはHost OSからアクセスできる
+* 場所はVagrantfileがあるフォルダ
+* 共有したいファイル（画像など）をここに置く
+
+==== Git関連
+
+===== Gitの補足
+
+. 元いたbranchに素早く戻る方法
++
+[source,bash]
+----
+git checkout other_branch # masterで
+# 編集作業とcommit
+git checkout - # masterに戻る
+----
+. Git brame
+* だれがどの作業をしたかわかる（誰がバグを仕込んだのかも）
+** https://help.github.com/articles/using-git-blame-to-trace-changes-in-a-file[Using
+git blame to trace changes in a file · GitHub Help]
+
+===== バイナリのコンフリクト(1)
+
+* git mergeでバイナリファイルがコンフリクトした場合、 ファイルはgit
+merge実行前のままとなりますfootnote:[https://github.com/ychubachi/collaborative_development/issues/6[git
+mergeでバイナリファイルがコンフリクトした場合 · Issue #6]]。
+* 以下を実行してコンフリクトが発生したとします。
+
+[source,bash]
+----
+git checkout master
+git merge branch_aaa
+----
+
+===== バイナリのコンフリクト(2)
+
+* そのままにしたいとき(=masterを採用）は
+
+[source,bash]
+----
+git checkout --ours <binaryfile> #明示的な実行は不要
+git add <binaryfile>
+git commit
+----
+
+* branch_aaaのファイルを採用したいときは
+
+[source,bash]
+----
+git checkout --theirs <binaryfile>
+git add <binaryfile>
+git commit
+----
+
+===== Hubコマンドについて
+
+* enPiT環境にはHubコマンドが仕込んである
+** https://github.com/github/hub[github/hub]
+* 通常のGitの機能に加えて，GitHub用のコマンドが利用できる
+** コマンド名は「git」のまま（エイリアス設定済み）
+* 確認方法
+
+[source,bash]
+----
+git version
+alias git
+----
+
+==== GitHub関連
+
+===== GitHubの補足(1)
+
+. Issue
+* 課題管理（ITS: Issue Tracking System）
+* コミットのメッセージでcloseできる
+** https://help.github.com/articles/closing-issues-via-commit-messages[Closing
+issues via commit messages · GitHub Help]
+. Wiki
+* GitHubのリポジトリにWikiを作る
+** https://help.github.com/articles/about-github-wikis[About GitHub
+Wikis · GitHub Help]
+
+===== GitHubの補足(2)
+
+. GitHub Pages
+* 特殊なブランチを作成すると，Webページが構築できる
+** https://pages.github.com/[GitHub Pages]
+
+==== Heroku関連
+
+===== Herokuの補足
+
+. HerokuのアプリのURL確認
++
+[source,bash]
+----
+heroku apps:info
+----
+. `+rails generate+` などが動かない
++
+[source,bash]
+----
+spring stop
+----
+
+==== Travis CI関連
+
+===== Travis CIの補足
+
+. Status Image
+* README.mdを編集し，Travisのテスト状況を表示するStatus Imageを追加する
+* http://docs.travis-ci.com/user/status-images/[Travis CI: Status
+Images]
+. Deploy後、自動で heroku の db:migrate
+* 次のURLの「Running-commands」の箇所を参照
+** http://docs.travis-ci.com/user/deployment/heroku/[Heroku Deployment -
+Travis CI]
+
+////
+[[travxs-setup-のトラブル]]
+===== [.todo .TODO]#TODO# `+travxs setup+` のトラブル
+
+* 次のようなトラブルが発生することがある
+** https://github.com/ychubachi/collaborative_development/issues/17[TravisとGitHubのリポジトリの同期
+· Issue #17]
+** https://github.com/ychubachi/collaborative_development/issues/18[楽天APIサンプルのfork
+· Issue #18]
+* Travis CIからHerokuにディプロイするのではなく，
+HerokuからGitHubを監視させるようにしたほうがよいかも・・・
+////
