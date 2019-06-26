@@ -1,0 +1,250 @@
+== Sinatra/Heroku
+
+=== SinatraでWebアプリを作ろう
+
+==== クラウド環境のアカウント・設定
+
+===== GitHub/Herokuのアカウントを作成
+
+. GitHub
+* https://github.com/join[Join GitHub · GitHub]
+. Heroku
+* https://id.heroku.com/signup[Heroku - Sign up]
+
+==== 仮想環境の準備から起動
+
+===== Port Forwardの設定(1)
+
+. 説明
+* Guest OSで実行するサーバに，Host
+OSからWebブラウザでアクセスできるようにしておく
+* 任意のエディタでVagrantfileの「config.vm.network」を変更
+* 任意のエディタでVagrantfileを変更
+
+===== Port Forwardの設定(2)
+
+. 変更前
++
+[source,ruby]
+----
+# config.vm.network "forwarded_port", guest: 80, host: 8080
+----
+. 変更後
++
+[source,ruby]
+----
+config.vm.network "forwarded_port", guest: 3000, host: 3000
+config.vm.network "forwarded_port", guest: 4567, host: 4567
+----
+
+==== Sinatraアプリケーションの作成
+
+===== Sinatraを使った簡単なWebアプリケーション
+
+. Sinatraとは？
+* Webアプリケーションを作成するDSL
+* Railsに比べ簡単で，学習曲線が緩やか
+* 素早くWebアプリを作ってHerokuで公開してみよう
+. 参考文献
+* http://www.sinatrarb.com/[Sinatra]
+* http://www.sinatrarb.com/intro.html[Sinatra: README]
+
+===== Sinatraアプリ用リポジトリを作成する
+
+* Sinatraアプリを作成するため，GitHubで新しいリポジトリを作る
+** 名前は 「sinatra_enpit」とする
+** できたらcloneする
+
+===== Sinatraアプリを作成する(1)
+
+* エディタを起動し，次のスライドにある 「hello.rb」のコードを入力
+
+. コマンド
++
+[source,bash]
+----
+emacs hello.rb
+git add hello.rb
+git commit -m 'Create hello.rb'
+----
+
+===== Sinatraアプリを作成する(2)
+
+* Sinatraアプリ本体のコード（たった4行！）
+
+. コード: *hello.rb*
++
+[source,ruby]
+----
+require 'sinatra'
+
+get '/' do
+  "Hello World!"
+end
+----
+
+===== Sinatraアプリを起動する
+
+* hello.rbをrubyで動かせば，サーバが立ち上がる
+** vagrantのport forwardを利用するため，「-o」オプションを指定する
+
+. コマンド
++
+[source,bash]
+----
+ruby hello.rb -o 0.0.0.0
+----
+
+===== Sinatraアプリの動作確認
+
+* *Host OS* のWebブラウザで，http://localhost:4567 にアクセスする
+** 「Hello World!」が表示されれば成功
+* アクセスできない場合は `+Vagrantfile+` のPort
+Forwardの設定を見直すこと
+
+===== Sinatraのマニュアル
+
+* http://sinatrarb.com/intro-ja.html
+
+===== アプリをGitHubにpushする
+
+* GitHubにコードをpushしよう
+
+. コマンド
++
+[source,bash]
+----
+git add .
+git commit -m 'My Sintra App'
+git push
+----
+
+==== HerokuでSinatraを動かす
+
+===== Sinatraアプリのディプロイ
+
+* SinatraアプリをHerokuで動作させてみよう
+* Webアプリは世界中からアクセスできるようになる
+* WebアプリをHeroku（などのアプリケーションサーバ）に
+設置することを配備（Deploy）と言う
+
+===== SinatraアプリをHerokuで動かせるようにする
+
+* SinatraアプリをHerokuで動作させるには，
+（少ないものの）追加の設定が必要
+** 次スライドを見ながら，エディタを用いて，
+
+次の2つのファイルを作成する
+
+[cols=",",options="header",]
+|===
+|ファイル名 |内容
+|`+config.ru+` |Webアプリサーバ（Rack）の設定
+|`+Gemfile+` |他のメンバーやHeroku/Travis CIとで，
+| |Gemのバージョンを揃える
+|===
+
+===== 追加するコード
+
+. コード: *config.ru*
++
+[source,ruby]
+----
+require './hello'
+run Sinatra::Application
+----
+. コード: *Gemfile*
++
+[source,ruby]
+----
+source 'https://rubygems.org'
+gem 'sinatra'
+----
+
+===== 関連するGemのインストール
+
+* `+Gemfile+` の中身に基づき，必要なGem（ライブラリ）をダウンロードする
+** `+Gemfile.lock+` というファイルができる
+** このファイルもcommitの対象に含める
+
+. コマンド
++
+[source,bash]
+----
+bundle install
+----
+
+===== アプリをGitHubにpushする
+
+* Herokuで動かす前に，commitが必要
+
+. コマンド
++
+[source,bash]
+----
+git add .
+git commit -m 'Add configuration files for Heroku'
+git push
+----
+
+===== Herokuにアプリを作る
+
+. Herokuでの操作
+* Heroku にログインする
+* 新しいアプリを作る
+* GitHubと連携させる
+* 手動でディプロイする
+* 以降、GitHubにpushするとHerokuにも自動でディプロイされる
+
+===== 【補足】Sinatraでテストを実行可能に
+
+* `+Gemfile+` に `+rake+` を追加する
+
+[source,bash]
+----
+gem 'rake'
+----
+
+* `+Rakefile+` を作成する
+
+[source,ruby]
+----
+task :default => :test
+
+require 'rake/testtask'
+
+Rake::TestTask.new do |t|
+  t.pattern = "./*_test.rb"
+end
+----
+
+==== 演習課題
+
+===== 演習課題4-1
+
+. Sinatraアプリの作成
+* Sinatraアプリを作成して，Herokuで動作させなさい
+* SinatraのDSLについて調べ，機能を追加しなさい
+* コミットのログは詳細に記述し，どんな作業を行ったかが
+他の人にも分かるようにしなさい
+* 完成したコードはGitHubにもpushしなさい
+
+===== 演習課題4-2 (1)
+
+. Sinatraアプリの共同開発
+* グループメンバーでSinatraアプリを開発しなさい
+* 代表者がGitHubのリポジトリを作成し他のメンバーを Collaborators
+に追加する
+** 他のメンバーは代表者のリポジトリをcloneする
+* どんな機能をもたせるかをチームで相談しなさい
+** メンバーのスキルに合わせて，できるだけ簡単なもの（DBは使わない）
+
+===== 演習課題4-2 (2)
+
+. Sinatraアプリの共同開発（続き）
+* 慣れてきたらGitHub Flowをチームで回すことを目指す
+** ブランチを作成し，Pull Requestを送る
+** 他のメンバー（一人以上）からレビューを受けたら各自でマージ
+* GitHubのURLとHerokuのURLを提出
+** http://goo.gl/forms/p1SXNT2grM
+
