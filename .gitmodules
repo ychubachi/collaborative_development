@@ -1,9 +1,0 @@
-[submodule "self_introduction"]
-	path = self_introduction
-	url = git@github.com:ychubachi/self_introduction.git
-[submodule "styles"]
-	path = styles
-	url = git@github.com:ychubachi/styles.git
-[submodule "figures"]
-	path = figures
-	url = git@github.com:ychubachi/figures.git
