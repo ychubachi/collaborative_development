@@ -1,9 +1,0 @@
-# ############################################################
-# Options for LaTeX
-# Use C-c C-e l l to export
-# ############################################################
-#+LaTeX_CLASS: bxjsarticle
-#+LaTeX_CLASS_OPTIONS: [xelatex,ja=standard,a4paper,jbase=12Q,twocolumn]
-#+LaTeX_HEADER: \setpagelayout{margin=1cm}
-
-#+INCLUDE: "collaborative_development.org"
