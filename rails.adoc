@@ -9,23 +9,35 @@
 . 参考文献
 * [.underline]#http://rubyonrails.org/[Ruby on Rails]#
 
-=== `+rails_enpit+` アプリを作成する
+=== 準備（ごめんなさい，入れ忘れでした）
 
-* `+rails+` は予め，仮想化環境にインストールしてある
-* `+rails new+` コマンドを用いて，RoRアプリの雛形を作成する
-** コマンドは次スライド
+// TODO * `+rails+`コマンドはenPiT仮想環境にインストール済み
+
+* railsコマンドとライブラリを追加
+[source,bash]
+----
+gem install rails
+sudo apt install libpq-dev
+----
+
+=== GitHubに`+rails_enpit+`レポジトリを作る
+
+* GitHubのページにてレポジトリを作成する
+* 作成時，必ず「Initialize this repository with a README」にチェックを入れること
 
 === `+rails_enpit+` を作成するコマンド
 
+* `+rails new+` コマンドを用いて，RoRアプリの雛形を作成する
+
 [source,bash]
 ----
-rails new ~/rails_enpit --database=postgresql
+git clone 【rails_enpitのURL】
 cd ~/rails_enpit
-git init
-git create
+rm README.md
+rails new . --database=postgresql
 git add .
 git commit -m 'Generate a new rails app'
-git push -u origin master
+git push
 ----
 
 === GemfileにJS用Gemの設定
@@ -37,28 +49,31 @@ git push -u origin master
 +
 [source,ruby]
 ----
-# gem 'therubyracer',  platforms: :ruby
+# gem 'mini_racer', platforms: :ruby
 ----
 . 変更後
 +
 [source,ruby]
 ----
-gem 'therubyracer',  platforms: :ruby
+gem 'mini_racer', platforms: :ruby
 ----
 
-=== Bundle installの実行
+=== Bundle installの再実行
 
 * Gemfileを読み込み，必要なgemをインストールする
 ** `+rails new+` をした際にも， `+bundle install+` は実行されている
-** `+therubyracer+` と，それが依存しているgemで
+** `+mini_racer+` と，それが依存しているgemで
 まだインストールしていないものをインストール
 
 . コマンド
 +
 [source,bash]
 ----
-git commit -a -m 'Run bundle install'
+bin/bundle install
 ----
+
+* `+bin/bundle+`と`+bin/+`...をコマンドにつけるのは，プロジェクトのbundle配下
+  にあるバージョンのコマンドを明示的に実行させるため
 
 === Gemfile設定変更のコミット
 
@@ -110,10 +125,10 @@ createdb rails_enpit_test
 [cols=",",options="header",]
 |===
 |Backslashコマンド |説明
-|l |DBの一覧
-|c |DBに接続
-|d |リレーションの一覧
-|q |終了
+|\l |DBの一覧
+|\c |DBに接続
+|\d |リレーションの一覧
+|\q |終了
 |===
 
 === Rails serverの起動
@@ -124,7 +139,7 @@ createdb rails_enpit_test
 +
 [source,bash]
 ----
-bundle exec rails server -b 0.0.0.0
+bin/rails server -b 0.0.0.0
 ----
 
 === Webアプリの動作確認
@@ -141,11 +156,10 @@ bundle exec rails server -b 0.0.0.0
 ** MVC構造でいうControllerである
 * `+rails generate controller+` コマンドで作成する
 
-. コマンド
 +
 [source,bash]
 ----
-bundle exec rails generate controller welcome
+bin/rails generate controller welcome
 ----
 
 === 生成されたControllerの確認とコミット
@@ -210,14 +224,16 @@ git commit -m 'Add the welcome view'
 
 `+welcome+` コントローラの `+index+` メソッドに紐付ける
 
-* `+config/routes.rb+` の当該箇所をアンコメント
+* `+config/routes.rb+`を次の通り書き換える
 
 [source,ruby]
 ----
-root 'welcome#index'
+Rails.application.routes.draw do
+  root 'welcome#index'
+end
 ----
 
-* `+bundle exec rake routes+` コマンドで確認できる
+* `+bin/rake routes+` コマンドで確認できる
 
 === routes.rbの設定変更の確認
 
@@ -268,37 +284,17 @@ git push
 
 * 作成しとRoRアプリをHerokuで動作させよう
 
-. Getting Started
-* [.underline]#https://devcenter.heroku.com/articles/getting-started-with-rails4[Getting
-Started with Rails 4.x on Heroku]#
+* https://devcenter.heroku.com/articles/getting-started-with-rails5[Getting Started on Heroku with Rails 5.x]
 
 === Heroku用設定をGemfileに追加
 
-* `+Gemfile+` に `+rails_12factor+` を追加する
-* Rubyのバージョンも指定しておく
-* `+Gemfile+` を変更したら必ず `+bundle install+` すること
-
-. `+Gemfile+` に追加する内容
+* GemfileにRubyのバージョンを指定しておく
 +
 [source,ruby]
 ----
-gem 'rails_12factor', group: :production
-ruby '2.2.5'
+ruby '2.5.5'
 ----
-
-=== productionを除いたbundle install
-
-* `+rils_12factor+` は開発時には利用しない
-** `+Gemfile+` では「 `+group: production+` 」を指定してある
-* 次のコマンドでproduction以外のGemをインストール
-
-[source,bash]
-----
-bundle install --without production
-----
-
-* このオプションは記憶されるので， 2回目以降 `+--without production+`
-は不要
+* `+Gemfile+` を変更したら必ず `+bundle install+` すること
 
 === デプロイ前にGitにコミット
 

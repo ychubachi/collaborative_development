@@ -47,12 +47,26 @@ image::tools.svg[]
 
 . 作業内容
 * 前の操作に引き続き，仮想化環境にSSH接続する
+* 以降，仮想環境のシェル（bash）で作業する
+
 . コマンド
 +
 [source,bash]
 ----
 vagrant up
 vagrant ssh
+----
+
+=== enPiT仮想環境の停止
+
+. 作業内容
+* 仮想環境のシェルからexitした後，次のコマンドを実行
+
+. コマンド
++
+[source,bash]
+----
+vagrant halt
 ----
 
 == 仮想環境の準備から起動
@@ -71,22 +85,12 @@ OSからWebブラウザでアクセスできるようにしておく
 +
 [source,ruby]
 ----
-# config.vm.network "forwarded_port", guest: 80, host: 8080
+# config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
 ----
 . 変更後
 +
 [source,ruby]
 ----
-config.vm.network "forwarded_port", guest: 3000, host: 3000
-config.vm.network "forwarded_port", guest: 4567, host: 4567
+config.vm.network "forwarded_port", guest: 3000, host: 3000, host_ip: "127.0.0.1"
+config.vm.network "forwarded_port", guest: 4567, host: 4567, host_ip: "127.0.0.1"
 ----
-
-== クラウド環境のアカウント・設定
-
-=== GitHub/Herokuのアカウントを作成
-
-. GitHub
-* https://github.com/join[Join GitHub · GitHub]
-. Heroku
-* https://id.heroku.com/signup[Heroku - Sign up]
-

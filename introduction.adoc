@@ -21,6 +21,15 @@
 * Vagrant
 ** https://www.vagrantup.com/
 
+
+=== GitHub/Herokuのアカウントを作成
+
+. GitHub
+* https://github.com/join[Join GitHub · GitHub]
+. Heroku
+* https://id.heroku.com/signup[Heroku - Sign up]
+
+
 == 授業の全体像
 
 === 学習の目的
