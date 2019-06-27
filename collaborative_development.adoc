@@ -1,6 +1,11 @@
 = コラボレイティブ開発特論
+中鉢欣秀
+:doctype: book
+:encoding: utf-8
+:lang: ja
 :toc: left
-:toclevels: 4
+:toclevels: 2
+:toclevels: 3
 :toc-title: 目次
 :sectnums:
 :imagesdir: figures

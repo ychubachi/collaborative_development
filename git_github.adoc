@@ -1,10 +1,6 @@
-== Git/GitHub演習（別資料）
+= Git/GitHub演習（別資料）
 
-=== 第3章 Git/GitHub演習
-
-==== Git/GitHub演習の解説と演習
-
-===== Git/GitHub演習について
+== Git/GitHub演習について
 
 . Git/GitHub演習
 

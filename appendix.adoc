@@ -1,10 +1,8 @@
-== 補足資料
+= 補足資料
 
-=== 補足資料
+== Vagrant関連
 
-==== Vagrant関連
-
-===== Vagrantの補足
+=== Vagrantの補足
 
 . 仮想環境とのファイル共有
 * Guest OS内に `+/vagrant+` という共有フォルダがある
@@ -12,9 +10,9 @@
 * 場所はVagrantfileがあるフォルダ
 * 共有したいファイル（画像など）をここに置く
 
-==== Git関連
+== Git関連
 
-===== Gitの補足
+=== Gitの補足
 
 . 元いたbranchに素早く戻る方法
 +
@@ -29,7 +27,7 @@ git checkout - # masterに戻る
 ** https://help.github.com/articles/using-git-blame-to-trace-changes-in-a-file[Using
 git blame to trace changes in a file · GitHub Help]
 
-===== バイナリのコンフリクト(1)
+=== バイナリのコンフリクト(1)
 
 * git mergeでバイナリファイルがコンフリクトした場合、 ファイルはgit
 merge実行前のままとなりますfootnote:[https://github.com/ychubachi/collaborative_development/issues/6[git
@@ -42,7 +40,7 @@ git checkout master
 git merge branch_aaa
 ----
 
-===== バイナリのコンフリクト(2)
+=== バイナリのコンフリクト(2)
 
 * そのままにしたいとき(=masterを採用）は
 
@@ -62,7 +60,7 @@ git add <binaryfile>
 git commit
 ----
 
-===== Hubコマンドについて
+=== Hubコマンドについて
 
 * enPiT環境にはHubコマンドが仕込んである
 ** https://github.com/github/hub[github/hub]
@@ -76,9 +74,9 @@ git version
 alias git
 ----
 
-==== GitHub関連
+== GitHub関連
 
-===== GitHubの補足(1)
+=== GitHubの補足(1)
 
 . Issue
 * 課題管理（ITS: Issue Tracking System）
@@ -90,15 +88,15 @@ issues via commit messages · GitHub Help]
 ** https://help.github.com/articles/about-github-wikis[About GitHub
 Wikis · GitHub Help]
 
-===== GitHubの補足(2)
+=== GitHubの補足(2)
 
 . GitHub Pages
 * 特殊なブランチを作成すると，Webページが構築できる
 ** https://pages.github.com/[GitHub Pages]
 
-==== Heroku関連
+== Heroku関連
 
-===== Herokuの補足
+=== Herokuの補足
 
 . HerokuのアプリのURL確認
 +
@@ -113,9 +111,9 @@ heroku apps:info
 spring stop
 ----
 
-==== Travis CI関連
+== Travis CI関連
 
-===== Travis CIの補足
+=== Travis CIの補足
 
 . Status Image
 * README.mdを編集し，Travisのテスト状況を表示するStatus Imageを追加する

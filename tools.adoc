@@ -1,12 +1,13 @@
-=== コラボレイティブ開発の道具達
+= コラボレイティブ開発の道具達
+:imagesdir: figures
 
-==== モダンなソフトウエア開発とは
+== モダンなソフトウエア開発とは
 
-===== ソフトウエア開発のための方法・言語・道具
+=== ソフトウエア開発のための方法・言語・道具
 
 image::FLT_framework.svg[]
 
-===== 授業で取り上げる範囲
+=== 授業で取り上げる範囲
 
 . 取り上げること
 * 良い道具には設計思想そのものに方法論が組み込まれている
@@ -15,11 +16,11 @@ image::FLT_framework.svg[]
 * 方法論そのものについてはアジャイル開発特論で学ぶ
 * プログラミングの初歩については教えない
 
-===== Scrumするためのモダンな道具たち
+=== Scrumするためのモダンな道具たち
 
 image::tools.svg[]
 
-===== モダンな開発環境の全体像
+=== モダンな開発環境の全体像
 
 . 仮想化技術（Virtualization）
 * WindowsやMacでLinux上でのWebアプリケーション開発を学ぶことができる
@@ -28,9 +29,9 @@ image::tools.svg[]
 * LinuxのソースコードのVCSとして用いられているGitを学ぶ
 * GitはGitHubと連携することでOSS型のチーム開発ができる
 
-===== enPiT仮想化環境
+== enPiT仮想化環境
 
-. 仮想環境にインストール済みの道具
+=== 仮想環境にインストール済みの道具
 * エディタ（Emacs/Vim）
 * Rubyの実行環境
 // * GitHub，Heroku，Travis
@@ -42,7 +43,7 @@ image::tools.svg[]
 . 仮想化環境の構築用リポジトリ（参考）
 * https://github.com/ychubachi/vagrant_enpit[ychubachi/vagrant_enpit]
 
-===== enPiT仮想化環境にログイン
+=== enPiT仮想化環境にログイン
 
 . 作業内容
 * 前の操作に引き続き，仮想化環境にSSH接続する
@@ -53,3 +54,39 @@ image::tools.svg[]
 vagrant up
 vagrant ssh
 ----
+
+== 仮想環境の準備から起動
+
+=== Port Forwardの設定(1)
+
+. 説明
+* Guest OSで実行するサーバに，Host
+OSからWebブラウザでアクセスできるようにしておく
+* 任意のエディタでVagrantfileの「config.vm.network」を変更
+* 任意のエディタでVagrantfileを変更
+
+=== Port Forwardの設定(2)
+
+. 変更前
++
+[source,ruby]
+----
+# config.vm.network "forwarded_port", guest: 80, host: 8080
+----
+. 変更後
++
+[source,ruby]
+----
+config.vm.network "forwarded_port", guest: 3000, host: 3000
+config.vm.network "forwarded_port", guest: 4567, host: 4567
+----
+
+== クラウド環境のアカウント・設定
+
+=== GitHub/Herokuのアカウントを作成
+
+. GitHub
+* https://github.com/join[Join GitHub · GitHub]
+. Heroku
+* https://id.heroku.com/signup[Heroku - Sign up]
+
