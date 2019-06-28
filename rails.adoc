@@ -18,7 +18,7 @@
 ----
 gem install rails
 sudo apt update
-sudo apt install libpq-dev
+sudo apt -y install libpq-dev
 ----
 
 === GitHubに`+rails_enpit+`レポジトリを作る
