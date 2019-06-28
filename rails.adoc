@@ -86,7 +86,7 @@ bin/bundle install
 ----
 git add .
 git commit -m 'Edit Gemfile to enable the rubyracer gem'
-git push -u origin master
+git push
 ----
 
 == データベースの作成
