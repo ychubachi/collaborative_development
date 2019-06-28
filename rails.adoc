@@ -17,6 +17,7 @@
 [source,bash]
 ----
 gem install rails
+sudo apt update
 sudo apt install libpq-dev
 ----
 
