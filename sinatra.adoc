@@ -159,7 +159,7 @@ git push
 * 手動でディプロイする
 * 以降、GitHubにpushするとHerokuにも自動でディプロイされる
 
-===== 【補足】Sinatraでテストを実行可能に
+==== 【補足】Sinatraでテストを実行可能に
 
 * `+Gemfile+` に `+rake+` を追加する
 
