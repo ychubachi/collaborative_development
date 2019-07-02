@@ -17,7 +17,8 @@
 [source,bash]
 ----
 gem install rails
-sudo apt install libpq-dev
+sudo apt update
+sudo apt -y install libpq-dev
 ----
 
 === GitHubに`+rails_enpit+`レポジトリを作る
@@ -85,7 +86,7 @@ bin/bundle install
 ----
 git add .
 git commit -m 'Edit Gemfile to enable the rubyracer gem'
-git push -u origin master
+git push
 ----
 
 == データベースの作成
