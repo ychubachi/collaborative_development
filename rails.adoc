@@ -327,9 +327,18 @@ git push heroku master
 * 2行目: `+git push+` はherokuのmasterを指定．
 ディプロイすると，Herokuからのログが流れてくる
 
+=== Herokuへのディプロイの自動化
+
+* HerokuにGitHubを直接接続することで，ディプロイを自動化することができる。
+  . Herokuでアプリケーションのダッシュボードを開く
+  . DeployタブのDeployment methodからGitHubを選ぶ
+  . GitHubのURLを設定し，Automatic deploysをenableする
+  . 最初は，Manual deployをする
+* 以後，GitHubのmasterが更新されるたび，自動でディプロイされる
+
 == 演習課題
 
-=== 演習課題6
+=== 演習課題
 
 . RoRアプリの作成
 * ここまでの説明に従い，Herokuで動作するRoRアプリ（ `+rails_enpit+`
