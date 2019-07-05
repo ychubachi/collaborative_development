@@ -480,7 +480,7 @@ Applications — Ruby on Rails Guides]
 +
 [source,bash]
 ----
-bundle exec rake test
+bin/exec rake test
 ----
 
 == Travis CIとの連携
@@ -506,7 +506,7 @@ Platform for the Open Source Community]
 ----
 language: ruby
 rvm:
-- 2.2.5
+- 2.5.5
 ----
 
 === Travis用DB設定ファイルと作成
@@ -520,7 +520,7 @@ rvm:
 ----
 language: ruby
 rvm:
-- 2.2.5
+- 2.5.5
 services: postgresql
 bundler_args: "--without development --deployment -j4"
 cache: bundler
