@@ -20,6 +20,6 @@ include::git_github.adoc[]
 
 include::rails.adoc[]
 
-include::sinatra.adoc[]
+// include::sinatra.adoc[]
 
 include::appendix.adoc[]
