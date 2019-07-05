@@ -263,7 +263,7 @@ git commit -m 'Edit routes.rb for the root controller'
 +
 [source,bash]
 ----
-bundle exec rails server -b 0.0.0.0
+bin/rails server -b 0.0.0.0
 ----
 
 === GitHubへのPush
