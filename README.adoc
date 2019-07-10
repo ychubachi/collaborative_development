@@ -103,8 +103,6 @@ Git/GitHub入門]
 CIを活用したチーム開発演習，最終発表 | |
 |===
 
-※休講（7/5,7）
-
 === 課題の提出先
 
 . https://goo.gl/forms/LOL7hOzVEKJeRk1t2[コラボレイティブ開発特論-GitHubユーザ名とURL]
