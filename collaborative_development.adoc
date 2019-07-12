@@ -1,14 +1,14 @@
 = コラボレイティブ開発特論
-中鉢欣秀
+中鉢欣秀 <yc@aiit.ac.jp>
 :doctype: book
 :encoding: utf-8
 :lang: ja
 :toc: left
-:toclevels: 2
 :toclevels: 3
 :toc-title: 目次
 :sectnums:
 :imagesdir: figures
+:chapter-label: 
 
 include::preparation.adoc[]
 
