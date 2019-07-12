@@ -1,5 +1,6 @@
 = コラボレイティブ開発の道具達
 :imagesdir: figures
+// :source-highlighter: coderay
 
 == モダンなソフトウエア開発とは
 
