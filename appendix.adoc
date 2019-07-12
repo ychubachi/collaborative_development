@@ -1,5 +1,18 @@
 = 補足資料
 
+== 90min Scrum 
+
+[cols="1,3,1,2"]
+.90min Scrum タイムテーブル
+|===
+|1|計画をたてる(Sprint Planning)|10分|
+|2|開発する|60分|※途中定期的に (Daily) Scrumをする
+|3|成果物レビュー(Sprint Review)|15分|
+|4|振り返り(Sprint Retrospective|15分|
+|===
+
+
+
 == Vagrant関連
 
 === Vagrantの補足
