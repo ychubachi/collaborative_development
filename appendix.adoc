@@ -8,7 +8,7 @@
 |1|計画をたてる(Sprint Planning)|10分|計画を立て終えたら開発に進んでよい
 |2|開発する(Development)|60分|途中 (Daily) Scrumをするとよい
 |3|成果物レビュー(Sprint Review)|10分|動くもののデモ
-|4|振り返り(Sprint Retrospective)|10分|KPT(Keep-Probrem-Try)
+|4|振り返り(Sprint Retrospective)|10分|KPT　(Keep-Probrem-Try)
 |===
 
 
