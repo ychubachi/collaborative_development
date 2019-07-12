@@ -7,8 +7,8 @@
 |===
 |1|計画をたてる(Sprint Planning)|10分|
 |2|開発する|60分|※途中定期的に (Daily) Scrumをする
-|3|成果物レビュー(Sprint Review)|15分|
-|4|振り返り(Sprint Retrospective|15分|
+|3|成果物レビュー(Sprint Review)|10分|
+|4|振り返り(Sprint Retrospective|10分|
 |===
 
 
