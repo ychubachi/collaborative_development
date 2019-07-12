@@ -53,6 +53,7 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   asciidoctor
@@ -60,4 +61,4 @@ DEPENDENCIES
   rake
 
 BUNDLED WITH
-   2.0.1
+   2.0.2
