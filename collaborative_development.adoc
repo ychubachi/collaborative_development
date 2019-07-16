@@ -4,12 +4,12 @@
 :encoding: utf-8
 :lang: ja
 :imagesdir: figures
-
+:stylesdir: stylesheets/
+:stylesheet: golo.css
 :toc: left
 :toclevels: 3
 :sectnums:
 :chapter-label:
-
 :toc-title: 目次
 :preface-title: はじめに
 :appendix-caption: 付録
