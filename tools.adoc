@@ -6,7 +6,7 @@
 
 === ソフトウエア開発のための方法・言語・道具
 
-image::FLT_framework.svg[width="80%"]
+image::FLT_framework.svg[width="50%"]
 
 === 授業で取り上げる範囲
 
@@ -19,7 +19,7 @@ image::FLT_framework.svg[width="80%"]
 
 === Scrumするためのモダンな道具たち
 
-image::tools.svg[width="80%"]
+image::tools.svg[width="50%"]
 
 === モダンな開発環境の全体像
 
