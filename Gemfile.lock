@@ -44,7 +44,7 @@ GEM
       pdf-reader (~> 2.0)
       prawn (~> 2.2)
     public_suffix (3.1.0)
-    rake (12.3.2)
+    rake (12.3.3)
     ruby-rc4 (0.1.5)
     safe_yaml (1.0.5)
     thread_safe (0.3.6)
