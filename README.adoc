@@ -45,7 +45,7 @@ Git/GitHub入門]
 
 | | |・インストラクション，個人演習資料の解説（branchのmergeまで） | |
 
-|7/14 |4 |*「GitHub演習」 解説(2)* |講義 |
+|7/15 |4 |*「GitHub演習」 解説(2)* |講義 |
 
 | | |・個人演習資料の解説（conflictから最後まで） | |
 
@@ -54,7 +54,7 @@ Git/GitHub入門]
 | | |「GitHub演習」の個人演習を通してGitHubをマスターする |
 |our~project~
 
-|7/21 |6 |*「GitHub演習」 チーム演習* |演習 |
+|7/22 |6 |*「GitHub演習」 チーム演習* |演習 |
 
 | | |「GitHub演習」のチーム演習を通してGitHubをマスターする |
 |team~project~
@@ -65,7 +65,7 @@ Git/GitHub入門]
 |・Sinatraアプリの作成・起動・動作確認，Herokuへのdeploy，グループ開発演習
 | |
 
-|7/28 |8 |*Webアプリ開発〜Sinatra編〜 個人演習* |演習 |
+|7/29 |8 |*Webアプリ開発〜Sinatra編〜 個人演習* |演習 |
 
 | | |・Sinatraアプリの作成・起動・動作確認まで個人での演習を行う |
 |sinatra~enpit~
